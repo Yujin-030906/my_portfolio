@@ -1,0 +1,905 @@
+edition,edition_id,country_noc,sport,event,result_id,athlete,athlete_id,pos,medal,isTeamSport
+1992 Winter Olympics,44,KOR,Alpine Skiing,"Downhill, Men",1382,Choi Yong-Hee,84749,39,,False
+1992 Winter Olympics,44,KOR,Alpine Skiing,"Super G, Men",1383,Hur Seung-Wook,87245,54,,False
+1992 Winter Olympics,44,KOR,Alpine Skiing,"Super G, Men",1383,Choi Yong-Hee,84749,63,,False
+1992 Winter Olympics,44,KOR,Alpine Skiing,"Giant Slalom, Men",1384,Choi Yong-Hee,84749,DNF,,False
+1992 Winter Olympics,44,KOR,Alpine Skiing,"Giant Slalom, Men",1384,Hur Seung-Wook,87245,DQ,,False
+1992 Winter Olympics,44,KOR,Alpine Skiing,"Slalom, Men",1387,Choi Yong-Hee,84749,40,,False
+1992 Winter Olympics,44,KOR,Alpine Skiing,"Slalom, Men",1387,Hur Seung-Wook,87245,DNF,,False
+1992 Winter Olympics,44,KOR,Alpine Skiing,"Combined, Men",1390,Choi Yong-Hee,84749,32,,False
+1992 Winter Olympics,44,KOR,Alpine Skiing,"Combined, Men",1390,Hur Seung-Wook,87245,DNF,,False
+1992 Winter Olympics,44,KOR,Biathlon,"10 kilometres Sprint, Men",1550,Hong Byung-Sik,86759,84,,False
+1992 Winter Olympics,44,KOR,Biathlon,"10 kilometres Sprint, Men",1550,Jang Dong-Lin,87462,88,,False
+1992 Winter Olympics,44,KOR,Biathlon,"10 kilometres Sprint, Men",1550,Kim Woon-Ki,87955,89,,False
+1992 Winter Olympics,44,KOR,Biathlon,"10 kilometres Sprint, Men",1550,Han Myung-Hee,86425,90,,False
+1992 Winter Olympics,44,KOR,Biathlon,"20 kilometres, Men",1551,Hong Byung-Sik,86759,87,,False
+1992 Winter Olympics,44,KOR,Biathlon,"20 kilometres, Men",1551,Jang Dong-Lin,87462,88,,False
+1992 Winter Olympics,44,KOR,Biathlon,"20 kilometres, Men",1551,Han Myung-Hee,86425,89,,False
+1992 Winter Olympics,44,KOR,Biathlon,"4 × 7.5 kilometres Relay, Men",1552,Kim Woon-Ki,87955,21,,True
+1992 Winter Olympics,44,KOR,Biathlon,"4 × 7.5 kilometres Relay, Men",1552,Hong Byung-Sik,86759,21,,True
+1992 Winter Olympics,44,KOR,Biathlon,"4 × 7.5 kilometres Relay, Men",1552,Jang Dong-Lin,87462,21,,True
+1992 Winter Olympics,44,KOR,Biathlon,"4 × 7.5 kilometres Relay, Men",1552,Han Myung-Hee,86425,21,,True
+1992 Winter Olympics,44,KOR,Cross Country Skiing,"10 kilometres, Men",2026,Park Byung-Chul,96209,40,,False
+1992 Winter Olympics,44,KOR,Cross Country Skiing,"10 kilometres, Men",2026,Ahn Jin-Soo,83584,77,,False
+1992 Winter Olympics,44,KOR,Cross Country Skiing,"10 kilometres, Men",2026,Kim Kwang-Rae,87952,85,,False
+1992 Winter Olympics,44,KOR,Cross Country Skiing,"10 kilometres, Men",2026,Wi Jae-Wook,98927,95,,False
+1992 Winter Olympics,44,KOR,Cross Country Skiing,"30 kilometres, Men",2030,Park Byung-Chul,96209,55,,False
+1992 Winter Olympics,44,KOR,Cross Country Skiing,"30 kilometres, Men",2030,Ahn Jin-Soo,83584,70,,False
+1992 Winter Olympics,44,KOR,Cross Country Skiing,"30 kilometres, Men",2030,Kim Kwang-Rae,87952,71,,False
+1992 Winter Olympics,44,KOR,Cross Country Skiing,"30 kilometres, Men",2030,Wi Jae-Wook,98927,DNF,,False
+1992 Winter Olympics,44,KOR,Cross Country Skiing,"10/15 kilometres Pursuit, Men",2027,Park Byung-Chul,96209,51,,False
+1992 Winter Olympics,44,KOR,Cross Country Skiing,"10/15 kilometres Pursuit, Men",2027,Ahn Jin-Soo,83584,79,,False
+1992 Winter Olympics,44,KOR,Cross Country Skiing,"10/15 kilometres Pursuit, Men",2027,Kim Kwang-Rae,87952,81,,False
+1992 Winter Olympics,44,KOR,Cross Country Skiing,"10/15 kilometres Pursuit, Men",2027,Wi Jae-Wook,98927,86,,False
+1992 Winter Olympics,44,KOR,Cross Country Skiing,"4 × 10 kilometres Relay, Men",2032,Park Byung-Chul,96209,15,,True
+1992 Winter Olympics,44,KOR,Cross Country Skiing,"4 × 10 kilometres Relay, Men",2032,Ahn Jin-Soo,83584,15,,True
+1992 Winter Olympics,44,KOR,Cross Country Skiing,"4 × 10 kilometres Relay, Men",2032,Wi Jae-Wook,98927,15,,True
+1992 Winter Olympics,44,KOR,Cross Country Skiing,"4 × 10 kilometres Relay, Men",2032,Kim Kwang-Rae,87952,15,,True
+1992 Winter Olympics,44,KOR,Figure Skating,"Singles, Men",13956,Jung Sung-Il,87672,21,,False
+1992 Winter Olympics,44,KOR,Figure Skating,"Singles, Women",13977,Lee Eun-Hee,81639,28 r1/2,,False
+1992 Winter Olympics,44,KOR,Short Track Speed Skating,"1,000 metres, Men",481,Kim Gi-Hun,87949,1,Gold,False
+1992 Winter Olympics,44,KOR,Short Track Speed Skating,"1,000 metres, Men",481,Lee Jun-Ho,89504,3,Bronze,False
+1992 Winter Olympics,44,KOR,Short Track Speed Skating,"1,000 metres, Men",481,Song Jae-Geun,97699,20,,False
+1992 Winter Olympics,44,KOR,Short Track Speed Skating,"5,000 metres Relay, Men",501,Song Jae-Geun,97699,1,Gold,True
+1992 Winter Olympics,44,KOR,Short Track Speed Skating,"5,000 metres Relay, Men",501,Kim Gi-Hun,87949,1,Gold,True
+1992 Winter Olympics,44,KOR,Short Track Speed Skating,"5,000 metres Relay, Men",501,Lee Jun-Ho,89504,1,Gold,True
+1992 Winter Olympics,44,KOR,Short Track Speed Skating,"5,000 metres Relay, Men",501,Mo Ji-Su,95507,1,Gold,True
+1992 Winter Olympics,44,KOR,Short Track Speed Skating,"5,000 metres Relay, Men",501,Lee Sung-Uk,1005122,1,Gold,True
+1992 Winter Olympics,44,KOR,Short Track Speed Skating,"500 metres, Women",510,Kim So-Hui,81497,9,,False
+1992 Winter Olympics,44,KOR,Short Track Speed Skating,"500 metres, Women",510,Jeon I-Gyeong,80843,12,,False
+1992 Winter Olympics,44,KOR,Speed Skating,"500 metres, Men",1074,Kim Yun-Man,87957,10,,False
+1992 Winter Olympics,44,KOR,Speed Skating,"500 metres, Men",1074,Jegar Seong-Ryeol,87430,12,,False
+1992 Winter Olympics,44,KOR,Speed Skating,"500 metres, Men",1074,Lee In-Hun,89502,=31,,False
+1992 Winter Olympics,44,KOR,Speed Skating,"1,000 metres, Men",1075,Kim Yun-Man,87957,2,Silver,False
+1992 Winter Olympics,44,KOR,Speed Skating,"1,000 metres, Men",1075,Jegar Seong-Ryeol,87430,=26,,False
+1992 Winter Olympics,44,KOR,Speed Skating,"1,000 metres, Men",1075,Lee In-Hun,89502,39,,False
+1992 Winter Olympics,44,KOR,Speed Skating,"1,500 metres, Men",1076,Oh Yong-Seok,95991,39,,False
+1992 Winter Olympics,44,KOR,Speed Skating,"5,000 metres, Men",1077,Oh Yong-Seok,95991,23,,False
+1992 Winter Olympics,44,KOR,Speed Skating,"500 metres, Women",1079,Yu Seon-Hui,83092,9,,False
+1992 Winter Olympics,44,KOR,Speed Skating,"1,000 metres, Women",1080,Yu Seon-Hui,83092,11,,False
+1994 Winter Olympics,45,KOR,Alpine Skiing,"Giant Slalom, Men",1410,Hur Seung-Wook,87245,33,,False
+1994 Winter Olympics,45,KOR,Alpine Skiing,"Slalom, Men",1413,Hur Seung-Wook,87245,21,,False
+1994 Winter Olympics,45,KOR,Cross Country Skiing,"10 kilometres, Men",2046,Ahn Jin-Soo,83584,75,,False
+1994 Winter Olympics,45,KOR,Cross Country Skiing,"10 kilometres, Men",2046,Park Byung-Chul,96209,77,,False
+1994 Winter Olympics,45,KOR,Cross Country Skiing,"30 kilometres, Men",2050,Ahn Jin-Soo,83584,51,,False
+1994 Winter Olympics,45,KOR,Cross Country Skiing,"30 kilometres, Men",2050,Park Byung-Chul,96209,56,,False
+1994 Winter Olympics,45,KOR,Cross Country Skiing,"10/15 kilometres Pursuit, Men",2047,Park Byung-Chul,96209,65,,False
+1994 Winter Olympics,45,KOR,Cross Country Skiing,"10/15 kilometres Pursuit, Men",2047,Ahn Jin-Soo,83584,68,,False
+1994 Winter Olympics,45,KOR,Figure Skating,"Singles, Men",14062,Jung Sung-Il,87672,17,,False
+1994 Winter Olympics,45,KOR,Figure Skating,"Singles, Women",14083,Lily Lee,81642,21,,False
+1994 Winter Olympics,45,KOR,Short Track Speed Skating,"500 metres, Men",535,Chae Ji-Hun,84684,1,Gold,False
+1994 Winter Olympics,45,KOR,Short Track Speed Skating,"500 metres, Men",535,Lee Jun-Ho,89504,6,,False
+1994 Winter Olympics,45,KOR,Short Track Speed Skating,"500 metres, Men",535,Kim Gi-Hun,87949,12,,False
+1994 Winter Olympics,45,KOR,Short Track Speed Skating,"1,000 metres, Men",555,Kim Gi-Hun,87949,1,Gold,False
+1994 Winter Olympics,45,KOR,Short Track Speed Skating,"1,000 metres, Men",555,Chae Ji-Hun,84684,2,Silver,False
+1994 Winter Olympics,45,KOR,Short Track Speed Skating,"1,000 metres, Men",555,Lee Jun-Ho,89504,5,,False
+1994 Winter Olympics,45,KOR,Short Track Speed Skating,"500 metres, Women",581,Won Hye-Gyeong,83060,4,,False
+1994 Winter Olympics,45,KOR,Short Track Speed Skating,"500 metres, Women",581,Kim So-Hui,81497,5,,False
+1994 Winter Olympics,45,KOR,Short Track Speed Skating,"500 metres, Women",581,Jeon I-Gyeong,80843,15,,False
+1994 Winter Olympics,45,KOR,Short Track Speed Skating,"1,000 metres, Women",601,Jeon I-Gyeong,80843,1,Gold,False
+1994 Winter Olympics,45,KOR,Short Track Speed Skating,"1,000 metres, Women",601,Kim So-Hui,81497,3,Bronze,False
+1994 Winter Olympics,45,KOR,Short Track Speed Skating,"1,000 metres, Women",601,Won Hye-Gyeong,83060,9,,False
+1994 Winter Olympics,45,KOR,Short Track Speed Skating,"3,000 metres Relay, Women",621,Jeon I-Gyeong,80843,1,Gold,True
+1994 Winter Olympics,45,KOR,Short Track Speed Skating,"3,000 metres Relay, Women",621,Kim So-Hui,81497,1,Gold,True
+1994 Winter Olympics,45,KOR,Short Track Speed Skating,"3,000 metres Relay, Women",621,Kim Yun-Mi,81500,1,Gold,True
+1994 Winter Olympics,45,KOR,Short Track Speed Skating,"3,000 metres Relay, Women",621,Won Hye-Gyeong,83060,1,Gold,True
+1994 Winter Olympics,45,KOR,Short Track Speed Skating,"3,000 metres Relay, Women",621,Kim Ryang-Hee,1005117,1,Gold,True
+1994 Winter Olympics,45,KOR,Speed Skating,"500 metres, Men",1084,Kim Yun-Man,87957,14,,False
+1994 Winter Olympics,45,KOR,Speed Skating,"500 metres, Men",1084,Jegar Seong-Ryeol,87430,30,,False
+1994 Winter Olympics,45,KOR,Speed Skating,"500 metres, Men",1084,Lee Jae-Sik,89503,=34,,False
+1994 Winter Olympics,45,KOR,Speed Skating,"500 metres, Men",1084,Lee Gyu-Hyeok,89506,36,,False
+1994 Winter Olympics,45,KOR,Speed Skating,"1,000 metres, Men",1085,Kim Yun-Man,87957,18,,False
+1994 Winter Olympics,45,KOR,Speed Skating,"1,000 metres, Men",1085,Lee Gyu-Hyeok,89506,32,,False
+1994 Winter Olympics,45,KOR,Speed Skating,"1,000 metres, Men",1085,Jegar Seong-Ryeol,87430,39,,False
+1994 Winter Olympics,45,KOR,Speed Skating,"1,000 metres, Men",1085,Lee Jae-Sik,89503,40,,False
+1994 Winter Olympics,45,KOR,Speed Skating,"1,500 metres, Men",1086,Lee Jae-Sik,89503,41,,False
+1994 Winter Olympics,45,KOR,Speed Skating,"500 metres, Women",1089,Yu Seon-Hui,83092,5,,False
+1994 Winter Olympics,45,KOR,Speed Skating,"500 metres, Women",1089,Gang Mi-Yeong,81440,28,,False
+1994 Winter Olympics,45,KOR,Speed Skating,"500 metres, Women",1089,Jeong Bae-Yeong,81396,31,,False
+1994 Winter Olympics,45,KOR,Speed Skating,"500 metres, Women",1089,Cheon Hui-Ju,80842,32,,False
+1994 Winter Olympics,45,KOR,Speed Skating,"1,000 metres, Women",1090,Yu Seon-Hui,83092,15,,False
+1994 Winter Olympics,45,KOR,Speed Skating,"1,000 metres, Women",1090,Gang Mi-Yeong,81440,32,,False
+1994 Winter Olympics,45,KOR,Speed Skating,"1,000 metres, Women",1090,Cheon Hui-Ju,80842,35,,False
+1994 Winter Olympics,45,KOR,Speed Skating,"1,000 metres, Women",1090,Jeong Bae-Yeong,81396,36,,False
+1994 Winter Olympics,45,KOR,Speed Skating,"1,500 metres, Women",1091,Cheon Hui-Ju,80842,30,,False
+1994 Winter Olympics,45,KOR,Speed Skating,"3,000 metres, Women",1092,Baek Eun-Bi,80579,23,,False
+1998 Winter Olympics,46,KOR,Alpine Skiing,"Giant Slalom, Men",1436,Hur Seung-Wook,87245,33,,False
+1998 Winter Olympics,46,KOR,Alpine Skiing,"Giant Slalom, Men",1436,Byun Jong-Moon,99536,DNF,,False
+1998 Winter Olympics,46,KOR,Alpine Skiing,"Slalom, Men",1439,Hur Seung-Wook,87245,23,,False
+1998 Winter Olympics,46,KOR,Alpine Skiing,"Slalom, Men",1439,Byun Jong-Moon,99536,DNF,,False
+1998 Winter Olympics,46,KOR,Biathlon,"10 kilometres Sprint, Men",1573,Jeon Jae-Won,99645,70,,False
+1998 Winter Olympics,46,KOR,Biathlon,"20 kilometres, Men",1574,Jeon Jae-Won,99645,71,,False
+1998 Winter Olympics,46,KOR,Cross Country Skiing,"10 kilometres, Men",2066,Park Byung-Chul,96209,53,,False
+1998 Winter Olympics,46,KOR,Cross Country Skiing,"10 kilometres, Men",2066,Ahn Jin-Soo,83584,74,,False
+1998 Winter Olympics,46,KOR,Cross Country Skiing,"10 kilometres, Men",2066,Park Byeong-Ju,100092,79,,False
+1998 Winter Olympics,46,KOR,Cross Country Skiing,"30 kilometres, Men",2070,Park Byung-Chul,96209,55,,False
+1998 Winter Olympics,46,KOR,Cross Country Skiing,"30 kilometres, Men",2070,Ahn Jin-Soo,83584,63,,False
+1998 Winter Olympics,46,KOR,Cross Country Skiing,"50 kilometres, Men",2071,Shin Doo-Sun,100091,61,,False
+1998 Winter Olympics,46,KOR,Cross Country Skiing,"10/15 kilometres Pursuit, Men",2067,Ahn Jin-Soo,83584,66,,False
+1998 Winter Olympics,46,KOR,Cross Country Skiing,"10/15 kilometres Pursuit, Men",2067,Park Byeong-Ju,100092,67,,False
+1998 Winter Olympics,46,KOR,Cross Country Skiing,"10/15 kilometres Pursuit, Men",2067,Park Byung-Chul,96209,DNF,,False
+1998 Winter Olympics,46,KOR,Cross Country Skiing,"4 × 10 kilometres Relay, Men",2072,Park Byung-Chul,96209,20,,True
+1998 Winter Olympics,46,KOR,Cross Country Skiing,"4 × 10 kilometres Relay, Men",2072,Ahn Jin-Soo,83584,20,,True
+1998 Winter Olympics,46,KOR,Cross Country Skiing,"4 × 10 kilometres Relay, Men",2072,Shin Doo-Sun,100091,20,,True
+1998 Winter Olympics,46,KOR,Cross Country Skiing,"4 × 10 kilometres Relay, Men",2072,Park Byeong-Ju,100092,20,,True
+1998 Winter Olympics,46,KOR,Figure Skating,"Singles, Men",14168,Lee Kyu-Hyun,100153,24,,False
+1998 Winter Olympics,46,KOR,Luge,"Singles, Men",178,Lee Gi-Ro,100489,29,,False
+1998 Winter Olympics,46,KOR,Luge,"Singles, Men",178,Gang Gwang-Bae,100485,31,,False
+1998 Winter Olympics,46,KOR,Luge,"Singles, Men",178,Lee Yong,100491,32,,False
+1998 Winter Olympics,46,KOR,Short Track Speed Skating,"500 metres, Men",627,Chae Ji-Hun,84684,5,,False
+1998 Winter Olympics,46,KOR,Short Track Speed Skating,"500 metres, Men",627,Kim Dong-Seong,100242,8,,False
+1998 Winter Olympics,46,KOR,Short Track Speed Skating,"500 metres, Men",627,Lee Jun-Hwan,100245,12,,False
+1998 Winter Olympics,46,KOR,Short Track Speed Skating,"1,000 metres, Men",647,Kim Dong-Seong,100242,1,Gold,False
+1998 Winter Olympics,46,KOR,Short Track Speed Skating,"1,000 metres, Men",647,Lee Jun-Hwan,100245,7,,False
+1998 Winter Olympics,46,KOR,Short Track Speed Skating,"1,000 metres, Men",647,Chae Ji-Hun,84684,10,,False
+1998 Winter Olympics,46,KOR,Short Track Speed Skating,"5,000 metres Relay, Men",667,Chae Ji-Hun,84684,2,Silver,True
+1998 Winter Olympics,46,KOR,Short Track Speed Skating,"5,000 metres Relay, Men",667,Lee Jun-Hwan,100245,2,Silver,True
+1998 Winter Olympics,46,KOR,Short Track Speed Skating,"5,000 metres Relay, Men",667,Lee Ho-Eung,100261,2,Silver,True
+1998 Winter Olympics,46,KOR,Short Track Speed Skating,"5,000 metres Relay, Men",667,Kim Dong-Seong,100242,2,Silver,True
+1998 Winter Olympics,46,KOR,Short Track Speed Skating,"5,000 metres Relay, Men",667,Kim Sun-Tae,1005105,2,Silver,True
+1998 Winter Olympics,46,KOR,Short Track Speed Skating,"500 metres, Women",673,Jeon I-Gyeong,80843,3,Bronze,False
+1998 Winter Olympics,46,KOR,Short Track Speed Skating,"500 metres, Women",673,Choi Min-Gyeong,100213,4,,False
+1998 Winter Olympics,46,KOR,Short Track Speed Skating,"500 metres, Women",673,Kim Yun-Mi,81500,10,,False
+1998 Winter Olympics,46,KOR,Short Track Speed Skating,"1,000 metres, Women",693,Jeon I-Gyeong,80843,1,Gold,False
+1998 Winter Olympics,46,KOR,Short Track Speed Skating,"1,000 metres, Women",693,Won Hye-Gyeong,83060,3,Bronze,False
+1998 Winter Olympics,46,KOR,Short Track Speed Skating,"1,000 metres, Women",693,Kim Yun-Mi,81500,6,,False
+1998 Winter Olympics,46,KOR,Short Track Speed Skating,"3,000 metres Relay, Women",713,Jeon I-Gyeong,80843,1,Gold,True
+1998 Winter Olympics,46,KOR,Short Track Speed Skating,"3,000 metres Relay, Women",713,Won Hye-Gyeong,83060,1,Gold,True
+1998 Winter Olympics,46,KOR,Short Track Speed Skating,"3,000 metres Relay, Women",713,An Sang-Mi,100233,1,Gold,True
+1998 Winter Olympics,46,KOR,Short Track Speed Skating,"3,000 metres Relay, Women",713,Kim Yun-Mi,81500,1,Gold,True
+1998 Winter Olympics,46,KOR,Short Track Speed Skating,"3,000 metres Relay, Women",713,Choi Min-Gyeong,100213,1,Gold,True
+1998 Winter Olympics,46,KOR,Ski Jumping,"Normal Hill, Individual, Men",2439,Choi Heung-Cheol,99855,46,,False
+1998 Winter Olympics,46,KOR,Ski Jumping,"Normal Hill, Individual, Men",2439,Choi Yong-Jik,99856,53,,False
+1998 Winter Olympics,46,KOR,Ski Jumping,"Normal Hill, Individual, Men",2439,Kim Hyeon-Gi,99880,59,,False
+1998 Winter Olympics,46,KOR,Ski Jumping,"Normal Hill, Individual, Men",2439,Kim Heung-Soo,99881,61,,False
+1998 Winter Olympics,46,KOR,Ski Jumping,"Large Hill, Individual, Men",2442,Choi Heung-Cheol,99855,40,,False
+1998 Winter Olympics,46,KOR,Ski Jumping,"Large Hill, Individual, Men",2442,Kim Hyeon-Gi,99880,51,,False
+1998 Winter Olympics,46,KOR,Ski Jumping,"Large Hill, Individual, Men",2442,Choi Yong-Jik,99856,53,,False
+1998 Winter Olympics,46,KOR,Ski Jumping,"Large Hill, Individual, Men",2442,Kim Heung-Soo,99881,62,,False
+1998 Winter Olympics,46,KOR,Ski Jumping,"Large Hill, Team, Men",2445,Kim Heung-Soo,99881,13,,True
+1998 Winter Olympics,46,KOR,Ski Jumping,"Large Hill, Team, Men",2445,Kim Hyeon-Gi,99880,13,,True
+1998 Winter Olympics,46,KOR,Ski Jumping,"Large Hill, Team, Men",2445,Choi Yong-Jik,99856,13,,True
+1998 Winter Olympics,46,KOR,Ski Jumping,"Large Hill, Team, Men",2445,Choi Heung-Cheol,99855,13,,True
+1998 Winter Olympics,46,KOR,Speed Skating,"500 metres, Men",1094,Kim Yun-Man,87957,7,,False
+1998 Winter Olympics,46,KOR,Speed Skating,"500 metres, Men",1094,Lee Gyu-Hyeok,89506,8,,False
+1998 Winter Olympics,46,KOR,Speed Skating,"500 metres, Men",1094,Jegar Seong-Ryeol,87430,=16,,False
+1998 Winter Olympics,46,KOR,Speed Skating,"500 metres, Men",1094,Kim Jin-Su,99357,34,,False
+1998 Winter Olympics,46,KOR,Speed Skating,"1,000 metres, Men",1097,Lee Gyu-Hyeok,89506,13,,False
+1998 Winter Olympics,46,KOR,Speed Skating,"1,000 metres, Men",1097,Kim Yun-Man,87957,20,,False
+1998 Winter Olympics,46,KOR,Speed Skating,"1,000 metres, Men",1097,Cheon Ju-Hyeon,99363,=21,,False
+1998 Winter Olympics,46,KOR,Speed Skating,"1,000 metres, Men",1097,Jegar Seong-Ryeol,87430,30,,False
+1998 Winter Olympics,46,KOR,Speed Skating,"1,500 metres, Men",1098,Choi Jae-Bong,99373,12,,False
+1998 Winter Olympics,46,KOR,Speed Skating,"1,500 metres, Men",1098,Cheon Ju-Hyeon,99363,15,,False
+1998 Winter Olympics,46,KOR,Speed Skating,"1,500 metres, Men",1098,Jeong Jin-Uk,99369,39,,False
+1998 Winter Olympics,46,KOR,Speed Skating,"5,000 metres, Men",1099,Choi Jae-Bong,99373,29,,False
+1998 Winter Olympics,46,KOR,Speed Skating,"500 metres, Women",1101,Choi Seung-Yong,100735,=24,,False
+1998 Winter Olympics,46,KOR,Speed Skating,"500 metres, Women",1101,Cheon Hui-Ju,80842,29,,False
+1998 Winter Olympics,46,KOR,Speed Skating,"500 metres, Women",1101,Gang Mi-Yeong,81440,30,,False
+1998 Winter Olympics,46,KOR,Speed Skating,"500 metres, Women",1101,Kim Ju-Hyeon,99400,=33,,False
+1998 Winter Olympics,46,KOR,Speed Skating,"1,000 metres, Women",1104,Choi Seung-Yong,100735,24,,False
+1998 Winter Olympics,46,KOR,Speed Skating,"1,000 metres, Women",1104,Cheon Hui-Ju,80842,30,,False
+1998 Winter Olympics,46,KOR,Speed Skating,"1,000 metres, Women",1104,Kim Ju-Hyeon,99400,35,,False
+1998 Winter Olympics,46,KOR,Speed Skating,"1,000 metres, Women",1104,Gang Mi-Yeong,81440,38,,False
+1998 Winter Olympics,46,KOR,Speed Skating,"1,500 metres, Women",1105,Baek Eun-Bi,80579,25,,False
+1998 Winter Olympics,46,KOR,Speed Skating,"1,500 metres, Women",1105,Lee Gyeong-Nam,99418,26,,False
+1998 Winter Olympics,46,KOR,Speed Skating,"3,000 metres, Women",1106,Lee Gyeong-Nam,99418,20,,False
+1998 Winter Olympics,46,KOR,Speed Skating,"3,000 metres, Women",1106,Baek Eun-Bi,80579,23,,False
+2002 Winter Olympics,47,KOR,Alpine Skiing,"Giant Slalom, Men",1462,Gang Min-Hyeok,101801,46,,False
+2002 Winter Olympics,47,KOR,Alpine Skiing,"Giant Slalom, Men",1462,Byun Jong-Moon,99536,47,,False
+2002 Winter Olympics,47,KOR,Alpine Skiing,"Giant Slalom, Men",1462,Hur Seung-Wook,87245,DNF,,False
+2002 Winter Olympics,47,KOR,Alpine Skiing,"Slalom, Men",1465,Gang Min-Hyeok,101801,30,,False
+2002 Winter Olympics,47,KOR,Alpine Skiing,"Slalom, Men",1465,Byun Jong-Moon,99536,31,,False
+2002 Winter Olympics,47,KOR,Alpine Skiing,"Slalom, Men",1465,Lee Ki-Hyun,101825,DNF,,False
+2002 Winter Olympics,47,KOR,Alpine Skiing,"Slalom, Men",1465,Hur Seung-Wook,87245,DQ,,False
+2002 Winter Olympics,47,KOR,Alpine Skiing,"Giant Slalom, Women",1476,Yoo Hye-Min,101838,DNF,,False
+2002 Winter Olympics,47,KOR,Biathlon,"10 kilometres Sprint, Men",1585,Shin Byung-Kook,101216,80,,False
+2002 Winter Olympics,47,KOR,Biathlon,"20 kilometres, Men",1586,Shin Byung-Kook,101216,75,,False
+2002 Winter Olympics,47,KOR,Biathlon,"7.5 kilometres Sprint, Women",1592,Kim Ja-Youn,101186,69,,False
+2002 Winter Olympics,47,KOR,Biathlon,"15 kilometres, Women",1593,Kim Ja-Youn,101186,66,,False
+2002 Winter Olympics,47,KOR,Cross Country Skiing,"Sprint, Men",2092,Shin Doo-Sun,100091,56,,False
+2002 Winter Olympics,47,KOR,Cross Country Skiing,"15 kilometres, Men",2086,Park Byeong-Ju,100092,62,,False
+2002 Winter Olympics,47,KOR,Cross Country Skiing,"15 kilometres, Men",2086,Choi Im-Heon,101341,64,,False
+2002 Winter Olympics,47,KOR,Cross Country Skiing,"30 kilometres, Men",2090,Park Byeong-Ju,100092,55,,False
+2002 Winter Olympics,47,KOR,Cross Country Skiing,"30 kilometres, Men",2090,Shin Doo-Sun,100091,59,,False
+2002 Winter Olympics,47,KOR,Cross Country Skiing,"30 kilometres, Men",2090,Jeong Ui-Myeong,101043,DNF,,False
+2002 Winter Olympics,47,KOR,Cross Country Skiing,"10/10 kilometres Pursuit, Men",2087,Shin Doo-Sun,100091,62 r1/2,,False
+2002 Winter Olympics,47,KOR,Cross Country Skiing,"10/10 kilometres Pursuit, Men",2087,Park Byeong-Ju,100092,66 r1/2,,False
+2002 Winter Olympics,47,KOR,Cross Country Skiing,"10/10 kilometres Pursuit, Men",2087,Jeong Ui-Myeong,101043,73 r1/2,,False
+2002 Winter Olympics,47,KOR,Cross Country Skiing,"Sprint, Women",2114,Lee Chae-Won,101004,52,,False
+2002 Winter Olympics,47,KOR,Cross Country Skiing,"10 kilometres, Women",2108,Lee Chae-Won,101004,54,,False
+2002 Winter Olympics,47,KOR,Cross Country Skiing,"15 kilometres, Women",2112,Lee Chae-Won,101004,46,,False
+2002 Winter Olympics,47,KOR,Cross Country Skiing,"5/5 kilometres Pursuit, Women",2109,Lee Chae-Won,101004,66 r1/2,,False
+2002 Winter Olympics,47,KOR,Figure Skating,"Singles, Men",14274,Lee Kyu-Hyun,100153,28 r1/2,,False
+2002 Winter Olympics,47,KOR,Figure Skating,"Singles, Women",14295,Park Bit-Na,101858,26 r1/2,,False
+2002 Winter Olympics,47,KOR,Figure Skating,"Ice Dancing, Mixed",14337,Yang Tae-Hwa,101629,24,,True
+2002 Winter Olympics,47,KOR,Figure Skating,"Ice Dancing, Mixed",14337,Lee Chuen-Gun,101630,24,,True
+2002 Winter Olympics,47,KOR,Luge,"Singles, Men",195,Lee Hak-Jin,101271,36,,False
+2002 Winter Olympics,47,KOR,Luge,"Singles, Men",195,Kim Min-Gyu,101274,42,,False
+2002 Winter Olympics,47,KOR,Luge,"Singles, Men",195,Lee Chang-Yong,101281,DNF,,False
+2002 Winter Olympics,47,KOR,Short Track Speed Skating,"500 metres, Men",719,Kim Dong-Seong,100242,6,,False
+2002 Winter Olympics,47,KOR,Short Track Speed Skating,"500 metres, Men",719,Lee Seung-Jae,101782,DQ,,False
+2002 Winter Olympics,47,KOR,Short Track Speed Skating,"1,000 metres, Men",739,Hyeon-Su An,101557,4,,False
+2002 Winter Olympics,47,KOR,Short Track Speed Skating,"1,000 metres, Men",739,Kim Dong-Seong,100242,5,,False
+2002 Winter Olympics,47,KOR,Short Track Speed Skating,"1,500 metres, Men",759,Kim Dong-Seong,100242,12,,False
+2002 Winter Olympics,47,KOR,Short Track Speed Skating,"1,500 metres, Men",759,Hyeon-Su An,101557,13,,False
+2002 Winter Olympics,47,KOR,Short Track Speed Skating,"5,000 metres Relay, Men",773,Kim Dong-Seong,100242,DQ,,True
+2002 Winter Olympics,47,KOR,Short Track Speed Skating,"5,000 metres Relay, Men",773,Min Ryong,101783,DQ,,True
+2002 Winter Olympics,47,KOR,Short Track Speed Skating,"5,000 metres Relay, Men",773,Lee Seung-Jae,101782,DQ,,True
+2002 Winter Olympics,47,KOR,Short Track Speed Skating,"5,000 metres Relay, Men",773,Oh Se-Jong,101784,DQ,,True
+2002 Winter Olympics,47,KOR,Short Track Speed Skating,"5,000 metres Relay, Men",773,Hyeon-Su An,101557,DQ,,True
+2002 Winter Olympics,47,KOR,Short Track Speed Skating,"500 metres, Women",779,Choi Eun-Gyeong,101418,7,,False
+2002 Winter Olympics,47,KOR,Short Track Speed Skating,"500 metres, Women",779,Ju Min-Jin,101549,9,,False
+2002 Winter Olympics,47,KOR,Short Track Speed Skating,"1,000 metres, Women",799,Go Gi-Hyeon,101409,2,Silver,False
+2002 Winter Olympics,47,KOR,Short Track Speed Skating,"1,000 metres, Women",799,Choi Eun-Gyeong,101418,6,,False
+2002 Winter Olympics,47,KOR,Short Track Speed Skating,"1,500 metres, Women",819,Go Gi-Hyeon,101409,1,Gold,False
+2002 Winter Olympics,47,KOR,Short Track Speed Skating,"1,500 metres, Women",819,Choi Eun-Gyeong,101418,2,Silver,False
+2002 Winter Olympics,47,KOR,Short Track Speed Skating,"3,000 metres Relay, Women",832,Choi Eun-Gyeong,101418,1,Gold,True
+2002 Winter Olympics,47,KOR,Short Track Speed Skating,"3,000 metres Relay, Women",832,Choi Min-Gyeong,100213,1,Gold,True
+2002 Winter Olympics,47,KOR,Short Track Speed Skating,"3,000 metres Relay, Women",832,Park Hye-Won,101764,1,Gold,True
+2002 Winter Olympics,47,KOR,Short Track Speed Skating,"3,000 metres Relay, Women",832,Ju Min-Jin,101549,1,Gold,True
+2002 Winter Olympics,47,KOR,Short Track Speed Skating,"3,000 metres Relay, Women",832,Go Gi-Hyeon,101409,1,Gold,True
+2002 Winter Olympics,47,KOR,Skeleton,"Skeleton, Men",17,Gang Gwang-Bae,100485,20,,False
+2002 Winter Olympics,47,KOR,Ski Jumping,"Normal Hill, Individual, Men",2448,Choi Heung-Cheol,99855,30,,False
+2002 Winter Olympics,47,KOR,Ski Jumping,"Normal Hill, Individual, Men",2448,Choi Yong-Jik,99856,34,,False
+2002 Winter Olympics,47,KOR,Ski Jumping,"Normal Hill, Individual, Men",2448,Kim Hyeon-Gi,99880,36,,False
+2002 Winter Olympics,47,KOR,Ski Jumping,"Normal Hill, Individual, Men",2448,Gang Chil-Gu,101150,46,,False
+2002 Winter Olympics,47,KOR,Ski Jumping,"Large Hill, Individual, Men",2453,Kim Hyeon-Gi,99880,31,,False
+2002 Winter Olympics,47,KOR,Ski Jumping,"Large Hill, Individual, Men",2453,Choi Yong-Jik,99856,46,,False
+2002 Winter Olympics,47,KOR,Ski Jumping,"Large Hill, Individual, Men",2453,Gang Chil-Gu,101150,47,,False
+2002 Winter Olympics,47,KOR,Ski Jumping,"Large Hill, Individual, Men",2453,Choi Heung-Cheol,99855,=41 r1/2,,False
+2002 Winter Olympics,47,KOR,Ski Jumping,"Large Hill, Team, Men",2458,Choi Heung-Cheol,99855,8,,True
+2002 Winter Olympics,47,KOR,Ski Jumping,"Large Hill, Team, Men",2458,Choi Yong-Jik,99856,8,,True
+2002 Winter Olympics,47,KOR,Ski Jumping,"Large Hill, Team, Men",2458,Kim Hyeon-Gi,99880,8,,True
+2002 Winter Olympics,47,KOR,Ski Jumping,"Large Hill, Team, Men",2458,Gang Chil-Gu,101150,8,,True
+2002 Winter Olympics,47,KOR,Speed Skating,"500 metres, Men",1108,Lee Gyu-Hyeok,89506,5,,False
+2002 Winter Olympics,47,KOR,Speed Skating,"500 metres, Men",1108,Choi Jae-Bong,99373,17,,False
+2002 Winter Olympics,47,KOR,Speed Skating,"500 metres, Men",1108,Park Jae-Man,101366,25,,False
+2002 Winter Olympics,47,KOR,Speed Skating,"500 metres, Men",1108,Kim Cheol-Su,101370,33,,False
+2002 Winter Olympics,47,KOR,Speed Skating,"1,000 metres, Men",1111,Lee Gyu-Hyeok,89506,8,,False
+2002 Winter Olympics,47,KOR,Speed Skating,"1,000 metres, Men",1111,Choi Jae-Bong,99373,12,,False
+2002 Winter Olympics,47,KOR,Speed Skating,"1,000 metres, Men",1111,Kim Cheol-Su,101370,25,,False
+2002 Winter Olympics,47,KOR,Speed Skating,"1,000 metres, Men",1111,Park Jae-Man,101366,32,,False
+2002 Winter Olympics,47,KOR,Speed Skating,"1,500 metres, Men",1112,Lee Gyu-Hyeok,89506,8,,False
+2002 Winter Olympics,47,KOR,Speed Skating,"1,500 metres, Men",1112,Choi Jae-Bong,99373,21,,False
+2002 Winter Olympics,47,KOR,Speed Skating,"1,500 metres, Men",1112,Mun Jun,101635,33,,False
+2002 Winter Olympics,47,KOR,Speed Skating,"1,500 metres, Men",1112,Yeo Sang-Yeop,101637,42,,False
+2002 Winter Olympics,47,KOR,Speed Skating,"5,000 metres, Men",1113,Lee Seung-Hwan,100963,28,,False
+2002 Winter Olympics,47,KOR,Speed Skating,"500 metres, Women",1115,Choi Seung-Yong,100735,18,,False
+2002 Winter Olympics,47,KOR,Speed Skating,"500 metres, Women",1115,Jo Seon-Yeon,101503,25,,False
+2002 Winter Olympics,47,KOR,Speed Skating,"500 metres, Women",1115,Lee Yong-Ju,101505,29,,False
+2002 Winter Olympics,47,KOR,Speed Skating,"1,000 metres, Women",1118,Jo Seon-Yeon,101503,29,,False
+2002 Winter Olympics,47,KOR,Speed Skating,"1,000 metres, Women",1118,Lee Yong-Ju,101505,31,,False
+2002 Winter Olympics,47,KOR,Speed Skating,"1,000 metres, Women",1118,Choi Seung-Yong,100735,32,,False
+2002 Winter Olympics,47,KOR,Speed Skating,"1,500 metres, Women",1119,Choi Yun-Suk,101867,=29,,False
+2002 Winter Olympics,47,KOR,Speed Skating,"1,500 metres, Women",1119,Baek Eun-Bi,80579,33,,False
+2002 Winter Olympics,47,KOR,Speed Skating,"3,000 metres, Women",1120,Baek Eun-Bi,80579,25,,False
+2006 Winter Olympics,49,KOR,Alpine Skiing,"Giant Slalom, Men",1490,Kim Hyeong-Cheol,110814,28,,False
+2006 Winter Olympics,49,KOR,Alpine Skiing,"Giant Slalom, Men",1490,Gang Min-Hyeok,101801,DNF,,False
+2006 Winter Olympics,49,KOR,Alpine Skiing,"Giant Slalom, Men",1490,Kim U-Seong,110816,DNF,,False
+2006 Winter Olympics,49,KOR,Alpine Skiing,"Slalom, Men",1493,Gang Min-Hyeok,101801,DQ,,False
+2006 Winter Olympics,49,KOR,Alpine Skiing,"Giant Slalom, Women",1504,Oh Jae-Eun,110986,33,,False
+2006 Winter Olympics,49,KOR,Alpine Skiing,"Slalom, Women",1507,Oh Jae-Eun,110986,41,,False
+2006 Winter Olympics,49,KOR,Biathlon,"10 kilometres Sprint, Men",1599,Park Yun-Bae,109629,79,,False
+2006 Winter Olympics,49,KOR,Biathlon,"20 kilometres, Men",1600,Park Yun-Bae,109629,81,,False
+2006 Winter Olympics,49,KOR,Cross Country Skiing,"Sprint, Men",2135,Park Byeong-Ju,100092,63,,False
+2006 Winter Olympics,49,KOR,Cross Country Skiing,"Sprint, Men",2135,Jeong Ui-Myeong,101043,76,,False
+2006 Winter Olympics,49,KOR,Cross Country Skiing,"15 kilometres, Men",2130,Choi Im-Heon,101341,78,,False
+2006 Winter Olympics,49,KOR,Cross Country Skiing,"15 kilometres, Men",2130,Park Byeong-Ju,100092,79,,False
+2006 Winter Olympics,49,KOR,Cross Country Skiing,"15 kilometres, Men",2130,Jeong Ui-Myeong,101043,80,,False
+2006 Winter Olympics,49,KOR,Cross Country Skiing,"50 kilometres, Men",2134,Jeong Ui-Myeong,101043,DNF,,False
+2006 Winter Olympics,49,KOR,Cross Country Skiing,"30 kilometres Skiathlon, Men",2131,Park Byeong-Ju,100092,DNF,,False
+2006 Winter Olympics,49,KOR,Cross Country Skiing,"30 kilometres Skiathlon, Men",2131,Jeong Ui-Myeong,101043,DNF,,False
+2006 Winter Olympics,49,KOR,Cross Country Skiing,"30 kilometres Skiathlon, Men",2131,Choi Im-Heon,101341,DNF,,False
+2006 Winter Olympics,49,KOR,Cross Country Skiing,"Team Sprint, Men",2152,Park Byeong-Ju,100092,18,,True
+2006 Winter Olympics,49,KOR,Cross Country Skiing,"Team Sprint, Men",2152,Choi Im-Heon,101341,18,,True
+2006 Winter Olympics,49,KOR,Cross Country Skiing,"Sprint, Women",2162,Lee Chae-Won,101004,64,,False
+2006 Winter Olympics,49,KOR,Cross Country Skiing,"10 kilometres, Women",2157,Lee Chae-Won,101004,62,,False
+2006 Winter Olympics,49,KOR,Cross Country Skiing,"30 kilometres, Women",2161,Lee Chae-Won,101004,DNF,,False
+2006 Winter Olympics,49,KOR,Cross Country Skiing,"15 kilometres Skiathlon, Women",2158,Lee Chae-Won,101004,57,,False
+2006 Winter Olympics,49,KOR,Freestyle Skiing,"Moguls, Women",1886,Yun Chae-Rin,109663,30,,False
+2006 Winter Olympics,49,KOR,Luge,"Singles, Men",212,Kim Min-Gyu,101274,29,,False
+2006 Winter Olympics,49,KOR,Short Track Speed Skating,"500 metres, Men",838,Hyeon-Su An,101557,3,Bronze,False
+2006 Winter Olympics,49,KOR,Short Track Speed Skating,"500 metres, Men",838,Lee Ho-Seok,109911,12,,False
+2006 Winter Olympics,49,KOR,Short Track Speed Skating,"500 metres, Men",838,Seo Ho-Jin,110395,DQ,,False
+2006 Winter Olympics,49,KOR,Short Track Speed Skating,"1,000 metres, Men",857,Hyeon-Su An,101557,1,Gold,False
+2006 Winter Olympics,49,KOR,Short Track Speed Skating,"1,000 metres, Men",857,Lee Ho-Seok,109911,2,Silver,False
+2006 Winter Olympics,49,KOR,Short Track Speed Skating,"1,500 metres, Men",876,Hyeon-Su An,101557,1,Gold,False
+2006 Winter Olympics,49,KOR,Short Track Speed Skating,"1,500 metres, Men",876,Lee Ho-Seok,109911,2,Silver,False
+2006 Winter Olympics,49,KOR,Short Track Speed Skating,"5,000 metres Relay, Men",890,Hyeon-Su An,101557,1,Gold,True
+2006 Winter Olympics,49,KOR,Short Track Speed Skating,"5,000 metres Relay, Men",890,Lee Ho-Seok,109911,1,Gold,True
+2006 Winter Olympics,49,KOR,Short Track Speed Skating,"5,000 metres Relay, Men",890,Oh Se-Jong,101784,1,Gold,True
+2006 Winter Olympics,49,KOR,Short Track Speed Skating,"5,000 metres Relay, Men",890,Seo Ho-Jin,110395,1,Gold,True
+2006 Winter Olympics,49,KOR,Short Track Speed Skating,"5,000 metres Relay, Men",890,Song Seok-Wu,111053,1,Gold,True
+2006 Winter Olympics,49,KOR,Short Track Speed Skating,"500 metres, Women",896,Jin Seon-Yu,109934,10,,False
+2006 Winter Olympics,49,KOR,Short Track Speed Skating,"500 metres, Women",896,Gang Yun-Mi,109922,DQ,,False
+2006 Winter Olympics,49,KOR,Short Track Speed Skating,"1,000 metres, Women",916,Jin Seon-Yu,109934,1,Gold,False
+2006 Winter Olympics,49,KOR,Short Track Speed Skating,"1,000 metres, Women",916,Choi Eun-Gyeong,101418,DQ,,False
+2006 Winter Olympics,49,KOR,Short Track Speed Skating,"1,500 metres, Women",936,Jin Seon-Yu,109934,1,Gold,False
+2006 Winter Olympics,49,KOR,Short Track Speed Skating,"1,500 metres, Women",936,Choi Eun-Gyeong,101418,2,Silver,False
+2006 Winter Olympics,49,KOR,Short Track Speed Skating,"1,500 metres, Women",936,Byeon Cheon-Sa,109941,DQ,,False
+2006 Winter Olympics,49,KOR,Short Track Speed Skating,"3,000 metres Relay, Women",950,Gang Yun-Mi,109922,1,Gold,True
+2006 Winter Olympics,49,KOR,Short Track Speed Skating,"3,000 metres Relay, Women",950,Byeon Cheon-Sa,109941,1,Gold,True
+2006 Winter Olympics,49,KOR,Short Track Speed Skating,"3,000 metres Relay, Women",950,Choi Eun-Gyeong,101418,1,Gold,True
+2006 Winter Olympics,49,KOR,Short Track Speed Skating,"3,000 metres Relay, Women",950,Jeon Da-Hye,110983,1,Gold,True
+2006 Winter Olympics,49,KOR,Short Track Speed Skating,"3,000 metres Relay, Women",950,Jin Seon-Yu,109934,1,Gold,True
+2006 Winter Olympics,49,KOR,Skeleton,"Skeleton, Men",23,Gang Gwang-Bae,100485,23,,False
+2006 Winter Olympics,49,KOR,Ski Jumping,"Normal Hill, Individual, Men",2461,Kim Hyeon-Gi,99880,43,,False
+2006 Winter Olympics,49,KOR,Ski Jumping,"Normal Hill, Individual, Men",2461,Choi Heung-Cheol,99855,=36 r1/2,,False
+2006 Winter Olympics,49,KOR,Ski Jumping,"Normal Hill, Individual, Men",2461,Choi Yong-Jik,99856,=36 r1/2,,False
+2006 Winter Olympics,49,KOR,Ski Jumping,"Normal Hill, Individual, Men",2461,Gang Chil-Gu,101150,44 r1/2,,False
+2006 Winter Olympics,49,KOR,Ski Jumping,"Large Hill, Individual, Men",2466,Kim Hyeon-Gi,99880,39,,False
+2006 Winter Olympics,49,KOR,Ski Jumping,"Large Hill, Individual, Men",2466,Choi Heung-Cheol,99855,47,,False
+2006 Winter Olympics,49,KOR,Ski Jumping,"Large Hill, Individual, Men",2466,Gang Chil-Gu,101150,45 r1/2,,False
+2006 Winter Olympics,49,KOR,Ski Jumping,"Large Hill, Individual, Men",2466,Choi Yong-Jik,99856,53 r1/2,,False
+2006 Winter Olympics,49,KOR,Ski Jumping,"Large Hill, Team, Men",2471,Choi Yong-Jik,99856,13,,True
+2006 Winter Olympics,49,KOR,Ski Jumping,"Large Hill, Team, Men",2471,Choi Heung-Cheol,99855,13,,True
+2006 Winter Olympics,49,KOR,Ski Jumping,"Large Hill, Team, Men",2471,Kim Hyeon-Gi,99880,13,,True
+2006 Winter Olympics,49,KOR,Ski Jumping,"Large Hill, Team, Men",2471,Gang Chil-Gu,101150,13,,True
+2006 Winter Olympics,49,KOR,Speed Skating,"500 metres, Men",1122,Lee Gang-Seok,110052,3,Bronze,False
+2006 Winter Olympics,49,KOR,Speed Skating,"500 metres, Men",1122,Choi Jae-Bong,99373,8,,False
+2006 Winter Olympics,49,KOR,Speed Skating,"500 metres, Men",1122,Lee Gyu-Hyeok,89506,17,,False
+2006 Winter Olympics,49,KOR,Speed Skating,"500 metres, Men",1122,Gwon Sun-Cheon,110050,37,,False
+2006 Winter Olympics,49,KOR,Speed Skating,"1,000 metres, Men",1125,Lee Gyu-Hyeok,89506,4,,False
+2006 Winter Olympics,49,KOR,Speed Skating,"1,000 metres, Men",1125,Choi Jae-Bong,99373,17,,False
+2006 Winter Olympics,49,KOR,Speed Skating,"1,000 metres, Men",1125,Lee Gang-Seok,110052,22,,False
+2006 Winter Olympics,49,KOR,Speed Skating,"1,000 metres, Men",1125,Mun Jun,101635,24,,False
+2006 Winter Olympics,49,KOR,Speed Skating,"1,500 metres, Men",1126,Lee Jong-U,110869,14,,False
+2006 Winter Olympics,49,KOR,Speed Skating,"1,500 metres, Men",1126,Mun Jun,101635,16,,False
+2006 Winter Olympics,49,KOR,Speed Skating,"1,500 metres, Men",1126,Lee Jin-U,110871,28,,False
+2006 Winter Olympics,49,KOR,Speed Skating,"5,000 metres, Men",1127,Yeo Sang-Yeop,101637,28,,False
+2006 Winter Olympics,49,KOR,Speed Skating,"500 metres, Women",1144,Lee Sang-Hwa,110124,5,,False
+2006 Winter Olympics,49,KOR,Speed Skating,"500 metres, Women",1144,Choi Seung-Yong,100735,18,,False
+2006 Winter Olympics,49,KOR,Speed Skating,"500 metres, Women",1144,Kim Yu-Rim,110117,20,,False
+2006 Winter Olympics,49,KOR,Speed Skating,"500 metres, Women",1144,Lee Bo-Ra,110114,25,,False
+2006 Winter Olympics,49,KOR,Speed Skating,"1,000 metres, Women",1147,Lee Sang-Hwa,110124,19,,False
+2006 Winter Olympics,49,KOR,Speed Skating,"1,000 metres, Women",1147,Lee Ju-Yeon,110759,26,,False
+2006 Winter Olympics,49,KOR,Speed Skating,"1,000 metres, Women",1147,Kim Yu-Rim,110117,28,,False
+2006 Winter Olympics,49,KOR,Speed Skating,"1,000 metres, Women",1147,Lee Bo-Ra,110114,34,,False
+2006 Winter Olympics,49,KOR,Speed Skating,"1,500 metres, Women",1148,Lee Ju-Yeon,110759,16,,False
+2006 Winter Olympics,49,KOR,Speed Skating,"1,500 metres, Women",1148,No Seon-Yeong,109774,32,,False
+2006 Winter Olympics,49,KOR,Speed Skating,"3,000 metres, Women",1149,No Seon-Yeong,109774,19,,False
+2010 Winter Olympics,57,KOR,Alpine Skiing,"Giant Slalom, Men",924544,Kim U-Seong,110816,DQ,,False
+2010 Winter Olympics,57,KOR,Alpine Skiing,"Slalom, Men",924547,Jeong Dong-Hyeon,118394,DNF,,False
+2010 Winter Olympics,57,KOR,Alpine Skiing,"Slalom, Men",924547,Kim U-Seong,110816,DNF,,False
+2010 Winter Olympics,57,KOR,Alpine Skiing,"Giant Slalom, Women",924555,Kim Seon-Ju,118400,49,,False
+2010 Winter Olympics,57,KOR,Alpine Skiing,"Slalom, Women",924558,Kim Seon-Ju,118400,46,,False
+2010 Winter Olympics,57,KOR,Biathlon,"10 kilometres Sprint, Men",923480,Lee In-Bok,118537,65,,False
+2010 Winter Olympics,57,KOR,Biathlon,"20 kilometres, Men",923481,Lee In-Bok,118537,71,,False
+2010 Winter Olympics,57,KOR,Biathlon,"7.5 kilometres Sprint, Women",923490,Mun Ji-Hui,118563,62,,False
+2010 Winter Olympics,57,KOR,Biathlon,"15 kilometres, Women",923491,Mun Ji-Hui,118563,72,,False
+2010 Winter Olympics,57,KOR,Bobsleigh,"Four, Men",924247,Gang Gwang-Bae,100485,19,,True
+2010 Winter Olympics,57,KOR,Bobsleigh,"Four, Men",924247,Lee Jin-Hui,118680,19,,True
+2010 Winter Olympics,57,KOR,Bobsleigh,"Four, Men",924247,Kim Dong-Hyeon,118676,19,,True
+2010 Winter Olympics,57,KOR,Bobsleigh,"Four, Men",924247,Kim Jeong-Su,118677,19,,True
+2010 Winter Olympics,57,KOR,Cross Country Skiing,"15 kilometres, Men",923550,Lee Jun-Gil,118794,79,,False
+2010 Winter Olympics,57,KOR,Cross Country Skiing,"10 kilometres, Women",923578,Lee Chae-Won,101004,53,,False
+2010 Winter Olympics,57,KOR,Cross Country Skiing,"15 kilometres Skiathlon, Women",923579,Lee Chae-Won,101004,58,,False
+2010 Winter Olympics,57,KOR,Figure Skating,"Singles, Women",924268,Yu-Na Kim,119090,1,Gold,False
+2010 Winter Olympics,57,KOR,Figure Skating,"Singles, Women",924268,Gwak Min-Jeong,119092,13,,False
+2010 Winter Olympics,57,KOR,Freestyle Skiing,"Moguls, Women",924312,Seo Jeong-Hwa,119023,21,,False
+2010 Winter Olympics,57,KOR,Luge,"Singles, Men",924220,Lee Yong,100491,36,,False
+2010 Winter Olympics,57,KOR,Short Track Speed Skating,"500 metres, Men",923655,Seong Si-Baek,119805,2,Silver,False
+2010 Winter Olympics,57,KOR,Short Track Speed Skating,"500 metres, Men",923655,Gwak Yun-Gi,119776,4,,False
+2010 Winter Olympics,57,KOR,Short Track Speed Skating,"500 metres, Men",923655,Lee Ho-Seok,109911,7,,False
+2010 Winter Olympics,57,KOR,Short Track Speed Skating,"1,000 metres, Men",923676,Lee Jeong-Su,119779,1,Gold,False
+2010 Winter Olympics,57,KOR,Short Track Speed Skating,"1,000 metres, Men",923676,Lee Ho-Seok,109911,2,Silver,False
+2010 Winter Olympics,57,KOR,Short Track Speed Skating,"1,000 metres, Men",923676,Seong Si-Baek,119805,7,,False
+2010 Winter Olympics,57,KOR,Short Track Speed Skating,"1,500 metres, Men",923697,Lee Jeong-Su,119779,1,Gold,False
+2010 Winter Olympics,57,KOR,Short Track Speed Skating,"1,500 metres, Men",923697,Seong Si-Baek,119805,5,,False
+2010 Winter Olympics,57,KOR,Short Track Speed Skating,"1,500 metres, Men",923697,Lee Ho-Seok,109911,12,,False
+2010 Winter Olympics,57,KOR,Short Track Speed Skating,"5,000 metres Relay, Men",923712,Lee Ho-Seok,109911,2,Silver,True
+2010 Winter Olympics,57,KOR,Short Track Speed Skating,"5,000 metres Relay, Men",923712,Kim Seong-Il,119775,2,Silver,True
+2010 Winter Olympics,57,KOR,Short Track Speed Skating,"5,000 metres Relay, Men",923712,Gwak Yun-Gi,119776,2,Silver,True
+2010 Winter Olympics,57,KOR,Short Track Speed Skating,"5,000 metres Relay, Men",923712,Lee Jeong-Su,119779,2,Silver,True
+2010 Winter Olympics,57,KOR,Short Track Speed Skating,"5,000 metres Relay, Men",923712,Seong Si-Baek,119805,2,Silver,True
+2010 Winter Olympics,57,KOR,Short Track Speed Skating,"500 metres, Women",923719,Lee Eun-Byeol,119778,8,,False
+2010 Winter Olympics,57,KOR,Short Track Speed Skating,"500 metres, Women",923719,Jo Hae-Ri,119757,10,,False
+2010 Winter Olympics,57,KOR,Short Track Speed Skating,"500 metres, Women",923719,Park Seung-Hui,119791,15,,False
+2010 Winter Olympics,57,KOR,Short Track Speed Skating,"1,000 metres, Women",923740,Park Seung-Hui,119791,3,Bronze,False
+2010 Winter Olympics,57,KOR,Short Track Speed Skating,"1,000 metres, Women",923740,Jo Hae-Ri,119757,4,,False
+2010 Winter Olympics,57,KOR,Short Track Speed Skating,"1,500 metres, Women",923761,Lee Eun-Byeol,119778,2,Silver,False
+2010 Winter Olympics,57,KOR,Short Track Speed Skating,"1,500 metres, Women",923761,Park Seung-Hui,119791,3,Bronze,False
+2010 Winter Olympics,57,KOR,Short Track Speed Skating,"1,500 metres, Women",923761,Jo Hae-Ri,119757,5,,False
+2010 Winter Olympics,57,KOR,Short Track Speed Skating,"3,000 metres Relay, Women",923776,Jo Hae-Ri,119757,DQ,,True
+2010 Winter Olympics,57,KOR,Short Track Speed Skating,"3,000 metres Relay, Women",923776,Kim Min-Jeong,119774,DQ,,True
+2010 Winter Olympics,57,KOR,Short Track Speed Skating,"3,000 metres Relay, Women",923776,Lee Eun-Byeol,119778,DQ,,True
+2010 Winter Olympics,57,KOR,Short Track Speed Skating,"3,000 metres Relay, Women",923776,Park Seung-Hui,119791,DQ,,True
+2010 Winter Olympics,57,KOR,Short Track Speed Skating,"3,000 metres Relay, Women",923776,Choi Jung-Won,1005100,DQ,,True
+2010 Winter Olympics,57,KOR,Skeleton,"Skeleton, Men",924600,Jo In-Ho,119494,22,,False
+2010 Winter Olympics,57,KOR,Ski Jumping,"Normal Hill, Individual, Men",923635,Kim Hyeon-Gi,99880,40,,False
+2010 Winter Olympics,57,KOR,Ski Jumping,"Normal Hill, Individual, Men",923635,Choi Heung-Cheol,99855,48,,False
+2010 Winter Olympics,57,KOR,Ski Jumping,"Normal Hill, Individual, Men",923635,Choi Yong-Jik,99856,43 r1/2,,False
+2010 Winter Olympics,57,KOR,Ski Jumping,"Large Hill, Individual, Men",923640,Kim Hyeon-Gi,99880,42,,False
+2010 Winter Olympics,57,KOR,Ski Jumping,"Large Hill, Individual, Men",923640,Choi Heung-Cheol,99855,49,,False
+2010 Winter Olympics,57,KOR,Ski Jumping,"Large Hill, Individual, Men",923640,Choi Yong-Jik,99856,46 r1/2,,False
+2010 Winter Olympics,57,KOR,Snowboarding,"Halfpipe, Men",924379,Kim Ho-Jun,119586,26,,False
+2010 Winter Olympics,57,KOR,Speed Skating,"500 metres, Men",924500,Mo Tae-Beom,119703,1,Gold,False
+2010 Winter Olympics,57,KOR,Speed Skating,"500 metres, Men",924500,Lee Gang-Seok,110052,4,,False
+2010 Winter Olympics,57,KOR,Speed Skating,"500 metres, Men",924500,Lee Gyu-Hyeok,89506,15,,False
+2010 Winter Olympics,57,KOR,Speed Skating,"500 metres, Men",924500,Mun Jun,101635,19,,False
+2010 Winter Olympics,57,KOR,Speed Skating,"1,000 metres, Men",924503,Mo Tae-Beom,119703,2,Silver,False
+2010 Winter Olympics,57,KOR,Speed Skating,"1,000 metres, Men",924503,Lee Gyu-Hyeok,89506,9,,False
+2010 Winter Olympics,57,KOR,Speed Skating,"1,000 metres, Men",924503,Mun Jun,101635,18,,False
+2010 Winter Olympics,57,KOR,Speed Skating,"1,000 metres, Men",924503,Lee Gi-Ho,119689,36,,False
+2010 Winter Olympics,57,KOR,Speed Skating,"1,500 metres, Men",924504,Mo Tae-Beom,119703,5,,False
+2010 Winter Olympics,57,KOR,Speed Skating,"1,500 metres, Men",924504,Lee Jong-U,110869,22,,False
+2010 Winter Olympics,57,KOR,Speed Skating,"1,500 metres, Men",924504,Ha Hong-Seon,119670,31,,False
+2010 Winter Olympics,57,KOR,Speed Skating,"5,000 metres, Men",924505,Lee Seung-Hun,119690,2,Silver,False
+2010 Winter Olympics,57,KOR,Speed Skating,"10,000 metres, Men",924506,Lee Seung-Hun,119690,1,Gold,False
+2010 Winter Olympics,57,KOR,Speed Skating,"Team Pursuit (8 laps), Men",924507,Ha Hong-Seon,119670,5,,True
+2010 Winter Olympics,57,KOR,Speed Skating,"Team Pursuit (8 laps), Men",924507,Lee Jong-U,110869,5,,True
+2010 Winter Olympics,57,KOR,Speed Skating,"Team Pursuit (8 laps), Men",924507,Lee Seung-Hun,119690,5,,True
+2010 Winter Olympics,57,KOR,Speed Skating,"Team Pursuit (8 laps), Men",924507,Mo Tae-Beom,119703,5,,True
+2010 Winter Olympics,57,KOR,Speed Skating,"500 metres, Women",924521,Lee Sang-Hwa,110124,1,Gold,False
+2010 Winter Olympics,57,KOR,Speed Skating,"500 metres, Women",924521,Lee Bo-Ra,110114,26,,False
+2010 Winter Olympics,57,KOR,Speed Skating,"500 metres, Women",924521,An Ji-Min,119655,31,,False
+2010 Winter Olympics,57,KOR,Speed Skating,"500 metres, Women",924521,Oh Min-Ji,119709,32,,False
+2010 Winter Olympics,57,KOR,Speed Skating,"1,000 metres, Women",924524,Lee Sang-Hwa,110124,23,,False
+2010 Winter Olympics,57,KOR,Speed Skating,"1,000 metres, Women",924524,Kim Yu-Rim,110117,DNF,,False
+2010 Winter Olympics,57,KOR,Speed Skating,"1,500 metres, Women",924525,No Seon-Yeong,109774,30,,False
+2010 Winter Olympics,57,KOR,Speed Skating,"1,500 metres, Women",924525,Lee Ju-Yeon,110759,33,,False
+2010 Winter Olympics,57,KOR,Speed Skating,"3,000 metres, Women",924526,No Seon-Yeong,109774,19,,False
+2010 Winter Olympics,57,KOR,Speed Skating,"3,000 metres, Women",924526,Lee Ju-Yeon,110759,23,,False
+2010 Winter Olympics,57,KOR,Speed Skating,"3,000 metres, Women",924526,Park Do-Yeong,119711,26,,False
+2010 Winter Olympics,57,KOR,Speed Skating,"Team Pursuit (6 laps), Women",924528,Lee Ju-Yeon,110759,8,,True
+2010 Winter Olympics,57,KOR,Speed Skating,"Team Pursuit (6 laps), Women",924528,No Seon-Yeong,109774,8,,True
+2010 Winter Olympics,57,KOR,Speed Skating,"Team Pursuit (6 laps), Women",924528,Park Do-Yeong,119711,8,,True
+2014 Winter Olympics,58,KOR,Alpine Skiing,"Giant Slalom, Men",350002,Jeong Dong-Hyeon,118394,41,,False
+2014 Winter Olympics,58,KOR,Alpine Skiing,"Giant Slalom, Men",350002,Gyeong Seong-Hyeon,128065,66,,False
+2014 Winter Olympics,58,KOR,Alpine Skiing,"Giant Slalom, Men",350002,Park Je-Yun,128066,DNF,,False
+2014 Winter Olympics,58,KOR,Alpine Skiing,"Slalom, Men",350005,Jeong Dong-Hyeon,118394,DNF,,False
+2014 Winter Olympics,58,KOR,Alpine Skiing,"Slalom, Men",350005,Gyeong Seong-Hyeon,128065,DNF,,False
+2014 Winter Olympics,58,KOR,Alpine Skiing,"Slalom, Men",350005,Park Je-Yun,128066,DNF,,False
+2014 Winter Olympics,58,KOR,Alpine Skiing,"Giant Slalom, Women",350013,Kim So-Hui,128063,53,,False
+2014 Winter Olympics,58,KOR,Alpine Skiing,"Slalom, Women",350016,Gang Yeong-Seo,128064,49,,False
+2014 Winter Olympics,58,KOR,Alpine Skiing,"Slalom, Women",350016,Kim So-Hui,128063,DNF,,False
+2014 Winter Olympics,58,KOR,Biathlon,"10 kilometres Sprint, Men",350022,Lee In-Bok,118537,80,,False
+2014 Winter Olympics,58,KOR,Biathlon,"20 kilometres, Men",350025,Lee In-Bok,118537,71,,False
+2014 Winter Olympics,58,KOR,Biathlon,"7.5 kilometres Sprint, Women",350027,Mun Ji-Hui,118563,73,,False
+2014 Winter Olympics,58,KOR,Biathlon,"15 kilometres, Women",350030,Mun Ji-Hui,118563,67,,False
+2014 Winter Olympics,58,KOR,Bobsleigh,"Two, Men",350033,Won Yun-Jong,128077,16,,True
+2014 Winter Olympics,58,KOR,Bobsleigh,"Two, Men",350033,Seo Yeong-Wu,128075,16,,True
+2014 Winter Olympics,58,KOR,Bobsleigh,"Two, Men",350033,Kim Dong-Hyeon,118676,23,,True
+2014 Winter Olympics,58,KOR,Bobsleigh,"Two, Men",350033,Jeon Jeong-Rin,128071,23,,True
+2014 Winter Olympics,58,KOR,Bobsleigh,"Four, Men",350040,Won Yun-Jong,128077,18,,True
+2014 Winter Olympics,58,KOR,Bobsleigh,"Four, Men",350040,Seok Yeong-Jin,128076,18,,True
+2014 Winter Olympics,58,KOR,Bobsleigh,"Four, Men",350040,Jeon Jeong-Rin,128071,18,,True
+2014 Winter Olympics,58,KOR,Bobsleigh,"Four, Men",350040,Seo Yeong-Wu,128075,18,,True
+2014 Winter Olympics,58,KOR,Bobsleigh,"Four, Men",350040,Kim Dong-Hyeon,118676,25,,True
+2014 Winter Olympics,58,KOR,Bobsleigh,"Four, Men",350040,Kim Sik,128073,25,,True
+2014 Winter Olympics,58,KOR,Bobsleigh,"Four, Men",350040,Kim Gyeong-Hyeon,128072,25,,True
+2014 Winter Olympics,58,KOR,Bobsleigh,"Four, Men",350040,Oh Je-Han,128074,25,,True
+2014 Winter Olympics,58,KOR,Bobsleigh,"Two, Women",350047,Kim Seon-Ok,128069,18,,True
+2014 Winter Olympics,58,KOR,Bobsleigh,"Two, Women",350047,Sin Mi-Hwa,128070,18,,True
+2014 Winter Olympics,58,KOR,Cross Country Skiing,"15 kilometres, Men",350066,Hwang Jun-Ho,128078,68,,False
+2014 Winter Olympics,58,KOR,Cross Country Skiing,"30 kilometres Skiathlon, Men",350068,Hwang Jun-Ho,128078,DNF,,False
+2014 Winter Olympics,58,KOR,Cross Country Skiing,"10 kilometres, Women",350087,Lee Chae-Won,101004,48,,False
+2014 Winter Olympics,58,KOR,Cross Country Skiing,"30 kilometres, Women",350088,Lee Chae-Won,101004,33,,False
+2014 Winter Olympics,58,KOR,Cross Country Skiing,"15 kilometres Skiathlon, Women",350089,Lee Chae-Won,101004,52,,False
+2014 Winter Olympics,58,KOR,Curling,"Curling, Women",350152,Kim Ji-Seon,128080,8,,True
+2014 Winter Olympics,58,KOR,Curling,"Curling, Women",350152,Kim Eun-Ji,128079,8,,True
+2014 Winter Olympics,58,KOR,Curling,"Curling, Women",350152,Sin Mi-Seong,128082,8,,True
+2014 Winter Olympics,58,KOR,Curling,"Curling, Women",350152,Eom Min-Ji,128083,8,,True
+2014 Winter Olympics,58,KOR,Curling,"Curling, Women",350152,Lee Seul-Bi,128081,8,,True
+2014 Winter Olympics,58,KOR,Figure Skating,"Singles, Women",350310,Yu-Na Kim,119090,2,Silver,False
+2014 Winter Olympics,58,KOR,Figure Skating,"Singles, Women",350310,Kim Hae-Jin,128088,16,,False
+2014 Winter Olympics,58,KOR,Figure Skating,"Singles, Women",350310,Park So-Yeon,128089,21,,False
+2014 Winter Olympics,58,KOR,Freestyle Skiing,"Moguls, Men",350206,Choi Jae-U,128086,12,,False
+2014 Winter Olympics,58,KOR,Freestyle Skiing,"Halfpipe, Men",350220,Kim Gwang-Jin,128087,25,,False
+2014 Winter Olympics,58,KOR,Freestyle Skiing,"Moguls, Women",350256,Seo Ji-Won,128085,23,,False
+2014 Winter Olympics,58,KOR,Freestyle Skiing,"Moguls, Women",350256,Seo Jeong-Hwa,119023,24,,False
+2014 Winter Olympics,58,KOR,Freestyle Skiing,"Halfpipe, Women",350271,Park Hui-Jin,128084,21,,False
+2014 Winter Olympics,58,KOR,Luge,"Singles, Men",350405,Kim Dong-Hyeon,128092,35,,False
+2014 Winter Olympics,58,KOR,Luge,"Doubles, Open",350412,Park Jin-Yong,128093,18,,True
+2014 Winter Olympics,58,KOR,Luge,"Doubles, Open",350412,Jo Jeong-Myeong,128091,18,,True
+2014 Winter Olympics,58,KOR,Luge,"Singles, Women",350415,Seong Eun-Ryeong,128090,29,,False
+2014 Winter Olympics,58,KOR,Luge,"Team Relay, Mixed",350422,Seong Eun-Ryeong,128090,12,,True
+2014 Winter Olympics,58,KOR,Luge,"Team Relay, Mixed",350422,Kim Dong-Hyeon,128092,12,,True
+2014 Winter Olympics,58,KOR,Luge,"Team Relay, Mixed",350422,Park Jin-Yong,128093,12,,True
+2014 Winter Olympics,58,KOR,Luge,"Team Relay, Mixed",350422,Jo Jeong-Myeong,128091,12,,True
+2014 Winter Olympics,58,KOR,Short Track Speed Skating,"500 metres, Men",350686,Lee Han-Bin,128113,11,,False
+2014 Winter Olympics,58,KOR,Short Track Speed Skating,"500 metres, Men",350686,Park Se-Yeong,128114,14,,False
+2014 Winter Olympics,58,KOR,Short Track Speed Skating,"1,000 metres, Men",350707,Sin Da-Un,128115,7,,False
+2014 Winter Olympics,58,KOR,Short Track Speed Skating,"1,000 metres, Men",350707,Lee Han-Bin,128113,8,,False
+2014 Winter Olympics,58,KOR,Short Track Speed Skating,"1,500 metres, Men",350728,Lee Han-Bin,128113,6,,False
+2014 Winter Olympics,58,KOR,Short Track Speed Skating,"1,500 metres, Men",350728,Sin Da-Un,128115,10,,False
+2014 Winter Olympics,58,KOR,Short Track Speed Skating,"1,500 metres, Men",350728,Park Se-Yeong,128114,13,,False
+2014 Winter Olympics,58,KOR,Short Track Speed Skating,"5,000 metres Relay, Men",350743,Kim Yun-Jae,128112,7,,True
+2014 Winter Olympics,58,KOR,Short Track Speed Skating,"5,000 metres Relay, Men",350743,Lee Han-Bin,128113,7,,True
+2014 Winter Olympics,58,KOR,Short Track Speed Skating,"5,000 metres Relay, Men",350743,Lee Ho-Seok,109911,7,,True
+2014 Winter Olympics,58,KOR,Short Track Speed Skating,"5,000 metres Relay, Men",350743,Park Se-Yeong,128114,7,,True
+2014 Winter Olympics,58,KOR,Short Track Speed Skating,"5,000 metres Relay, Men",350743,Sin Da-Un,128115,7,,True
+2014 Winter Olympics,58,KOR,Short Track Speed Skating,"500 metres, Women",350750,Park Seung-Hui,119791,3,Bronze,False
+2014 Winter Olympics,58,KOR,Short Track Speed Skating,"500 metres, Women",350750,Kim A-Rang,128109,10,,False
+2014 Winter Olympics,58,KOR,Short Track Speed Skating,"500 metres, Women",350750,Sim Seok-Hui,128111,14,,False
+2014 Winter Olympics,58,KOR,Short Track Speed Skating,"1,000 metres, Women",350771,Park Seung-Hui,119791,1,Gold,False
+2014 Winter Olympics,58,KOR,Short Track Speed Skating,"1,000 metres, Women",350771,Sim Seok-Hui,128111,3,Bronze,False
+2014 Winter Olympics,58,KOR,Short Track Speed Skating,"1,000 metres, Women",350771,Kim A-Rang,128109,10,,False
+2014 Winter Olympics,58,KOR,Short Track Speed Skating,"1,500 metres, Women",350792,Sim Seok-Hui,128111,2,Silver,False
+2014 Winter Olympics,58,KOR,Short Track Speed Skating,"1,500 metres, Women",350792,Kim A-Rang,128109,13,,False
+2014 Winter Olympics,58,KOR,Short Track Speed Skating,"1,500 metres, Women",350792,Jo Hae-Ri,119757,19,,False
+2014 Winter Olympics,58,KOR,Short Track Speed Skating,"3,000 metres Relay, Women",350807,Jo Hae-Ri,119757,1,Gold,True
+2014 Winter Olympics,58,KOR,Short Track Speed Skating,"3,000 metres Relay, Women",350807,Kim A-Rang,128109,1,Gold,True
+2014 Winter Olympics,58,KOR,Short Track Speed Skating,"3,000 metres Relay, Women",350807,Gong Sang-Jeong,128110,1,Gold,True
+2014 Winter Olympics,58,KOR,Short Track Speed Skating,"3,000 metres Relay, Women",350807,Park Seung-Hui,119791,1,Gold,True
+2014 Winter Olympics,58,KOR,Short Track Speed Skating,"3,000 metres Relay, Women",350807,Sim Seok-Hui,128111,1,Gold,True
+2014 Winter Olympics,58,KOR,Skeleton,"Skeleton, Men",350433,Yun Seong-Bin,128095,16,,False
+2014 Winter Olympics,58,KOR,Skeleton,"Skeleton, Men",350433,Lee Han-Sin,128094,24,,False
+2014 Winter Olympics,58,KOR,Ski Jumping,"Normal Hill, Individual, Men",350447,Choi Seo-Wu,99856,34,,False
+2014 Winter Olympics,58,KOR,Ski Jumping,"Normal Hill, Individual, Men",350447,Kim Hyeon-Gi,99880,42,,False
+2014 Winter Olympics,58,KOR,Ski Jumping,"Normal Hill, Individual, Men",350447,Choi Heung-Cheol,99855,43,,False
+2014 Winter Olympics,58,KOR,Ski Jumping,"Normal Hill, Individual, Men",350447,Gang Chil-Gu,101150,52,,False
+2014 Winter Olympics,58,KOR,Ski Jumping,"Large Hill, Individual, Men",350452,Choi Seo-Wu,99856,39,,False
+2014 Winter Olympics,58,KOR,Ski Jumping,"Large Hill, Individual, Men",350452,Choi Heung-Cheol,99855,44,,False
+2014 Winter Olympics,58,KOR,Ski Jumping,"Large Hill, Individual, Men",350452,Kim Hyeon-Gi,99880,54,,False
+2014 Winter Olympics,58,KOR,Ski Jumping,"Large Hill, Individual, Men",350452,Gang Chil-Gu,101150,55,,False
+2014 Winter Olympics,58,KOR,Ski Jumping,"Large Hill, Team, Men",350457,Gang Chil-Gu,101150,11,,True
+2014 Winter Olympics,58,KOR,Ski Jumping,"Large Hill, Team, Men",350457,Kim Hyeon-Gi,99880,11,,True
+2014 Winter Olympics,58,KOR,Ski Jumping,"Large Hill, Team, Men",350457,Choi Heung-Cheol,99855,11,,True
+2014 Winter Olympics,58,KOR,Ski Jumping,"Large Hill, Team, Men",350457,Choi Seo-Wu,99856,11,,True
+2014 Winter Olympics,58,KOR,Snowboarding,"Parallel Giant Slalom, Men",350464,Kim Sang-Gyeom,128098,17,,False
+2014 Winter Olympics,58,KOR,Snowboarding,"Parallel Giant Slalom, Men",350464,Sin Bong-Sik,128100,26,,False
+2014 Winter Olympics,58,KOR,Snowboarding,"Parallel Slalom, Men",350488,Sin Bong-Sik,128100,23,,False
+2014 Winter Olympics,58,KOR,Snowboarding,"Parallel Slalom, Men",350488,Kim Sang-Gyeom,128098,26,,False
+2014 Winter Olympics,58,KOR,Snowboarding,"Halfpipe, Men",350512,Lee Gwang-Gi,128099,20,,False
+2014 Winter Olympics,58,KOR,Snowboarding,"Halfpipe, Men",350512,Kim Ho-Jun,119586,28,,False
+2014 Winter Olympics,58,KOR,Speed Skating,"500 metres, Men",350644,Mo Tae-Beom,119703,4,,False
+2014 Winter Olympics,58,KOR,Speed Skating,"500 metres, Men",350644,Lee Gyu-Hyeok,89506,18,,False
+2014 Winter Olympics,58,KOR,Speed Skating,"500 metres, Men",350644,Kim Jun-Ho,128107,21,,False
+2014 Winter Olympics,58,KOR,Speed Skating,"500 metres, Men",350644,Lee Gang-Seok,110052,22,,False
+2014 Winter Olympics,58,KOR,Speed Skating,"1,000 metres, Men",350647,Mo Tae-Beom,119703,12,,False
+2014 Winter Olympics,58,KOR,Speed Skating,"1,000 metres, Men",350647,Lee Gyu-Hyeok,89506,21,,False
+2014 Winter Olympics,58,KOR,Speed Skating,"1,000 metres, Men",350647,Kim Tae-Yun,128108,30,,False
+2014 Winter Olympics,58,KOR,Speed Skating,"1,500 metres, Men",350648,Ju Hyeong-Jun,128105,29,,False
+2014 Winter Olympics,58,KOR,Speed Skating,"5,000 metres, Men",350649,Lee Seung-Hun,119690,12,,False
+2014 Winter Olympics,58,KOR,Speed Skating,"5,000 metres, Men",350649,Kim Cheol-Min,128106,24,,False
+2014 Winter Olympics,58,KOR,Speed Skating,"10,000 metres, Men",350650,Lee Seung-Hun,119690,4,,False
+2014 Winter Olympics,58,KOR,Speed Skating,"Team Pursuit (8 laps), Men",350651,Ju Hyeong-Jun,128105,2,Silver,True
+2014 Winter Olympics,58,KOR,Speed Skating,"Team Pursuit (8 laps), Men",350651,Kim Cheol-Min,128106,2,Silver,True
+2014 Winter Olympics,58,KOR,Speed Skating,"Team Pursuit (8 laps), Men",350651,Lee Seung-Hun,119690,2,Silver,True
+2014 Winter Olympics,58,KOR,Speed Skating,"Team Pursuit (8 laps), Men",350651,Mo Tae-Beom,119703,2,Silver,True
+2014 Winter Olympics,58,KOR,Speed Skating,"500 metres, Women",350665,Lee Sang-Hwa,110124,1,Gold,False
+2014 Winter Olympics,58,KOR,Speed Skating,"500 metres, Women",350665,Lee Bo-Ra,110114,20,,False
+2014 Winter Olympics,58,KOR,Speed Skating,"500 metres, Women",350665,Kim Hyeon-Yeong,128102,24,,False
+2014 Winter Olympics,58,KOR,Speed Skating,"500 metres, Women",350665,Park Seung-Ju,128103,26,,False
+2014 Winter Olympics,58,KOR,Speed Skating,"1,000 metres, Women",350668,Lee Sang-Hwa,110124,12,,False
+2014 Winter Olympics,58,KOR,Speed Skating,"1,000 metres, Women",350668,Kim Hyeon-Yeong,128102,28,,False
+2014 Winter Olympics,58,KOR,Speed Skating,"1,000 metres, Women",350668,Park Seung-Ju,128103,31,,False
+2014 Winter Olympics,58,KOR,Speed Skating,"1,000 metres, Women",350668,Lee Bo-Ra,110114,35,,False
+2014 Winter Olympics,58,KOR,Speed Skating,"1,500 metres, Women",350669,Kim Bo-Reum,128101,21,,False
+2014 Winter Olympics,58,KOR,Speed Skating,"1,500 metres, Women",350669,No Seon-Yeong,109774,29,,False
+2014 Winter Olympics,58,KOR,Speed Skating,"1,500 metres, Women",350669,Yang Sin-Yeong,128104,36,,False
+2014 Winter Olympics,58,KOR,Speed Skating,"3,000 metres, Women",350670,Kim Bo-Reum,128101,13,,False
+2014 Winter Olympics,58,KOR,Speed Skating,"3,000 metres, Women",350670,No Seon-Yeong,109774,25,,False
+2014 Winter Olympics,58,KOR,Speed Skating,"3,000 metres, Women",350670,Yang Sin-Yeong,128104,27,,False
+2014 Winter Olympics,58,KOR,Speed Skating,"Team Pursuit (6 laps), Women",350672,Kim Bo-Reum,128101,8,,True
+2014 Winter Olympics,58,KOR,Speed Skating,"Team Pursuit (6 laps), Women",350672,No Seon-Yeong,109774,8,,True
+2014 Winter Olympics,58,KOR,Speed Skating,"Team Pursuit (6 laps), Women",350672,Yang Sin-Yeong,128104,8,,True
+2014 Winter Olympics,58,KOR,Speed Skating,"Team Pursuit (6 laps), Women",350672,Kim Hyeon-Yeong,128102,8,,True
+2018 Winter Olympics,60,KOR,Alpine Skiing,"Downhill, Men",9000100,Kim Dong-Wu,137536,48,,False
+2018 Winter Olympics,60,KOR,Alpine Skiing,"Super G, Men",9000101,Kim Dong-Wu,137536,44,,False
+2018 Winter Olympics,60,KOR,Alpine Skiing,"Giant Slalom, Men",9000102,Kim Dong-Wu,137536,39,,False
+2018 Winter Olympics,60,KOR,Alpine Skiing,"Giant Slalom, Men",9000102,Jeong Dong-Hyeon,118394,DNF,,False
+2018 Winter Olympics,60,KOR,Alpine Skiing,"Slalom, Men",9000105,Jeong Dong-Hyeon,118394,27,,False
+2018 Winter Olympics,60,KOR,Alpine Skiing,"Slalom, Men",9000105,Kim Dong-Wu,137536,DNF,,False
+2018 Winter Olympics,60,KOR,Alpine Skiing,"Combined, Men",9000108,Kim Dong-Wu,137536,33,,False
+2018 Winter Olympics,60,KOR,Alpine Skiing,"Giant Slalom, Women",9000113,Kim So-Hui,128063,45,,False
+2018 Winter Olympics,60,KOR,Alpine Skiing,"Giant Slalom, Women",9000113,Gang Yeong-Seo,128064,47,,False
+2018 Winter Olympics,60,KOR,Alpine Skiing,"Slalom, Women",9000116,Gang Yeong-Seo,128064,DNF,,False
+2018 Winter Olympics,60,KOR,Alpine Skiing,"Slalom, Women",9000116,Kim So-Hui,128063,DNF,,False
+2018 Winter Olympics,60,KOR,Alpine Skiing,"Team, Mixed",9000122,Kim So-Hui,128063,=9,,True
+2018 Winter Olympics,60,KOR,Alpine Skiing,"Team, Mixed",9000122,Gang Yeong-Seo,128064,=9,,True
+2018 Winter Olympics,60,KOR,Alpine Skiing,"Team, Mixed",9000122,Jeong Dong-Hyeon,118394,=9,,True
+2018 Winter Olympics,60,KOR,Alpine Skiing,"Team, Mixed",9000122,Kim Dong-Wu,137536,=9,,True
+2018 Winter Olympics,60,KOR,Biathlon,"10 kilometres Sprint, Men",9000220,Timofei Lapshin,137540,16,,False
+2018 Winter Olympics,60,KOR,Biathlon,"12.5 kilometres Pursuit, Men",9000221,Timofei Lapshin,137540,22,,False
+2018 Winter Olympics,60,KOR,Biathlon,"15 kilometres Mass Start, Men",9000222,Timofei Lapshin,137540,25,,False
+2018 Winter Olympics,60,KOR,Biathlon,"20 kilometres, Men",9000223,Timofei Lapshin,137540,20,,False
+2018 Winter Olympics,60,KOR,Biathlon,"7.5 kilometres Sprint, Women",9000225,Anna Frolina,118506,32,,False
+2018 Winter Olympics,60,KOR,Biathlon,"7.5 kilometres Sprint, Women",9000225,Go Eun-Jeong,137539,78,,False
+2018 Winter Olympics,60,KOR,Biathlon,"7.5 kilometres Sprint, Women",9000225,Mun Ji-Hui,118563,82,,False
+2018 Winter Olympics,60,KOR,Biathlon,"7.5 kilometres Sprint, Women",9000225,Yekaterina Avvakumova,137537,87,,False
+2018 Winter Olympics,60,KOR,Biathlon,"10 kilometres Pursuit, Women",9000226,Anna Frolina,118506,50,,False
+2018 Winter Olympics,60,KOR,Biathlon,"15 kilometres, Women",9000228,Yekaterina Avvakumova,137537,16,,False
+2018 Winter Olympics,60,KOR,Biathlon,"15 kilometres, Women",9000228,Anna Frolina,118506,61,,False
+2018 Winter Olympics,60,KOR,Biathlon,"15 kilometres, Women",9000228,Mun Ji-Hui,118563,78,,False
+2018 Winter Olympics,60,KOR,Biathlon,"15 kilometres, Women",9000228,Jung Ju-Mi,137538,86,,False
+2018 Winter Olympics,60,KOR,Biathlon,"4 × 6 kilometres Relay, Women",9000229,Anna Frolina,118506,18,,True
+2018 Winter Olympics,60,KOR,Biathlon,"4 × 6 kilometres Relay, Women",9000229,Yekaterina Avvakumova,137537,18,,True
+2018 Winter Olympics,60,KOR,Biathlon,"4 × 6 kilometres Relay, Women",9000229,Mun Ji-Hui,118563,18,,True
+2018 Winter Olympics,60,KOR,Biathlon,"4 × 6 kilometres Relay, Women",9000229,Go Eun-Jeong,137539,18,,True
+2018 Winter Olympics,60,KOR,Bobsleigh,"Two, Men",9000240,Won Yun-Jong,128077,6,,True
+2018 Winter Olympics,60,KOR,Bobsleigh,"Two, Men",9000240,Seo Yeong-Wu,128075,6,,True
+2018 Winter Olympics,60,KOR,Bobsleigh,"Four, Open",9000247,Won Yun-Jong,128077,=2,Silver,True
+2018 Winter Olympics,60,KOR,Bobsleigh,"Four, Open",9000247,Jeon Jeong-Rin,128071,=2,Silver,True
+2018 Winter Olympics,60,KOR,Bobsleigh,"Four, Open",9000247,Seo Yeong-Wu,128075,=2,Silver,True
+2018 Winter Olympics,60,KOR,Bobsleigh,"Four, Open",9000247,Kim Dong-Hyeon,118676,=2,Silver,True
+2018 Winter Olympics,60,KOR,Bobsleigh,"Two, Women",9000254,Kim Yu-Ran,137542,14,,True
+2018 Winter Olympics,60,KOR,Bobsleigh,"Two, Women",9000254,Kim Min-Seong,137541,14,,True
+2018 Winter Olympics,60,KOR,Cross Country Skiing,"Sprint, Men",9000265,Kim Magnus,137545,47,,False
+2018 Winter Olympics,60,KOR,Cross Country Skiing,"15 kilometres, Men",9000277,Kim Magnus,137545,42,,False
+2018 Winter Olympics,60,KOR,Cross Country Skiing,"15 kilometres, Men",9000277,Kim Eun-Ho,137544,81,,False
+2018 Winter Olympics,60,KOR,Cross Country Skiing,"50 kilometres, Men",9000278,Kim Magnus,137545,43,,False
+2018 Winter Olympics,60,KOR,Cross Country Skiing,"50 kilometres, Men",9000278,Kim Eun-Ho,137544,DNF,,False
+2018 Winter Olympics,60,KOR,Cross Country Skiing,"30 kilometres Skiathlon, Men",9000279,Kim Eun-Ho,137544,DNF,,False
+2018 Winter Olympics,60,KOR,Cross Country Skiing,"Team Sprint, Men",9000281,Kim Magnus,137545,23,,True
+2018 Winter Olympics,60,KOR,Cross Country Skiing,"Team Sprint, Men",9000281,Kim Eun-Ho,137544,23,,True
+2018 Winter Olympics,60,KOR,Cross Country Skiing,"Sprint, Women",9000286,Ju Hye-Ri,137543,67,,False
+2018 Winter Olympics,60,KOR,Cross Country Skiing,"10 kilometres, Women",9000298,Lee Chae-Won,101004,51,,False
+2018 Winter Olympics,60,KOR,Cross Country Skiing,"10 kilometres, Women",9000298,Ju Hye-Ri,137543,79,,False
+2018 Winter Olympics,60,KOR,Cross Country Skiing,"15 kilometres Skiathlon, Women",9000300,Lee Chae-Won,101004,57,,False
+2018 Winter Olympics,60,KOR,Cross Country Skiing,"Team Sprint, Women",9000302,Lee Chae-Won,101004,21,,True
+2018 Winter Olympics,60,KOR,Cross Country Skiing,"Team Sprint, Women",9000302,Ju Hye-Ri,137543,21,,True
+2018 Winter Olympics,60,KOR,Curling,"Curling, Men",9000320,Kim Chang-Min,137552,7,,True
+2018 Winter Olympics,60,KOR,Curling,"Curling, Men",9000320,Seong Se-Hyeon,137557,7,,True
+2018 Winter Olympics,60,KOR,Curling,"Curling, Men",9000320,Kim Min-Chan,137553,7,,True
+2018 Winter Olympics,60,KOR,Curling,"Curling, Men",9000320,Lee Gi-Bok,137554,7,,True
+2018 Winter Olympics,60,KOR,Curling,"Curling, Men",9000320,Oh Eun-Su,137556,7,,True
+2018 Winter Olympics,60,KOR,Curling,"Curling, Women",9000374,Kim Eun-Jeong,137548,2,Silver,True
+2018 Winter Olympics,60,KOR,Curling,"Curling, Women",9000374,Kim Gyeong-Ae,137549,2,Silver,True
+2018 Winter Olympics,60,KOR,Curling,"Curling, Women",9000374,Kim Seon-Yeong,137550,2,Silver,True
+2018 Winter Olympics,60,KOR,Curling,"Curling, Women",9000374,Kim Yeong-Mi,137551,2,Silver,True
+2018 Winter Olympics,60,KOR,Curling,"Curling, Women",9000374,Kim Cho-Hui,137547,2,Silver,True
+2018 Winter Olympics,60,KOR,Curling,"Mixed Doubles, Mixed",9000428,Jang Hye-Ji,137546,5,,True
+2018 Winter Olympics,60,KOR,Curling,"Mixed Doubles, Mixed",9000428,Lee Gi-Jeong,137555,5,,True
+2018 Winter Olympics,60,KOR,Figure Skating,"Singles, Men",9000630,Cha Jun-Hwan,137567,15,,False
+2018 Winter Olympics,60,KOR,Figure Skating,"Singles, Women",9000633,Choi Da-Bin,137563,7,,False
+2018 Winter Olympics,60,KOR,Figure Skating,"Singles, Women",9000633,Kim Ha-Neul,137564,13,,False
+2018 Winter Olympics,60,KOR,Figure Skating,"Pairs, Mixed",9000636,Kim Gyu-Eun,137565,22 r1/2,,True
+2018 Winter Olympics,60,KOR,Figure Skating,"Pairs, Mixed",9000636,Alex Gam,137569,22 r1/2,,True
+2018 Winter Olympics,60,KOR,Figure Skating,"Ice Dancing, Mixed",9000639,Min Yu-Ra,137566,18,,True
+2018 Winter Olympics,60,KOR,Figure Skating,"Ice Dancing, Mixed",9000639,Aleksandr Gamelin,137568,18,,True
+2018 Winter Olympics,60,KOR,Figure Skating,"Team, Mixed",9000642,Cha Jun-Hwan,137567,9,,True
+2018 Winter Olympics,60,KOR,Figure Skating,"Team, Mixed",9000642,Choi Da-Bin,137563,9,,True
+2018 Winter Olympics,60,KOR,Figure Skating,"Team, Mixed",9000642,Kim Ha-Neul,137564,9,,True
+2018 Winter Olympics,60,KOR,Figure Skating,"Team, Mixed",9000642,Kim Gyu-Eun,137565,9,,True
+2018 Winter Olympics,60,KOR,Figure Skating,"Team, Mixed",9000642,Alex Gam,137569,9,,True
+2018 Winter Olympics,60,KOR,Figure Skating,"Team, Mixed",9000642,Min Yu-Ra,137566,9,,True
+2018 Winter Olympics,60,KOR,Figure Skating,"Team, Mixed",9000642,Aleksandr Gamelin,137568,9,,True
+2018 Winter Olympics,60,KOR,Freestyle Skiing,"Moguls, Men",9000500,Choi Jae-U,128086,12,,False
+2018 Winter Olympics,60,KOR,Freestyle Skiing,"Moguls, Men",9000500,Kim Ji-Hyeon,138395,27,,False
+2018 Winter Olympics,60,KOR,Freestyle Skiing,"Moguls, Men",9000500,Seo Myeong-Jun,137562,28,,False
+2018 Winter Olympics,60,KOR,Freestyle Skiing,"Halfpipe, Men",9000516,Lee Gang-Bok,137561,27,,False
+2018 Winter Olympics,60,KOR,Freestyle Skiing,"Moguls, Women",9000552,Seo Jeong-Hwa,119023,14,,False
+2018 Winter Olympics,60,KOR,Freestyle Skiing,"Moguls, Women",9000552,Seo Ji-Won,128085,24,,False
+2018 Winter Olympics,60,KOR,Freestyle Skiing,"Aerials, Women",9000560,Kim Gyeong-Eun,137559,25,,False
+2018 Winter Olympics,60,KOR,Freestyle Skiing,"Halfpipe, Women",9000568,Jang Yu-Jin,137558,18,,False
+2018 Winter Olympics,60,KOR,Freestyle Skiing,"Slopestyle, Women",9000575,Lee Mi-Hyeon,137560,13,,False
+2018 Winter Olympics,60,KOR,Ice Hockey,"Ice Hockey, Men",9000660,Matt Dalton,137596,12,,True
+2018 Winter Olympics,60,KOR,Ice Hockey,"Ice Hockey, Men",9000660,Jo Hyeong-Gon,1800066,12,,True
+2018 Winter Olympics,60,KOR,Ice Hockey,"Ice Hockey, Men",9000660,Seo Yeong-Jun,137612,12,,True
+2018 Winter Olympics,60,KOR,Ice Hockey,"Ice Hockey, Men",9000660,Bryan Young,137617,12,,True
+2018 Winter Olympics,60,KOR,Ice Hockey,"Ice Hockey, Men",9000660,Kim Won-Jun,137600,12,,True
+2018 Winter Olympics,60,KOR,Ice Hockey,"Ice Hockey, Men",9000660,Oh Hyeon-Ho,137604,12,,True
+2018 Winter Olympics,60,KOR,Ice Hockey,"Ice Hockey, Men",9000660,Kim Won-Jung,137601,12,,True
+2018 Winter Olympics,60,KOR,Ice Hockey,"Ice Hockey, Men",9000660,Jeon Jeong-Wu,137597,12,,True
+2018 Winter Olympics,60,KOR,Ice Hockey,"Ice Hockey, Men",9000660,Michael Swift,137615,12,,True
+2018 Winter Olympics,60,KOR,Ice Hockey,"Ice Hockey, Men",9000660,Kim Gi-Seong,137598,12,,True
+2018 Winter Olympics,60,KOR,Ice Hockey,"Ice Hockey, Men",9000660,Lee Yeong-Jun,137603,12,,True
+2018 Winter Olympics,60,KOR,Ice Hockey,"Ice Hockey, Men",9000660,Kim Sang-Uk,137599,12,,True
+2018 Winter Olympics,60,KOR,Ice Hockey,"Ice Hockey, Men",9000660,Mike Testwuide,137616,12,,True
+2018 Winter Olympics,60,KOR,Ice Hockey,"Ice Hockey, Men",9000660,Eric Regan,137611,12,,True
+2018 Winter Olympics,60,KOR,Ice Hockey,"Ice Hockey, Men",9000660,Brock Radunske,137610,12,,True
+2018 Winter Olympics,60,KOR,Ice Hockey,"Ice Hockey, Men",9000660,An Jin-Hwi,137593,12,,True
+2018 Winter Olympics,60,KOR,Ice Hockey,"Ice Hockey, Men",9000660,Park Wu-Sang,137608,12,,True
+2018 Winter Olympics,60,KOR,Ice Hockey,"Ice Hockey, Men",9000660,Park Gye-Hun,1800075,12,,True
+2018 Winter Olympics,60,KOR,Ice Hockey,"Ice Hockey, Men",9000660,Alex Plante,137609,12,,True
+2018 Winter Olympics,60,KOR,Ice Hockey,"Ice Hockey, Men",9000660,Sin Sang-Hun,137613,12,,True
+2018 Winter Olympics,60,KOR,Ice Hockey,"Ice Hockey, Men",9000660,Park Seong-Je,137607,12,,True
+2018 Winter Olympics,60,KOR,Ice Hockey,"Ice Hockey, Men",9000660,Lee Don-Gu,137602,12,,True
+2018 Winter Olympics,60,KOR,Ice Hockey,"Ice Hockey, Men",9000660,Park Jin-Gyu,137605,12,,True
+2018 Winter Olympics,60,KOR,Ice Hockey,"Ice Hockey, Men",9000660,Jo Min-Ho,137595,12,,True
+2018 Winter Olympics,60,KOR,Ice Hockey,"Ice Hockey, Men",9000660,Sin Sang-Wu,137614,12,,True
+2018 Winter Olympics,60,KOR,Luge,"Singles, Men",400000,Im Nam-Gyu,137619,30,,False
+2018 Winter Olympics,60,KOR,Luge,"Doubles, Open",9000737,Park Jin-Yong,128093,9,,True
+2018 Winter Olympics,60,KOR,Luge,"Doubles, Open",9000737,Jo Jeong-Myeong,128091,9,,True
+2018 Winter Olympics,60,KOR,Luge,"Singles, Women",9000740,Aileen Frisch,137618,8,,False
+2018 Winter Olympics,60,KOR,Luge,"Singles, Women",9000740,Seong Eun-Ryeong,128090,18,,False
+2018 Winter Olympics,60,KOR,Luge,"Team Relay, Mixed",9000747,Aileen Frisch,137618,9,,True
+2018 Winter Olympics,60,KOR,Luge,"Team Relay, Mixed",9000747,Im Nam-Gyu,137619,9,,True
+2018 Winter Olympics,60,KOR,Luge,"Team Relay, Mixed",9000747,Park Jin-Yong,128093,9,,True
+2018 Winter Olympics,60,KOR,Luge,"Team Relay, Mixed",9000747,Jo Jeong-Myeong,128091,9,,True
+2018 Winter Olympics,60,KOR,Nordic Combined,"Normal Hill / 10 km, Individual, Men",9000760,Park Je-Eon,137620,46,,False
+2018 Winter Olympics,60,KOR,Nordic Combined,"Large Hill / 10 km, Individual, Men",9000763,Park Je-Eon,137620,47,,False
+2018 Winter Olympics,60,KOR,Short Track Speed Skating,"500 metres, Men",9001100,Hwang Dae-Heon,137644,2,Silver,False
+2018 Winter Olympics,60,KOR,Short Track Speed Skating,"500 metres, Men",9001100,Im Hyo-Jun,137647,3,Bronze,False
+2018 Winter Olympics,60,KOR,Short Track Speed Skating,"500 metres, Men",9001100,Seo I-Ra,137648,14,,False
+2018 Winter Olympics,60,KOR,Short Track Speed Skating,"1,000 metres, Men",9001121,Seo I-Ra,137648,3,Bronze,False
+2018 Winter Olympics,60,KOR,Short Track Speed Skating,"1,000 metres, Men",9001121,Im Hyo-Jun,137647,4,,False
+2018 Winter Olympics,60,KOR,Short Track Speed Skating,"1,000 metres, Men",9001121,Hwang Dae-Heon,137644,17,,False
+2018 Winter Olympics,60,KOR,Short Track Speed Skating,"1,500 metres, Men",9001142,Im Hyo-Jun,137647,1,Gold,False
+2018 Winter Olympics,60,KOR,Short Track Speed Skating,"1,500 metres, Men",9001142,Seo I-Ra,137648,9,,False
+2018 Winter Olympics,60,KOR,Short Track Speed Skating,"1,500 metres, Men",9001142,Hwang Dae-Heon,137644,14,,False
+2018 Winter Olympics,60,KOR,Short Track Speed Skating,"5,000 metres Relay, Men",9001157,Seo I-Ra,137648,4,,True
+2018 Winter Olympics,60,KOR,Short Track Speed Skating,"5,000 metres Relay, Men",9001157,Hwang Dae-Heon,137644,4,,True
+2018 Winter Olympics,60,KOR,Short Track Speed Skating,"5,000 metres Relay, Men",9001157,Kim Do-Gyeom,137645,4,,True
+2018 Winter Olympics,60,KOR,Short Track Speed Skating,"5,000 metres Relay, Men",9001157,Gwak Yun-Gi,119776,4,,True
+2018 Winter Olympics,60,KOR,Short Track Speed Skating,"5,000 metres Relay, Men",9001157,Im Hyo-Jun,137647,4,,True
+2018 Winter Olympics,60,KOR,Short Track Speed Skating,"500 metres, Women",9001164,Choi Min-Jeong,137639,6,,False
+2018 Winter Olympics,60,KOR,Short Track Speed Skating,"500 metres, Women",9001164,Sim Seok-Hui,128111,17,,False
+2018 Winter Olympics,60,KOR,Short Track Speed Skating,"500 metres, Women",9001164,Kim A-Rang,128109,19,,False
+2018 Winter Olympics,60,KOR,Short Track Speed Skating,"1,000 metres, Women",9001185,Choi Min-Jeong,137639,4,,False
+2018 Winter Olympics,60,KOR,Short Track Speed Skating,"1,000 metres, Women",9001185,Kim A-Rang,128109,5,,False
+2018 Winter Olympics,60,KOR,Short Track Speed Skating,"1,000 metres, Women",9001185,Sim Seok-Hui,128111,6,,False
+2018 Winter Olympics,60,KOR,Short Track Speed Skating,"1,500 metres, Women",9001206,Choi Min-Jeong,137639,1,Gold,False
+2018 Winter Olympics,60,KOR,Short Track Speed Skating,"1,500 metres, Women",9001206,Kim A-Rang,128109,4,,False
+2018 Winter Olympics,60,KOR,Short Track Speed Skating,"1,500 metres, Women",9001206,Sim Seok-Hui,128111,29,,False
+2018 Winter Olympics,60,KOR,Short Track Speed Skating,"3,000 metres Relay, Women",9001221,Sim Seok-Hui,128111,1,Gold,True
+2018 Winter Olympics,60,KOR,Short Track Speed Skating,"3,000 metres Relay, Women",9001221,Choi Min-Jeong,137639,1,Gold,True
+2018 Winter Olympics,60,KOR,Short Track Speed Skating,"3,000 metres Relay, Women",9001221,Kim Ye-Jin,137641,1,Gold,True
+2018 Winter Olympics,60,KOR,Short Track Speed Skating,"3,000 metres Relay, Women",9001221,Kim A-Rang,128109,1,Gold,True
+2018 Winter Olympics,60,KOR,Short Track Speed Skating,"3,000 metres Relay, Women",9001221,Lee Yu-Bin,137642,1,Gold,True
+2018 Winter Olympics,60,KOR,Skeleton,"Skeleton, Men",9000790,Yun Seong-Bin,128095,1,Gold,False
+2018 Winter Olympics,60,KOR,Skeleton,"Skeleton, Men",9000790,Kim Ji-Su,137622,6,,False
+2018 Winter Olympics,60,KOR,Skeleton,"Skeleton, Women",9000797,Sophia Jeong,137621,15,,False
+2018 Winter Olympics,60,KOR,Ski Jumping,"Normal Hill, Individual, Men",9000810,Choi Seo-Wu,99856,41,,False
+2018 Winter Olympics,60,KOR,Ski Jumping,"Normal Hill, Individual, Men",9000810,Kim Hyeon-Gi,99880,52,,False
+2018 Winter Olympics,60,KOR,Ski Jumping,"Large Hill, Individual, Men",9000815,Choi Seo-Wu,99856,45,,False
+2018 Winter Olympics,60,KOR,Ski Jumping,"Large Hill, Individual, Men",9000815,Kim Hyeon-Gi,99880,55,,False
+2018 Winter Olympics,60,KOR,Ski Jumping,"Large Hill, Team, Men",9000820,Kim Hyeon-Gi,99880,12,,True
+2018 Winter Olympics,60,KOR,Ski Jumping,"Large Hill, Team, Men",9000820,Park Je-Eon,137620,12,,True
+2018 Winter Olympics,60,KOR,Ski Jumping,"Large Hill, Team, Men",9000820,Choi Heung-Cheol,99855,12,,True
+2018 Winter Olympics,60,KOR,Ski Jumping,"Large Hill, Team, Men",9000820,Choi Seo-Wu,99856,12,,True
+2018 Winter Olympics,60,KOR,Ski Jumping,"Normal Hill, Individual, Women",9000823,Park Gyu-Rim,137623,35,,False
+2018 Winter Olympics,60,KOR,Snowboarding,"Parallel Giant Slalom, Men",9000850,Lee Sang-Ho,137631,2,Silver,False
+2018 Winter Olympics,60,KOR,Snowboarding,"Parallel Giant Slalom, Men",9000850,Kim Sang-Gyeom,128098,15,,False
+2018 Winter Olympics,60,KOR,Snowboarding,"Parallel Giant Slalom, Men",9000850,Choi Bo-Gun,137628,26,,False
+2018 Winter Olympics,60,KOR,Snowboarding,"Slopestyle, Men",9000895,Lee Min-Sik,137630,DNS,,False
+2018 Winter Olympics,60,KOR,Snowboarding,"Halfpipe, Men",9000874,Lee Gwang-Gi,128099,14,,False
+2018 Winter Olympics,60,KOR,Snowboarding,"Halfpipe, Men",9000874,Gwon Lee-Jun,137629,21,,False
+2018 Winter Olympics,60,KOR,Snowboarding,"Halfpipe, Men",9000874,Kim Ho-Jun,119586,24,,False
+2018 Winter Olympics,60,KOR,Snowboarding,"Big Air, Men",9000884,Lee Min-Sik,137630,27,,False
+2018 Winter Olympics,60,KOR,Snowboarding,"Parallel Giant Slalom, Women",9000930,Jeong Hae-Rim,137625,20,,False
+2018 Winter Olympics,60,KOR,Snowboarding,"Parallel Giant Slalom, Women",9000930,Sin Da-Hye,137627,25,,False
+2018 Winter Olympics,60,KOR,Snowboarding,"Halfpipe, Women",9000954,Gwon Seon-Wu,137626,20,,False
+2018 Winter Olympics,60,KOR,Speed Skating,"500 metres, Men",9001025,Cha Min-Gyu,137635,2,Silver,False
+2018 Winter Olympics,60,KOR,Speed Skating,"500 metres, Men",9001025,Kim Jun-Ho,128107,12,,False
+2018 Winter Olympics,60,KOR,Speed Skating,"500 metres, Men",9001025,Mo Tae-Beom,119703,16,,False
+2018 Winter Olympics,60,KOR,Speed Skating,"1,000 metres, Men",9001028,Kim Tae-Yun,128108,3,Bronze,False
+2018 Winter Olympics,60,KOR,Speed Skating,"1,000 metres, Men",9001028,Cha Min-Gyu,137635,12,,False
+2018 Winter Olympics,60,KOR,Speed Skating,"1,000 metres, Men",9001028,Jeong Jae-Ung,137637,13,,False
+2018 Winter Olympics,60,KOR,Speed Skating,"1,500 metres, Men",9001029,Kim Min-Seok,137638,3,Bronze,False
+2018 Winter Olympics,60,KOR,Speed Skating,"1,500 metres, Men",9001029,Ju Hyeong-Jun,128105,17,,False
+2018 Winter Olympics,60,KOR,Speed Skating,"5,000 metres, Men",9001030,Lee Seung-Hun,119690,5,,False
+2018 Winter Olympics,60,KOR,Speed Skating,"10,000 metres, Men",9001031,Lee Seung-Hun,119690,4,,False
+2018 Winter Olympics,60,KOR,Speed Skating,"Mass Start, Men",9001046,Lee Seung-Hun,119690,1,Gold,False
+2018 Winter Olympics,60,KOR,Speed Skating,"Mass Start, Men",9001046,Jeong Jae-Won,137636,8,,False
+2018 Winter Olympics,60,KOR,Speed Skating,"Team Pursuit (8 laps), Men",9001032,Lee Seung-Hun,119690,2,Silver,True
+2018 Winter Olympics,60,KOR,Speed Skating,"Team Pursuit (8 laps), Men",9001032,Jeong Jae-Won,137636,2,Silver,True
+2018 Winter Olympics,60,KOR,Speed Skating,"Team Pursuit (8 laps), Men",9001032,Kim Min-Seok,137638,2,Silver,True
+2018 Winter Olympics,60,KOR,Speed Skating,"Team Pursuit (8 laps), Men",9001032,Ju Hyeong-Jun,128105,2,Silver,True
+2018 Winter Olympics,60,KOR,Speed Skating,"500 metres, Women",9001051,Lee Sang-Hwa,110124,2,Silver,False
+2018 Winter Olympics,60,KOR,Speed Skating,"500 metres, Women",9001051,Kim Hyeon-Yeong,128102,12,,False
+2018 Winter Olympics,60,KOR,Speed Skating,"500 metres, Women",9001051,Kim Min-Seon,137633,=16,,False
+2018 Winter Olympics,60,KOR,Speed Skating,"1,000 metres, Women",9001054,Park Seung-Hui,119791,16,,False
+2018 Winter Olympics,60,KOR,Speed Skating,"1,000 metres, Women",9001054,Kim Hyeon-Yeong,128102,18,,False
+2018 Winter Olympics,60,KOR,Speed Skating,"1,500 metres, Women",9001055,No Seon-Yeong,109774,14,,False
+2018 Winter Olympics,60,KOR,Speed Skating,"3,000 metres, Women",9001056,Kim Bo-Reum,128101,18,,False
+2018 Winter Olympics,60,KOR,Speed Skating,"Mass Start, Women",9001072,Kim Bo-Reum,128101,2,Silver,False
+2018 Winter Olympics,60,KOR,Speed Skating,"Mass Start, Women",9001072,Park Ji-Wu,137634,9 h2 r1/2,,False
+2018 Winter Olympics,60,KOR,Speed Skating,"Team Pursuit (6 laps), Women",9001058,Park Seung-Hui,119791,8,,True
+2018 Winter Olympics,60,KOR,Speed Skating,"Team Pursuit (6 laps), Women",9001058,Kim Bo-Reum,128101,8,,True
+2018 Winter Olympics,60,KOR,Speed Skating,"Team Pursuit (6 laps), Women",9001058,Park Ji-Wu,137634,8,,True
+2018 Winter Olympics,60,KOR,Speed Skating,"Team Pursuit (6 laps), Women",9001058,No Seon-Yeong,109774,8,,True
+2022 Winter Olympics,62,KOR,Alpine Skiing,"Giant Slalom, Men",19019502,Jeong Dong-Hyeon,118394,DNF,,False
+2022 Winter Olympics,62,KOR,Alpine Skiing,"Slalom, Men",19019505,Jeong Dong-Hyeon,118394,21,,False
+2022 Winter Olympics,62,KOR,Alpine Skiing,"Giant Slalom, Women",19019513,Kim So-Hui,128063,33,,False
+2022 Winter Olympics,62,KOR,Alpine Skiing,"Giant Slalom, Women",19019513,Gang Yeong-Seo,128064,DNF,,False
+2022 Winter Olympics,62,KOR,Alpine Skiing,"Slalom, Women",19019516,Kim So-Hui,128063,39,,False
+2022 Winter Olympics,62,KOR,Alpine Skiing,"Slalom, Women",19019516,Gang Yeong-Seo,128064,DNF,,False
+2022 Winter Olympics,62,KOR,Biathlon,"10 kilometres Sprint, Men",19019630,Timofei Lapshin,137540,82,,False
+2022 Winter Olympics,62,KOR,Biathlon,"20 kilometres, Men",19019633,Timofei Lapshin,137540,76,,False
+2022 Winter Olympics,62,KOR,Biathlon,"7.5 kilometres Sprint, Women",19019635,Yekaterina Avvakumova,137537,49,,False
+2022 Winter Olympics,62,KOR,Biathlon,"7.5 kilometres Sprint, Women",19019635,Kim Seon-Su,148589,83,,False
+2022 Winter Olympics,62,KOR,Biathlon,"10 kilometres Pursuit, Women",19019636,Yekaterina Avvakumova,137537,DNF,,False
+2022 Winter Olympics,62,KOR,Biathlon,"15 kilometres, Women",19019638,Yekaterina Avvakumova,137537,73,,False
+2022 Winter Olympics,62,KOR,Biathlon,"15 kilometres, Women",19019638,Kim Seon-Su,148589,84,,False
+2022 Winter Olympics,62,KOR,Bobsleigh,"Two, Men",19019650,Won Yun-Jong,128077,19,,True
+2022 Winter Olympics,62,KOR,Bobsleigh,"Two, Men",19019650,Kim Jin-Su,148587,19,,True
+2022 Winter Olympics,62,KOR,Bobsleigh,"Two, Men",19019650,Seok Yeong-Jin,128076,24,,True
+2022 Winter Olympics,62,KOR,Bobsleigh,"Two, Men",19019650,Kim Hyeong-Geun,148586,24,,True
+2022 Winter Olympics,62,KOR,Bobsleigh,"Four, Open",19019657,Won Yun-Jong,128077,18,,True
+2022 Winter Olympics,62,KOR,Bobsleigh,"Four, Open",19019657,Kim Jin-Su,148587,18,,True
+2022 Winter Olympics,62,KOR,Bobsleigh,"Four, Open",19019657,Jeong Hyeon-U,148585,18,,True
+2022 Winter Olympics,62,KOR,Bobsleigh,"Four, Open",19019657,Kim Dong-Hyeon,118676,18,,True
+2022 Winter Olympics,62,KOR,Bobsleigh,"Four, Open",19019657,Seok Yeong-Jin,128076,25,,True
+2022 Winter Olympics,62,KOR,Bobsleigh,"Four, Open",19019657,Kim Hyeong-Geun,148586,25,,True
+2022 Winter Olympics,62,KOR,Bobsleigh,"Four, Open",19019657,Kim Tae-Yang,148588,25,,True
+2022 Winter Olympics,62,KOR,Bobsleigh,"Four, Open",19019657,Shin Ye-Chan,149217,25,,True
+2022 Winter Olympics,62,KOR,Bobsleigh,"Monobob, Women",19019671,Kim Yu-Ran,137542,18,,True
+2022 Winter Olympics,62,KOR,Cross Country Skiing,"Sprint, Men",19019700,Jeong Jong-Won,148592,81,,False
+2022 Winter Olympics,62,KOR,Cross Country Skiing,"Sprint, Men",19019700,Kim Min-U,148593,82,,False
+2022 Winter Olympics,62,KOR,Cross Country Skiing,"15 kilometres, Men",19019712,Kim Min-U,148593,79,,False
+2022 Winter Olympics,62,KOR,Cross Country Skiing,"15 kilometres, Men",19019712,Jeong Jong-Won,148592,82,,False
+2022 Winter Olympics,62,KOR,Cross Country Skiing,"30 kilometres Skiathlon, Men",19019714,Kim Min-U,148593,60,,False
+2022 Winter Olympics,62,KOR,Cross Country Skiing,"30 kilometres Skiathlon, Men",19019714,Jeong Jong-Won,148592,66,,False
+2022 Winter Olympics,62,KOR,Cross Country Skiing,"Team Sprint, Men",19019716,Kim Min-U,148593,25,,True
+2022 Winter Olympics,62,KOR,Cross Country Skiing,"Team Sprint, Men",19019716,Jeong Jong-Won,148592,25,,True
+2022 Winter Olympics,62,KOR,Cross Country Skiing,"Sprint, Women",19019721,Han Da-Som,148590,74,,False
+2022 Winter Olympics,62,KOR,Cross Country Skiing,"Sprint, Women",19019721,Lee Ui-Jin,148591,76,,False
+2022 Winter Olympics,62,KOR,Cross Country Skiing,"Sprint, Women",19019721,Lee Chae-Won,101004,DNS,,False
+2022 Winter Olympics,62,KOR,Cross Country Skiing,"10 kilometres, Women",19019733,Lee Ui-Jin,148591,72,,False
+2022 Winter Olympics,62,KOR,Cross Country Skiing,"10 kilometres, Women",19019733,Lee Chae-Won,101004,75,,False
+2022 Winter Olympics,62,KOR,Cross Country Skiing,"15 kilometres Skiathlon, Women",19019735,Lee Chae-Won,101004,61,,False
+2022 Winter Olympics,62,KOR,Cross Country Skiing,"15 kilometres Skiathlon, Women",19019735,Han Da-Som,148590,DNF,,False
+2022 Winter Olympics,62,KOR,Cross Country Skiing,"Team Sprint, Women",19019737,Han Da-Som,148590,22,,True
+2022 Winter Olympics,62,KOR,Cross Country Skiing,"Team Sprint, Women",19019737,Lee Ui-Jin,148591,22,,True
+2022 Winter Olympics,62,KOR,Curling,"Curling, Women",19019814,Kim Cho-Hui,137547,8,,True
+2022 Winter Olympics,62,KOR,Curling,"Curling, Women",19019814,Kim Eun-Jeong,137548,8,,True
+2022 Winter Olympics,62,KOR,Curling,"Curling, Women",19019814,Kim Gyeong-Ae,137549,8,,True
+2022 Winter Olympics,62,KOR,Curling,"Curling, Women",19019814,Kim Seon-Yeong,137550,8,,True
+2022 Winter Olympics,62,KOR,Curling,"Curling, Women",19019814,Kim Yeong-Mi,137551,8,,True
+2022 Winter Olympics,62,KOR,Figure Skating,"Singles, Men",19020000,Cha Jun-Hwan,137567,5,,False
+2022 Winter Olympics,62,KOR,Figure Skating,"Singles, Men",19020000,Lee Si-Hyeong,148597,27 r1/2,,False
+2022 Winter Olympics,62,KOR,Figure Skating,"Singles, Women",19020003,Yu Yeong,139343,6,,False
+2022 Winter Olympics,62,KOR,Figure Skating,"Singles, Women",19020003,Kim Ye-Rim,148596,9,,False
+2022 Winter Olympics,62,KOR,Freestyle Skiing,"Halfpipe, Men",19020084,Lee Seung-Hun,148595,16,,False
+2022 Winter Olympics,62,KOR,Freestyle Skiing,"Halfpipe, Women",19020142,Kim Da-Eun,148594,17,,False
+2022 Winter Olympics,62,KOR,Freestyle Skiing,"Halfpipe, Women",19020142,Jang Yu-Jin,137558,20,,False
+2022 Winter Olympics,62,KOR,Luge,"Singles, Men",19020300,Im Nam-Gyu,137619,33,,False
+2022 Winter Olympics,62,KOR,Luge,"Doubles, Open",19020307,Park Jin-Yong,128093,12,,True
+2022 Winter Olympics,62,KOR,Luge,"Doubles, Open",19020307,Jo Jeong-Myeong,128091,12,,True
+2022 Winter Olympics,62,KOR,Luge,"Singles, Women",19020310,Aileen Frisch,137618,19,,False
+2022 Winter Olympics,62,KOR,Luge,"Team Relay, Mixed",19020317,Aileen Frisch,137618,13,,True
+2022 Winter Olympics,62,KOR,Luge,"Team Relay, Mixed",19020317,Im Nam-Gyu,137619,13,,True
+2022 Winter Olympics,62,KOR,Luge,"Team Relay, Mixed",19020317,Park Jin-Yong,128093,13,,True
+2022 Winter Olympics,62,KOR,Luge,"Team Relay, Mixed",19020317,Jo Jeong-Myeong,128091,13,,True
+2022 Winter Olympics,62,KOR,Nordic Combined,"Normal Hill / 10 km, Individual, Men",19020350,Park Je-Eon,137620,42,,False
+2022 Winter Olympics,62,KOR,Nordic Combined,"Large Hill / 10 km, Individual, Men",19020353,Park Je-Eon,137620,44,,False
+2022 Winter Olympics,62,KOR,Short Track Speed Skating,"500 metres, Men",19020460,Hwang Dae-Heon,137644,10,,False
+2022 Winter Olympics,62,KOR,Short Track Speed Skating,"500 metres, Men",19020460,Lee Jun-Seo,148602,DQ,,False
+2022 Winter Olympics,62,KOR,Short Track Speed Skating,"1,000 metres, Men",19020481,Hwang Dae-Heon,137644,8,,False
+2022 Winter Olympics,62,KOR,Short Track Speed Skating,"1,000 metres, Men",19020481,Lee Jun-Seo,148602,9,,False
+2022 Winter Olympics,62,KOR,Short Track Speed Skating,"1,000 metres, Men",19020481,Park Jang-Hyeok,148603,10,,False
+2022 Winter Olympics,62,KOR,Short Track Speed Skating,"1,500 metres, Men",19020502,Hwang Dae-Heon,137644,1,Gold,False
+2022 Winter Olympics,62,KOR,Short Track Speed Skating,"1,500 metres, Men",19020502,Lee Jun-Seo,148602,5,,False
+2022 Winter Olympics,62,KOR,Short Track Speed Skating,"1,500 metres, Men",19020502,Park Jang-Hyeok,148603,7,,False
+2022 Winter Olympics,62,KOR,Short Track Speed Skating,"5,000 metres Relay, Men",19020517,Lee Jun-Seo,148602,2,Silver,True
+2022 Winter Olympics,62,KOR,Short Track Speed Skating,"5,000 metres Relay, Men",19020517,Kim Dong-Uk,148601,2,Silver,True
+2022 Winter Olympics,62,KOR,Short Track Speed Skating,"5,000 metres Relay, Men",19020517,Hwang Dae-Heon,137644,2,Silver,True
+2022 Winter Olympics,62,KOR,Short Track Speed Skating,"5,000 metres Relay, Men",19020517,Gwak Yun-Gi,119776,2,Silver,True
+2022 Winter Olympics,62,KOR,Short Track Speed Skating,"5,000 metres Relay, Men",19020517,Park Jang-Hyeok,148603,2,Silver,True
+2022 Winter Olympics,62,KOR,Short Track Speed Skating,"500 metres, Women",19020524,Choi Min-Jeong,137639,14,,False
+2022 Winter Olympics,62,KOR,Short Track Speed Skating,"500 metres, Women",19020524,Lee Yu-Bin,137642,26,,False
+2022 Winter Olympics,62,KOR,Short Track Speed Skating,"1,000 metres, Women",19020545,Choi Min-Jeong,137639,2,Silver,False
+2022 Winter Olympics,62,KOR,Short Track Speed Skating,"1,000 metres, Women",19020545,Lee Yu-Bin,137642,6,,False
+2022 Winter Olympics,62,KOR,Short Track Speed Skating,"1,000 metres, Women",19020545,Kim A-Rang,128109,22,,False
+2022 Winter Olympics,62,KOR,Short Track Speed Skating,"1,500 metres, Women",19020566,Choi Min-Jeong,137639,1,Gold,False
+2022 Winter Olympics,62,KOR,Short Track Speed Skating,"1,500 metres, Women",19020566,Lee Yu-Bin,137642,6,,False
+2022 Winter Olympics,62,KOR,Short Track Speed Skating,"1,500 metres, Women",19020566,Kim A-Rang,128109,13,,False
+2022 Winter Olympics,62,KOR,Short Track Speed Skating,"3,000 metres Relay, Women",19020581,Seo Hwi-Min,140265,2,Silver,True
+2022 Winter Olympics,62,KOR,Short Track Speed Skating,"3,000 metres Relay, Women",19020581,Choi Min-Jeong,137639,2,Silver,True
+2022 Winter Olympics,62,KOR,Short Track Speed Skating,"3,000 metres Relay, Women",19020581,Kim A-Rang,128109,2,Silver,True
+2022 Winter Olympics,62,KOR,Short Track Speed Skating,"3,000 metres Relay, Women",19020581,Lee Yu-Bin,137642,2,Silver,True
+2022 Winter Olympics,62,KOR,Short Track Speed Skating,"3,000 metres Relay, Women",19020581,Park Ji-Yun,148600,2,Silver,True
+2022 Winter Olympics,62,KOR,Short Track Speed Skating,"2,000 metres Relay, Mixed",19020588,Choi Min-Jeong,137639,9,,True
+2022 Winter Olympics,62,KOR,Short Track Speed Skating,"2,000 metres Relay, Mixed",19020588,Lee Yu-Bin,137642,9,,True
+2022 Winter Olympics,62,KOR,Short Track Speed Skating,"2,000 metres Relay, Mixed",19020588,Hwang Dae-Heon,137644,9,,True
+2022 Winter Olympics,62,KOR,Short Track Speed Skating,"2,000 metres Relay, Mixed",19020588,Park Jang-Hyeok,148603,9,,True
+2022 Winter Olympics,62,KOR,Skeleton,"Skeleton, Men",19020370,Jeong Seung-Gi,1800040,10,,False
+2022 Winter Olympics,62,KOR,Skeleton,"Skeleton, Men",19020370,Yun Seong-Bin,128095,12,,False
+2022 Winter Olympics,62,KOR,Skeleton,"Skeleton, Women",19020377,Kim Eun-Ji,148598,23,,False
+2022 Winter Olympics,62,KOR,Snowboarding,"Parallel Giant Slalom, Men",19020670,Lee Sang-Ho,137631,5,,False
+2022 Winter Olympics,62,KOR,Snowboarding,"Parallel Giant Slalom, Men",19020670,Kim Sang-Gyeom,128098,24,,False
+2022 Winter Olympics,62,KOR,Snowboarding,"Halfpipe, Men",19020706,Lee Chae-Eun,149197,18,,False
+2022 Winter Olympics,62,KOR,Snowboarding,"Parallel Giant Slalom, Women",19020750,Jeong Hae-Rim,137625,18,,False
+2022 Winter Olympics,62,KOR,Snowboarding,"Halfpipe, Women",19020782,Lee Na-Yun,139895,20,,False
+2022 Winter Olympics,62,KOR,Speed Skating,"500 metres, Men",19020400,Cha Min-Gyu,137635,2,Silver,False
+2022 Winter Olympics,62,KOR,Speed Skating,"500 metres, Men",19020400,Kim Jun-Ho,128107,6,,False
+2022 Winter Olympics,62,KOR,Speed Skating,"1,000 metres, Men",19020401,Cha Min-Gyu,137635,18,,False
+2022 Winter Olympics,62,KOR,Speed Skating,"1,000 metres, Men",19020401,Kim Min-Seok,137638,24,,False
+2022 Winter Olympics,62,KOR,Speed Skating,"1,500 metres, Men",19020402,Kim Min-Seok,137638,3,Bronze,False
+2022 Winter Olympics,62,KOR,Speed Skating,"1,500 metres, Men",19020402,Park Seong-Hyeon,148599,21,,False
+2022 Winter Olympics,62,KOR,Speed Skating,"Mass Start, Men",19020405,Jeong Jae-Won,137636,2,Silver,False
+2022 Winter Olympics,62,KOR,Speed Skating,"Mass Start, Men",19020405,Lee Seung-Hun,119690,3,Bronze,False
+2022 Winter Olympics,62,KOR,Speed Skating,"Team Pursuit (8 laps), Men",19020410,Jeong Jae-Won,137636,6,,True
+2022 Winter Olympics,62,KOR,Speed Skating,"Team Pursuit (8 laps), Men",19020410,Kim Min-Seok,137638,6,,True
+2022 Winter Olympics,62,KOR,Speed Skating,"Team Pursuit (8 laps), Men",19020410,Lee Seung-Hun,119690,6,,True
+2022 Winter Olympics,62,KOR,Speed Skating,"Team Pursuit (8 laps), Men",19020410,Park Seong-Hyeon,148599,6,,True
+2022 Winter Olympics,62,KOR,Speed Skating,"500 metres, Women",19020424,Kim Min-Seon,137633,7,,False
+2022 Winter Olympics,62,KOR,Speed Skating,"1,000 metres, Women",19020425,Kim Min-Seon,137633,16,,False
+2022 Winter Olympics,62,KOR,Speed Skating,"1,000 metres, Women",19020425,Kim Hyeon-Yeong,128102,25,,False
+2022 Winter Olympics,62,KOR,Speed Skating,"1,000 metres, Women",19020425,Park Ji-Wu,137634,30,,False
+2022 Winter Olympics,62,KOR,Speed Skating,"Mass Start, Women",19020429,Kim Bo-Reum,128101,5,,False
+2022 Winter Olympics,62,KOR,Speed Skating,"Mass Start, Women",19020429,Park Ji-Wu,137634,26,,False
+2022 Winter Olympics,62,KOR,Bobsleigh,"Monobob, Women",19019671,Kim Yu-Ran,137542,18,,False
