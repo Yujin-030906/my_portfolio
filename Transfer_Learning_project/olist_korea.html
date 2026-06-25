@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>한국 쇼핑몰 분석 대시보드</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f5f3ee;
+    --surface: #ffffff;
+    --surface2: #faf9f6;
+    --border: #e8e4dc;
+    --accent: #d63031;
+    --accent2: #0984e3;
+    --accent3: #00b894;
+    --accent4: #e17055;
+    --text: #1a1a2e;
+    --muted: #8c8c9a;
+    --tag-bg: #1a1a2e;
+    --shadow: 0 2px 16px rgba(26,26,46,0.07);
+  }
+ 
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+ 
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Noto Sans KR', sans-serif;
+    min-height: 100vh;
+  }
+ 
+  /* ── HEADER ── */
+  header {
+    background: var(--tag-bg);
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+ 
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+ 
+  .logo-badge {
+    background: var(--accent);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 5px 12px;
+    border-radius: 4px;
+    letter-spacing: 0.05em;
+  }
+ 
+  .header-title {
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+  }
+ 
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+ 
+  .header-stat {
+    text-align: right;
+  }
+ 
+  .header-stat-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    color: #666880;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+ 
+  .header-stat-val {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: #fff;
+    font-weight: 500;
+  }
+ 
+  .divider-v {
+    width: 1px;
+    height: 28px;
+    background: #2e2e40;
+  }
+ 
+  .live-pill {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(0,184,148,0.15);
+    border: 1px solid rgba(0,184,148,0.3);
+    border-radius: 20px;
+    padding: 4px 12px;
+    font-size: 11px;
+    color: var(--accent3);
+    font-family: 'JetBrains Mono', monospace;
+  }
+ 
+  .live-dot {
+    width: 6px; height: 6px;
+    background: var(--accent3);
+    border-radius: 50%;
+    animation: blink 2s infinite;
+  }
+ 
+  @keyframes blink {
+    0%,100% { opacity: 1; }
+    50% { opacity: 0.2; }
+  }
+ 
+  /* ── MAIN ── */
+  main {
+    padding: 28px 40px 40px;
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+ 
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 16px;
+    margin-top: 28px;
+  }
+ 
+  .section-title {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text);
+  }
+ 
+  .section-line {
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+ 
+  .section-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+  }
+ 
+  /* ── KPI ── */
+  .kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin-bottom: 0;
+  }
+ 
+  .kpi-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 22px 24px;
+    box-shadow: var(--shadow);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+ 
+  .kpi-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(26,26,46,0.12);
+  }
+ 
+  .kpi-accent-bar {
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 4px;
+    border-radius: 10px 0 0 10px;
+  }
+ 
+  .kpi-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+ 
+  .kpi-value {
+    font-size: 28px;
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 6px;
+    color: var(--text);
+  }
+ 
+  .kpi-sub {
+    font-size: 11px;
+    color: var(--muted);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+ 
+  .kpi-badge {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    padding: 2px 7px;
+    border-radius: 3px;
+    font-weight: 500;
+  }
+ 
+  .badge-up { background: rgba(0,184,148,0.12); color: var(--accent3); }
+  .badge-down { background: rgba(214,48,49,0.1); color: var(--accent); }
+ 
+  /* ── CHART CARD ── */
+  .chart-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 24px;
+    box-shadow: var(--shadow);
+  }
+ 
+  .chart-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+ 
+  .chart-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 3px;
+  }
+ 
+  .chart-sub {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+  }
+ 
+  .chart-kpi-inline {
+    text-align: right;
+  }
+ 
+  .chart-kpi-inline .val {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text);
+  }
+ 
+  .chart-kpi-inline .lbl {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    color: var(--muted);
+  }
+ 
+  /* ── GRID ROWS ── */
+  .row { display: grid; gap: 14px; margin-bottom: 14px; }
+  .row-2-1 { grid-template-columns: 2fr 1fr; }
+  .row-3   { grid-template-columns: 1fr 1fr 1fr; }
+  .row-2   { grid-template-columns: 1fr 1fr; }
+ 
+  /* ── STATUS ── */
+  .status-list { display: flex; flex-direction: column; gap: 11px; }
+ 
+  .status-row {
+    display: grid;
+    grid-template-columns: 100px 1fr 56px;
+    align-items: center;
+    gap: 10px;
+  }
+ 
+  .status-label {
+    font-size: 11px;
+    color: var(--text);
+    font-weight: 500;
+  }
+ 
+  .status-track {
+    height: 6px;
+    background: var(--border);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+ 
+  .status-fill { height: 100%; border-radius: 3px; transition: width 1.2s ease; }
+ 
+  .status-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    text-align: right;
+  }
+ 
+  /* ── REGION BARS ── */
+  .region-list { display: flex; flex-direction: column; gap: 9px; }
+ 
+  .region-row {
+    display: grid;
+    grid-template-columns: 70px 1fr 64px;
+    align-items: center;
+    gap: 10px;
+  }
+ 
+  .region-name { font-size: 12px; font-weight: 500; color: var(--text); }
+ 
+  .region-track {
+    height: 8px;
+    background: var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+ 
+  .region-fill {
+    height: 100%;
+    border-radius: 4px;
+    background: linear-gradient(90deg, var(--accent2), #74b9ff);
+  }
+ 
+  .region-val {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    text-align: right;
+  }
+ 
+  /* ── LEGEND ── */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 12px;
+  }
+ 
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 11px;
+    color: var(--muted);
+  }
+ 
+  .legend-dot {
+    width: 8px; height: 8px;
+    border-radius: 2px;
+  }
+ 
+  /* ── FOOTER ── */
+  footer {
+    background: var(--tag-bg);
+    color: #555568;
+    text-align: center;
+    padding: 18px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    margin-top: 32px;
+  }
+ 
+  footer span { color: var(--accent); }
+ 
+  @media (max-width: 960px) {
+    .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+    .row-2-1, .row-3, .row-2 { grid-template-columns: 1fr; }
+    main { padding: 20px 16px; }
+    header { padding: 0 20px; }
+    .header-stat:not(:last-child) { display: none; }
+  }
+</style>
+</head>
+<body>
+ 
+<header>
+  <div class="header-left">
+    <div class="logo-badge">KR</div>
+    <div class="header-title">한국 쇼핑몰 분석 대시보드</div>
+  </div>
+  <div class="header-right">
+    <div class="header-stat">
+      <div class="header-stat-label">기준 기간</div>
+      <div class="header-stat-val">2023.01 — 2024.06</div>
+    </div>
+    <div class="divider-v"></div>
+    <div class="header-stat">
+      <div class="header-stat-label">데이터 건수</div>
+      <div class="header-stat-val">152,340 orders</div>
+    </div>
+    <div class="divider-v"></div>
+    <div class="live-pill"><span class="live-dot"></span>가상 데이터</div>
+  </div>
+</header>
+ 
+<main>
+ 
+  <!-- KPI -->
+  <div class="section-header" style="margin-top:0;">
+    <div class="section-title">핵심 지표</div>
+    <div class="section-line"></div>
+    <div class="section-tag">KEY METRICS</div>
+  </div>
+  <div class="kpi-grid">
+    <div class="kpi-card">
+      <div class="kpi-accent-bar" style="background:var(--accent)"></div>
+      <div class="kpi-label">총 매출</div>
+      <div class="kpi-value">₩248.7억</div>
+      <div class="kpi-sub"><span class="kpi-badge badge-up">↑ 18.4%</span> 전년 대비</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-accent-bar" style="background:var(--accent2)"></div>
+      <div class="kpi-label">총 주문 수</div>
+      <div class="kpi-value">152,340</div>
+      <div class="kpi-sub"><span class="kpi-badge badge-up">↑ 12.1%</span> 전년 대비</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-accent-bar" style="background:var(--accent3)"></div>
+      <div class="kpi-label">평균 주문액 (AOV)</div>
+      <div class="kpi-value">₩163,300</div>
+      <div class="kpi-sub"><span class="kpi-badge badge-up">↑ 5.6%</span> 전년 대비</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-accent-bar" style="background:var(--accent4)"></div>
+      <div class="kpi-label">총 회원 수</div>
+      <div class="kpi-value">98,721</div>
+      <div class="kpi-sub"><span class="kpi-badge badge-down">↓ 2.3%</span> 재구매율</div>
+    </div>
+  </div>
+ 
+  <!-- Revenue + Status -->
+  <div class="section-header">
+    <div class="section-title">매출 & 주문 현황</div>
+    <div class="section-line"></div>
+    <div class="section-tag">REVENUE &amp; STATUS</div>
+  </div>
+  <div class="row row-2-1">
+    <div class="chart-card">
+      <div class="chart-head">
+        <div>
+          <div class="chart-title">월별 매출 추이</div>
+          <div class="chart-sub">Monthly Revenue (단위: 만원)</div>
+        </div>
+        <div class="chart-kpi-inline">
+          <div class="val">₩17.2억</div>
+          <div class="lbl">최고 월 매출</div>
+        </div>
+      </div>
+      <canvas id="revenueChart" height="90"></canvas>
+    </div>
+    <div class="chart-card">
+      <div class="chart-head">
+        <div>
+          <div class="chart-title">주문 상태 분포</div>
+          <div class="chart-sub">Order Status</div>
+        </div>
+      </div>
+      <div class="status-list" id="statusList"></div>
+    </div>
+  </div>
+ 
+  <!-- Orders + Payment + Category -->
+  <div class="section-header">
+    <div class="section-title">채널 & 카테고리</div>
+    <div class="section-line"></div>
+    <div class="section-tag">CHANNEL &amp; CATEGORY</div>
+  </div>
+  <div class="row row-3">
+    <div class="chart-card">
+      <div class="chart-head">
+        <div>
+          <div class="chart-title">결제 수단별 비중</div>
+          <div class="chart-sub">Payment Methods</div>
+        </div>
+      </div>
+      <div style="max-width:210px;margin:0 auto;">
+        <canvas id="paymentChart" height="180"></canvas>
+      </div>
+      <div class="legend" id="payLegend"></div>
+    </div>
+    <div class="chart-card">
+      <div class="chart-head">
+        <div>
+          <div class="chart-title">카테고리별 매출 (Top 10)</div>
+          <div class="chart-sub">Revenue by Category</div>
+        </div>
+      </div>
+      <canvas id="categoryChart" height="170"></canvas>
+    </div>
+    <div class="chart-card">
+      <div class="chart-head">
+        <div>
+          <div class="chart-title">월별 주문 건수</div>
+          <div class="chart-sub">Monthly Order Count</div>
+        </div>
+      </div>
+      <canvas id="ordersChart" height="170"></canvas>
+    </div>
+  </div>
+ 
+  <!-- Region + Dual -->
+  <div class="section-header">
+    <div class="section-title">지역 & 복합 분석</div>
+    <div class="section-line"></div>
+    <div class="section-tag">REGION &amp; COMPOSITE</div>
+  </div>
+  <div class="row row-2">
+    <div class="chart-card">
+      <div class="chart-head">
+        <div>
+          <div class="chart-title">지역별 주문 분포 (시/도)</div>
+          <div class="chart-sub">Orders by Region</div>
+        </div>
+      </div>
+      <div class="region-list" id="regionList"></div>
+    </div>
+    <div class="chart-card">
+      <div class="chart-head">
+        <div>
+          <div class="chart-title">매출 vs 주문량 (이중 축)</div>
+          <div class="chart-sub">Revenue &amp; Orders Dual Axis</div>
+        </div>
+      </div>
+      <canvas id="dualChart" height="180"></canvas>
+    </div>
+  </div>
+ 
+</main>
+ 
+<footer>
+  가상 데이터 기반 한국 쇼핑몰 대시보드 &nbsp;·&nbsp; 실제 수치와 무관합니다 &nbsp;·&nbsp; Built with <span>Chart.js</span>
+</footer>
+ 
+<script>
+// ═══════════════════════════════════════════════════════
+//  가상 데이터 (Korean Virtual Data)
+// ═══════════════════════════════════════════════════════
+ 
+const months = [
+  "2023-01","2023-02","2023-03","2023-04","2023-05","2023-06",
+  "2023-07","2023-08","2023-09","2023-10","2023-11","2023-12",
+  "2024-01","2024-02","2024-03","2024-04","2024-05","2024-06"
+];
+ 
+// 단위: 만원
+const revenue = [
+  88200, 76500, 102300, 115800, 134200, 128700,
+  142500, 158900, 163400, 172100, 168300, 195600,
+  101400, 89700, 118200, 136700, 155300, 148900
+];
+ 
+const orderCounts = [
+  5820, 5140, 6830, 7510, 8270, 7940,
+  8640, 9380, 9810, 10240, 9970, 11560,
+  6210, 5790, 7380, 8430, 9240, 8920
+];
+ 
+const statusData = [
+  { name: "배송 완료", count: 135820, color: "#00b894" },
+  { name: "배송 중",   count: 8640,  color: "#0984e3" },
+  { name: "주문 처리", count: 4210,  color: "#fdcb6e" },
+  { name: "취소됨",    count: 2380,  color: "#d63031" },
+  { name: "반품/교환", count: 1290,  color: "#e17055" },
+];
+ 
+const paymentData = {
+  labels: ["신용카드", "카카오페이", "네이버페이", "토스페이", "무통장입금", "기타"],
+  values: [62140, 38420, 22870, 14560, 9830, 4520],
+  colors: ["#d63031", "#0984e3", "#00b894", "#e17055", "#6c5ce7", "#b2bec3"]
+};
+ 
+const categories = [
+  "패션의류", "뷰티/화장품", "식품/건강", "전자기기", "생활/주방",
+  "스포츠/레저", "출산/육아", "반려동물", "도서/취미", "자동차용품"
+];
+ 
+const catRevenue = [
+  4820, 3960, 3510, 3280, 2790, 2340, 1870, 1540, 1230, 980
+]; // 단위: 천만원
+ 
+const regions = [
+  ["서울특별시",   52410],
+  ["경기도",      38720],
+  ["부산광역시",   12840],
+  ["인천광역시",    9310],
+  ["대구광역시",    7640],
+  ["경상남도",     6820],
+  ["대전광역시",    5390],
+  ["광주광역시",    4710],
+  ["경상북도",     4280],
+  ["충청남도",     3680],
+];
+ 
+// ═══════════════════════════════════════════════════════
+//  Chart.js 기본 설정
+// ═══════════════════════════════════════════════════════
+Chart.defaults.color = '#8c8c9a';
+Chart.defaults.font.family = "'JetBrains Mono', monospace";
+Chart.defaults.font.size = 10;
+ 
+const grid = { color: '#e8e4dc', borderColor: '#e8e4dc' };
+ 
+const labelFmt = months.map(m => {
+  const [y, mo] = m.split('-');
+  return `${y.slice(2)}년 ${mo}월`;
+});
+ 
+// ── 월별 매출 라인 ──────────────────────────────────────
+new Chart(document.getElementById('revenueChart'), {
+  type: 'line',
+  data: {
+    labels: labelFmt,
+    datasets: [{
+      label: '매출(만원)',
+      data: revenue,
+      borderColor: '#d63031',
+      backgroundColor: 'rgba(214,48,49,0.06)',
+      borderWidth: 2.5,
+      pointBackgroundColor: '#d63031',
+      pointRadius: 3,
+      pointHoverRadius: 6,
+      fill: true,
+      tension: 0.45
+    }]
+  },
+  options: {
+    plugins: { legend: { display: false } },
+    scales: {
+      x: { grid, ticks: { maxTicksLimit: 9 } },
+      y: {
+        grid,
+        ticks: {
+          callback: v => `${(v/10000).toFixed(1)}억`
+        }
+      }
+    }
+  }
+});
+ 
+// ── 월별 주문 바 ───────────────────────────────────────
+new Chart(document.getElementById('ordersChart'), {
+  type: 'bar',
+  data: {
+    labels: labelFmt,
+    datasets: [{
+      label: '주문 건수',
+      data: orderCounts,
+      backgroundColor: orderCounts.map((_, i) =>
+        i < 12 ? 'rgba(9,132,227,0.65)' : 'rgba(9,132,227,0.35)'
+      ),
+      borderRadius: 4,
+    }]
+  },
+  options: {
+    plugins: { legend: { display: false } },
+    scales: {
+      x: { grid: { display: false }, ticks: { maxTicksLimit: 9 } },
+      y: { grid, ticks: { callback: v => v.toLocaleString() } }
+    }
+  }
+});
+ 
+// ── 결제수단 도넛 ──────────────────────────────────────
+new Chart(document.getElementById('paymentChart'), {
+  type: 'doughnut',
+  data: {
+    labels: paymentData.labels,
+    datasets: [{
+      data: paymentData.values,
+      backgroundColor: paymentData.colors,
+      borderColor: '#fff',
+      borderWidth: 3,
+      hoverOffset: 8
+    }]
+  },
+  options: {
+    cutout: '65%',
+    plugins: { legend: { display: false } }
+  }
+});
+ 
+// 결제수단 커스텀 레전드
+const legEl = document.getElementById('payLegend');
+paymentData.labels.forEach((lbl, i) => {
+  const pct = ((paymentData.values[i] / paymentData.values.reduce((a,b)=>a+b,0))*100).toFixed(1);
+  legEl.innerHTML += `<div class="legend-item">
+    <div class="legend-dot" style="background:${paymentData.colors[i]}"></div>
+    ${lbl} <span style="color:var(--text);font-weight:700;">${pct}%</span>
+  </div>`;
+});
+ 
+// ── 카테고리 수평 바 ───────────────────────────────────
+new Chart(document.getElementById('categoryChart'), {
+  type: 'bar',
+  data: {
+    labels: categories,
+    datasets: [{
+      label: '매출(천만원)',
+      data: catRevenue,
+      backgroundColor: [
+        '#d63031','#e17055','#fdcb6e','#00b894','#0984e3',
+        '#6c5ce7','#fd79a8','#00cec9','#74b9ff','#a29bfe'
+      ],
+      borderRadius: 5,
+    }]
+  },
+  options: {
+    indexAxis: 'y',
+    plugins: { legend: { display: false } },
+    scales: {
+      x: {
+        grid,
+        ticks: { callback: v => `${v}천만` }
+      },
+      y: { grid: { display: false } }
+    }
+  }
+});
+ 
+// ── 이중 축 ────────────────────────────────────────────
+new Chart(document.getElementById('dualChart'), {
+  type: 'line',
+  data: {
+    labels: labelFmt,
+    datasets: [
+      {
+        label: '매출(만원)',
+        data: revenue,
+        borderColor: '#d63031',
+        yAxisID: 'y1',
+        tension: 0.45,
+        borderWidth: 2,
+        pointRadius: 2,
+        pointBackgroundColor: '#d63031',
+      },
+      {
+        label: '주문수',
+        data: orderCounts,
+        borderColor: '#0984e3',
+        yAxisID: 'y2',
+        tension: 0.45,
+        borderWidth: 2,
+        borderDash: [4, 3],
+        pointRadius: 2,
+        pointBackgroundColor: '#0984e3',
+      }
+    ]
+  },
+  options: {
+    plugins: {
+      legend: {
+        labels: { boxWidth: 10, padding: 16 }
+      }
+    },
+    scales: {
+      x: { grid, ticks: { maxTicksLimit: 7 } },
+      y1: {
+        type: 'linear',
+        position: 'left',
+        grid,
+        ticks: { callback: v => `${(v/10000).toFixed(1)}억` }
+      },
+      y2: {
+        type: 'linear',
+        position: 'right',
+        grid: { display: false },
+        ticks: { callback: v => v.toLocaleString() }
+      }
+    }
+  }
+});
+ 
+// ── 주문 상태 목록 렌더링 ────────────────────────────────
+const maxStatus = statusData[0].count;
+const statusEl = document.getElementById('statusList');
+statusData.forEach(s => {
+  const pct = (s.count / maxStatus * 100).toFixed(1);
+  statusEl.innerHTML += `
+    <div class="status-row">
+      <div class="status-label">${s.name}</div>
+      <div class="status-track">
+        <div class="status-fill" style="width:${pct}%;background:${s.color}"></div>
+      </div>
+      <div class="status-num">${s.count.toLocaleString()}</div>
+    </div>`;
+});
+ 
+// ── 지역 목록 렌더링 ────────────────────────────────────
+const maxRegion = regions[0][1];
+const regionEl = document.getElementById('regionList');
+regions.forEach(([name, val]) => {
+  const pct = (val / maxRegion * 100).toFixed(1);
+  regionEl.innerHTML += `
+    <div class="region-row">
+      <div class="region-name">${name}</div>
+      <div class="region-track">
+        <div class="region-fill" style="width:${pct}%"></div>
+      </div>
+      <div class="region-val">${val.toLocaleString()}</div>
+    </div>`;
+});
+</script>
+</body>
+</html>
