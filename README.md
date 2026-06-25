@@ -8,6 +8,7 @@ AI & Big Data Analysis Portfolio | Python, SQL, Machine Learning, Deep Learning,
 - Computer Vision / NLP
 
 ## 📁 Projects
+- [Deeplearning_project](./Deeplearning_project) — PCB 불량 검출 YOLOv8 전이학습 (Pascal VOC XML → YOLO 변환, mAP@0.5: 0.4188)
 - [Vision_project](./Vision_project) — MVTec Pill 비지도 학습 기반 불량 검출 (PCA, Isolation Forest, HOG+HSV)
 - [MachineLearning_project](./MachineLearning_project) — 심장질환 예측 머신러닝 모델 비교 분석
 - [Crawling_project](./Crawling_project) — 자동차·기계 분야 채용 공고 크롤링 및 요구 역량 분석
