@@ -8,6 +8,7 @@ AI & Big Data Analysis Portfolio | Python, SQL, Machine Learning, Deep Learning,
 - Computer Vision / NLP
 
 ## 📁 Projects
+- [Computermate_project](./Computermate_project) — Anomalib 기반 볼트 불량 이상 탐지 (PatchCore, EfficientAD, 95 Percentile Threshold)
 - [Transfer_Learning_project](./Transfer_Learning_project) — 브라질 Olist 이커머스 → 한국 쇼핑몰 분석 적용 (Chart.js 대시보드, 매출·주문·예측 분석)
 - [NLP_project](./NLP_project) — 타로 하루 플래너 LLM 프롬프트 설계 (GPT-4o-mini, temperature 실험, 카드 데이터 설계)
 - [Deeplearning_project](./Deeplearning_project) — PCB 불량 검출 YOLOv8 전이학습 (Pascal VOC XML → YOLO 변환, mAP@0.5: 0.4188)

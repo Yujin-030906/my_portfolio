@@ -1,0 +1,15 @@
+# 데이터셋 (대용량 이미지)
+bolt/
+datasets/
+imagenette/
+samurai/
+results/
+*.jpg
+*.jpeg
+*.png
+*.JPEG
+
+# 모델 가중치
+*.pt
+*.pth
+*.ckpt
