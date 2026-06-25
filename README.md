@@ -8,6 +8,7 @@ AI & Big Data Analysis Portfolio | Python, SQL, Machine Learning, Deep Learning,
 - Computer Vision / NLP
 
 ## 📁 Projects
+- [NLP_project](./NLP_project) — 타로 하루 플래너 LLM 프롬프트 설계 (GPT-4o-mini, temperature 실험, 카드 데이터 설계)
 - [Deeplearning_project](./Deeplearning_project) — PCB 불량 검출 YOLOv8 전이학습 (Pascal VOC XML → YOLO 변환, mAP@0.5: 0.4188)
 - [Vision_project](./Vision_project) — MVTec Pill 비지도 학습 기반 불량 검출 (PCA, Isolation Forest, HOG+HSV)
 - [MachineLearning_project](./MachineLearning_project) — 심장질환 예측 머신러닝 모델 비교 분석
