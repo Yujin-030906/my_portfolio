@@ -1,0 +1,181 @@
+﻿url,description
+https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=52868949&t_ref=jobcategory_recruit&t_ref_content=general#seq=0,"모집분야
+자율주행 SLAM
+엔지니어
+
+📋 자격요건
+• 경력 3년 이상
+• 대학교졸업(4년)이상
+•로봇공학, 컴퓨터공학, 전자공학, 기계공학, 항공우주 등 관련 전공 석사 이상 
+  혹은 동등한 경험
+ •SLAM (특히 LiDAR SLAM) 알고리즘에 대한 깊은 이해
+ •Point Cloud 처리 및 정합 알고리즘(ICP, NDT, LOAM 등) 구현 경험
+ •ROS/ROS2를 활용한 센서 데이터 통합 및 SLAM 개발 경험
+ •C++, Python 기반 소프트웨어 개발 능력
+ •Git 기반 버전 관리 및 협업 경험
+ •Eigen, PCL(Point Cloud Library), OpenCV 등 사용 능력
+ •수학적 모델링 (선형대수, 확률 필터링, 최적화) 이해
+📋 우대사항
+ㆍ대표적인 오픈소스 SLAM 시스템 경험 (LOAM, LeGO-LOAM, Cartographer,
+     FAST-LIO, LIO-SAM 등)
+ ㆍSensor Fusion 경험 (LiDAR + IMU + GPS + Camera 등)
+ ㆍGraph SLAM, Factor Graph, Pose Graph Optimization(g2o, Ceres Solver 등) 경험
+ ㆍKalman Filter, EKF/UKF, Particle Filter 등 필터링 기법 경험
+ ㆍSLAM 기반 HD맵 생성 및 동기화 경험
+ ㆍSLAM 기반 자율주행 실차 테스트 또는 로봇 플랫폼 운영 경험
+ ㆍ카메라-LiDAR 보정(Calibration), 시간 동기화(Time Synchronization) 경험
+ ㆍNVIDIA Isaac, Autoware, Apollo 등 자율주행 프레임워크 경험
+ ㆍ관련 논문 작성 및 학회 발표 경험
+ ㆍCUDA, OpenCL 등 GPU 연산 최적화 경험"
+https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=53061389&t_ref=jobcategory_recruit&t_ref_content=general#seq=0,"[인티그리트]
+온디바이스 AI와 로보틱스 플랫폼을 기반으로 차세대 지능형 인터페이스를 연구·구현하는 딥테크 기업입니다.
+ 우리는 온디바이스 AI 기술을 통해 하드웨어–펌웨어–AI 모델을 하나의 흐름으로 통합하여 ‘실행 가능한 지능(Executable Intelligence)’을 만들어갑니다.
+당신의 꿈과 비전은 AI의 다음 세대를 함께 만들어가는 인티그리트의 새로운 동력이 됩니다.
+       [AI 플랫폼 SW] 로봇 주행 / AI SW (LLM) / 임베디드 SW 개발]
+임베디드플랫폼/플랫폼개발/클라우드개발(0명)
+📋 주요업무
+• 퀄컴 드래곤윙 AP - 리눅스, 안드로이드 OS  Firmware & BSP 
+• 로봇 솔루션 FW 개발 
+• AI (LLM,VLA) 개발 
+• ROS 기반 자율주행 SW 개발  
+📋 자격요건
+• 경력 (연수 무관)
+• 학력무관"
+https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=53032954&t_ref=jobcategory_recruit&t_ref_content=general#seq=0,"강릉 자율주행차 오퍼레이터 신입/경력 채용
+차량 오퍼레이터 (2명)
+📋 주요업무
+• 자율주행차 운행
+• 자율주행차 운행 데이터 수집
+• 자율주행차 운행 관련 코드수정(Python)
+• 자율주행차 서비스(탑승 및 시승)
+• 운행 관련 문서작성(엑셀 파워포인트 한글 워드)
+• 강원사업파트(강릉시) 부서 소속으로 함께할 예정이에요.
+📋 자격요건
+• 경력 무관 (신입 지원 가능)
+• 학력무관"
+https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=52873318&t_ref=jobcategory_recruit&t_ref_content=general#seq=0,"(주)케이엠앤아이
+기술연구소
+신입 및 경력 인재 채용
+최고의 제품으로 고객감동을 실현하고 끊임없는 가치창조로 공동번영을 추구한다는
+사명으로 창조적이고 도전적인 인재와 함께 하고자 케이엠앤아이에서 여러분을 모십니다.
+모집내용
+구분 소속 및 근무지 직무내용 자격요건 및 우대사항 인원
+신입 및 경력
+(정규직) 기술연구소 ㆍ구조 해석 엔지니어
+   (차량용 시트 충돌 및 정적 해석) [자격요건]
+ㆍLS-DYNA, PRIMER, HYPER-MESH 능숙자
+ㆍ학력 : 학사 이상(졸업예정자 포함)
+   (기계, 자동차공학 등 관련학과)
+ㆍ영어능력 우수자(공인어학증명 필수)
+ㆍ경력 : 5년 미만
+
+[우대사항]
+ㆍ해당 직무 근무 경험자
+ㆍ관련 분야 석사 학위 소지자
+ㆍ제조업 근무 경력자 우대
+ㆍ직무 관련 자격증 소지자 우대 0명
+* 신입 : 수습 3개월 적용"
+https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=53116842&t_ref=jobcategory_recruit&t_ref_content=general#seq=0,"◈ 의뢰회사
+- 국내 자동차/가전용 모터제조 중견기업
+
+◈포지션
+- R&D (유성감속기 및로봇 엑추에이터용 감속기 설계) (선임~책임급) : 2명
+ ◈ 담당업무
+- 유성 감속기 개발설계
+- 로봇 엑추에이터 개발설계
+ ◈ 자격요건
+- 대졸(4년제) 이상
+- 기계과/전기과/자동차과 전공자 (필수)
+- 유성 감속기 설계 경력 5년 이상
+- 영어 : 토익 600점이상
+ ◈ 우대사항
+- 기계 감속기 개발 경력자
+- 로봇 엑추에이터 개발 경력자"
+https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=53081291&t_ref=jobcategory_recruit&t_ref_content=general#seq=0,"검증(신입~7년, SW, 자동차, 코스닥)
+검증(신입~7년, SW, 자동차, 코스닥)(0명)
+📋 주요업무
+검증 (신입~7년경력, 자동차 부품, 코스닥 상장사)
+담당업무
+- 자동차 분야 통신 검증
+- 요구사양 기반 테스트 케이스 개발
+- 신호 측정 장비를 이용한 통신 검증 수행
+자격요건
+- 자동차 분야 검증에 관심이 있는 지원자
+- C언어 가능자
+- 통신 검증 분야 교육 경험자
+- 학사졸
+우대사항
+- CANoe 및 T32 장비 사용 경험자
+- CAN 통신 분야 프로젝트 및 업무 수행 경험자
+- SW 검증 관련 자격증 보유자
+면접 : 화상면접(코딩테스트 예정)
+근무지 : 경기도 판교
+------------------------
+검증 2 (신입~7년경력, 자동차 부품, 코스닥 상장사)
+담당업무
+- 요구사항 기반 테스트케이스 개발
+- HILS 장비를 활용한 검증 수행 및 결과 보고
+자격요건
+- MATLAB Simulink 가능자( 모델 분석 )
+- C언어 가능자
+- 자동차 분야 검증에 관심이 있는 지원자
+- 학사졸
+우대사항
+- MATLAB Simulink를 이용한 설계 모델 분석 및 초급 수준의 개발 가능
+- HILS 장비 및 관련 소프트웨어 운용 경험 보유 및 교육 이수자(ETAS, dSPACE, Vector 등)
+- 임베디드 시스템 및 자동차 SW 관련 검증 경험자 및 교육 이수자
+- 자동차 분야 SW 개발 및 검증 경험자
+- SW 검증 관련 자격증 보유자
+면접 : 화상면접(코딩테스트 예정)
+근무지 : 경기도 판교
+📋 자격요건
+• 신입 / 경력 7년 이하
+• 대학교졸업(4년)이상"
+https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=52898615&t_ref=jobcategory_recruit&t_ref_content=general#seq=0,"2026년 상반기 공개 채용 공고 (연구개발)
+
+모집부문 및 상세내용
+모집부문 및 자격요건
+모집부문 담당업무 지원자격 모집인원 우대 사항
+E2E AI 자율주행
+기술 개발  · E2E AI 자율주행을 위한 데이터
+   파이프라인 구축
+ · 데이터 라벨링 자동화 환경 설계
+ · Simulation 기반 학습(Training)
+  환경 구축
+ · LLM / VLM / VLA 기반 자율주행
+   모델 학습 및 실차 적용  · 학력: 석사 이상 (경력 무관)
+ · C/C++, Python 사용 가능자
+ · 자율주행 / 로보틱스 / AI 시스템 중
+  1개 이상에 대한 이해
+ · 운전 경력 1년 이상 O명  · 자동차·전자 SW 개발 경험 PyTorch, ROS2,
+  시뮬레이션 환경 경험
+· 영어 기술 문서 이해 및 커뮤니케이션 가능자
+로보택시 자율주행
+SW 개발  · ROS1 / ROS2 기반 자율주행
+   소프트웨어 개발
+ · LiDAR / Camera 인지 알고리즘 개발
+ · 시뮬레이션 기반 자율주행 검증 및
+  안전성 확보 기술 개발  · 학력: 석사 이상 (경력 무관)
+ · C/C++, Python 사용 가능자
+· 운전 경력 1년 이상 O명  · ROS 기반 프로젝트 경험
+ · 자율주행 / 로보틱스 / SLAM / Perception /
+ Planning 경험
+자율주행 프로젝트 PM (시스템 엔지니어)  · E2E AI 및 로보택시 자율주행
+  프로젝트 총괄 · 제철소
+ ·항만·스마트시티 등 실환경 자율주행
+  프로젝트 관리
+ · 기술 조직과 사업 조직 간 협업 및
+  일정·품질 관리  · 경력: 5년 이상
+ · 학력: 석사 이상
+ · 자동차 또는 자율주행 관련
+ 실무 경험
+ · 운전 경력 3년 이상 O명  · 자율주행 시스템 전반에 대한 이해
+ · 기술 문서 작성 및 커뮤니케이션 역량 영어
+  커뮤니케이션 가능자
+자율주행 SW 인턴  · 자율주행 요소 기술
+ (E2E AI,Perception, Sensor Fusion)    개발 지원
+ · AI / LiDAR / Camera 기반 설계 지원
+ · 자율주행 운행 데이터 분석
+ · 자율주행 시스템 외관 및 사용자 관점      설계 지원  · 학력: 학사 이상 (경력 무관)
+ · 자동차 또는 AI 관련 프로젝트 경험 O명  · 기계 / 전기 / 전자 / 메카트로닉스 / 컴퓨터 전공
+ · 자율주행 엔지니어로의 성장 의지"

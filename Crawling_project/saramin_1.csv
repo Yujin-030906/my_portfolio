@@ -1,0 +1,29 @@
+﻿url,description
+https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=52868949&t_ref=jobcategory_recruit&t_ref_content=general#seq=0,"모집분야
+자율주행 SLAM
+엔지니어
+
+📋 자격요건
+• 경력 3년 이상
+• 대학교졸업(4년)이상
+•로봇공학, 컴퓨터공학, 전자공학, 기계공학, 항공우주 등 관련 전공 석사 이상 
+  혹은 동등한 경험
+ •SLAM (특히 LiDAR SLAM) 알고리즘에 대한 깊은 이해
+ •Point Cloud 처리 및 정합 알고리즘(ICP, NDT, LOAM 등) 구현 경험
+ •ROS/ROS2를 활용한 센서 데이터 통합 및 SLAM 개발 경험
+ •C++, Python 기반 소프트웨어 개발 능력
+ •Git 기반 버전 관리 및 협업 경험
+ •Eigen, PCL(Point Cloud Library), OpenCV 등 사용 능력
+ •수학적 모델링 (선형대수, 확률 필터링, 최적화) 이해
+📋 우대사항
+ㆍ대표적인 오픈소스 SLAM 시스템 경험 (LOAM, LeGO-LOAM, Cartographer,
+     FAST-LIO, LIO-SAM 등)
+ ㆍSensor Fusion 경험 (LiDAR + IMU + GPS + Camera 등)
+ ㆍGraph SLAM, Factor Graph, Pose Graph Optimization(g2o, Ceres Solver 등) 경험
+ ㆍKalman Filter, EKF/UKF, Particle Filter 등 필터링 기법 경험
+ ㆍSLAM 기반 HD맵 생성 및 동기화 경험
+ ㆍSLAM 기반 자율주행 실차 테스트 또는 로봇 플랫폼 운영 경험
+ ㆍ카메라-LiDAR 보정(Calibration), 시간 동기화(Time Synchronization) 경험
+ ㆍNVIDIA Isaac, Autoware, Apollo 등 자율주행 프레임워크 경험
+ ㆍ관련 논문 작성 및 학회 발표 경험
+ ㆍCUDA, OpenCL 등 GPU 연산 최적화 경험"

@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Olist E-Commerce Dashboard</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0a0f;
+    --surface: #111118;
+    --surface2: #18181f;
+    --border: #2a2a38;
+    --accent: #f0c040;
+    --accent2: #7c6af7;
+    --accent3: #3de8a0;
+    --text: #e8e8f0;
+    --muted: #6b6b80;
+    --danger: #f07060;
+  }
+ 
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+ 
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Syne', sans-serif;
+    min-height: 100vh;
+  }
+ 
+  /* HEADER */
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 36px;
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    background: rgba(10,10,15,0.9);
+    backdrop-filter: blur(12px);
+    z-index: 100;
+  }
+ 
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+ 
+  .logo-mark {
+    width: 36px; height: 36px;
+    background: var(--accent);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px; font-weight: 800;
+    color: #000;
+  }
+ 
+  .logo-text {
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+  }
+ 
+  .logo-text span { color: var(--accent); }
+ 
+  .header-meta {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    text-align: right;
+    line-height: 1.6;
+  }
+ 
+  .live-dot {
+    display: inline-block;
+    width: 6px; height: 6px;
+    background: var(--accent3);
+    border-radius: 50%;
+    margin-right: 5px;
+    animation: pulse 2s infinite;
+  }
+ 
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+ 
+  /* MAIN LAYOUT */
+  main {
+    padding: 32px 36px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+ 
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+ 
+  /* KPI CARDS */
+  .kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+ 
+  .kpi-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+ 
+  .kpi-card:hover { border-color: var(--accent); }
+ 
+  .kpi-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+  }
+ 
+  .kpi-card:nth-child(1)::before { background: var(--accent); }
+  .kpi-card:nth-child(2)::before { background: var(--accent2); }
+  .kpi-card:nth-child(3)::before { background: var(--accent3); }
+  .kpi-card:nth-child(4)::before { background: var(--danger); }
+ 
+  .kpi-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+ 
+  .kpi-value {
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+ 
+  .kpi-card:nth-child(1) .kpi-value { color: var(--accent); }
+  .kpi-card:nth-child(2) .kpi-value { color: var(--accent2); }
+  .kpi-card:nth-child(3) .kpi-value { color: var(--accent3); }
+  .kpi-card:nth-child(4) .kpi-value { color: var(--danger); }
+ 
+  .kpi-sub {
+    font-size: 12px;
+    color: var(--muted);
+    font-family: 'DM Mono', monospace;
+  }
+ 
+  /* CHART GRID */
+  .chart-row {
+    display: grid;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+ 
+  .chart-row-2 { grid-template-columns: 2fr 1fr; }
+  .chart-row-3 { grid-template-columns: 1fr 1fr 1fr; }
+  .chart-row-2b { grid-template-columns: 1fr 1fr; }
+ 
+  .chart-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    transition: border-color 0.2s;
+  }
+ 
+  .chart-card:hover { border-color: var(--border); }
+ 
+  .chart-title {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    margin-bottom: 4px;
+  }
+ 
+  .chart-subtitle {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    margin-bottom: 20px;
+  }
+ 
+  .chart-wrap {
+    position: relative;
+  }
+ 
+  /* STATUS TABLE */
+  .status-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 8px;
+  }
+ 
+  .status-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+ 
+  .status-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+ 
+  .status-name {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    flex: 1;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+ 
+  .status-bar-wrap {
+    flex: 2;
+    height: 4px;
+    background: var(--border);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+ 
+  .status-bar {
+    height: 100%;
+    border-radius: 2px;
+    transition: width 1s ease;
+  }
+ 
+  .status-count {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--text);
+    text-align: right;
+    min-width: 48px;
+  }
+ 
+  /* TOP STATES */
+  .state-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+ 
+  .state-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+ 
+  .state-code {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--accent);
+    width: 28px;
+  }
+ 
+  .state-bar-wrap {
+    flex: 1;
+    height: 6px;
+    background: var(--border);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+ 
+  .state-bar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent2), var(--accent));
+    border-radius: 3px;
+  }
+ 
+  .state-val {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    min-width: 44px;
+    text-align: right;
+  }
+ 
+  /* FOOTER */
+  footer {
+    text-align: center;
+    padding: 24px;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    border-top: 1px solid var(--border);
+    margin-top: 32px;
+  }
+ 
+  @media (max-width: 900px) {
+    .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+    .chart-row-2, .chart-row-3, .chart-row-2b { grid-template-columns: 1fr; }
+    main { padding: 20px 16px; }
+    header { padding: 16px; }
+  }
+</style>
+</head>
+<body>
+ 
+<header>
+  <div class="logo">
+    <div class="logo-mark">O</div>
+    <div class="logo-text"><span>Olist</span> Analytics</div>
+  </div>
+  <div class="header-meta">
+    <span class="live-dot"></span>Dataset: 2017.05 — 2018.08<br>
+    Brazilian E-Commerce · 99,441 Orders
+  </div>
+</header>
+ 
+<main>
+ 
+  <!-- KPI -->
+  <div class="section-label">핵심 지표 / Key Metrics</div>
+  <div class="kpi-grid">
+    <div class="kpi-card">
+      <div class="kpi-label">총 매출 / Total Revenue</div>
+      <div class="kpi-value">R$16.0M</div>
+      <div class="kpi-sub">전체 기간 누적</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">총 주문 수 / Orders</div>
+      <div class="kpi-value">99,441</div>
+      <div class="kpi-sub">96.5% 배송 완료</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">평균 주문액 / AOV</div>
+      <div class="kpi-value">R$161</div>
+      <div class="kpi-sub">건당 평균값</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">총 고객 수 / Customers</div>
+      <div class="kpi-value">99,441</div>
+      <div class="kpi-sub">고유 고객 계정</div>
+    </div>
+  </div>
+ 
+  <!-- Revenue + Status -->
+  <div class="chart-row chart-row-2" style="margin-bottom:16px;">
+    <div class="chart-card">
+      <div class="chart-title">월별 매출 추이</div>
+      <div class="chart-subtitle">Monthly Revenue (BRL)</div>
+      <div class="chart-wrap"><canvas id="revenueChart" height="100"></canvas></div>
+    </div>
+    <div class="chart-card">
+      <div class="chart-title">주문 상태 분포</div>
+      <div class="chart-subtitle">Order Status Breakdown</div>
+      <div class="status-list" id="statusList"></div>
+    </div>
+  </div>
+ 
+  <!-- Orders + Payment + Categories -->
+  <div class="chart-row chart-row-3" style="margin-bottom:16px;">
+    <div class="chart-card">
+      <div class="chart-title">월별 주문량</div>
+      <div class="chart-subtitle">Monthly Order Count</div>
+      <div class="chart-wrap"><canvas id="ordersChart" height="140"></canvas></div>
+    </div>
+    <div class="chart-card">
+      <div class="chart-title">결제 수단</div>
+      <div class="chart-subtitle">Payment Methods</div>
+      <div class="chart-wrap" style="max-width:220px;margin:0 auto;"><canvas id="paymentChart" height="160"></canvas></div>
+    </div>
+    <div class="chart-card">
+      <div class="chart-title">카테고리별 매출 Top 10</div>
+      <div class="chart-subtitle">Revenue by Category</div>
+      <div class="chart-wrap"><canvas id="categoryChart" height="140"></canvas></div>
+    </div>
+  </div>
+ 
+  <!-- States -->
+  <div class="chart-row chart-row-2b">
+    <div class="chart-card">
+      <div class="chart-title">지역별 고객 분포 Top 10</div>
+      <div class="chart-subtitle">Customers by State</div>
+      <div class="state-grid" id="stateGrid"></div>
+    </div>
+    <div class="chart-card">
+      <div class="chart-title">주문량 vs 매출 비교</div>
+      <div class="chart-subtitle">Orders &amp; Revenue Overlay</div>
+      <div class="chart-wrap"><canvas id="dualChart" height="180"></canvas></div>
+    </div>
+  </div>
+ 
+</main>
+ 
+<footer>
+  Data Source: Olist Brazilian E-Commerce Public Dataset &nbsp;·&nbsp; Dashboard built with Chart.js
+</footer>
+ 
+<script>
+// ─── DATA ───────────────────────────────────────────────────────────────────
+const months = ["2017-05","2017-06","2017-07","2017-08","2017-09","2017-10","2017-11","2017-12","2018-01","2018-02","2018-03","2018-04","2018-05","2018-06","2018-07","2018-08"];
+const revenue = [592918.82,511276.38,592382.92,674396.32,727762.45,779677.88,1194882.8,878401.48,1115004.18,992463.34,1159652.12,1160785.48,1153982.15,1023880.5,1066540.75,1022425.32];
+const orderCounts = [3700,3245,4026,4331,4285,4631,7544,5673,7269,6728,7211,6939,6873,6167,6292,6512];
+ 
+const statusData = [
+  {name:"Delivered", count:96478, color:"#3de8a0"},
+  {name:"Shipped", count:1107, color:"#7c6af7"},
+  {name:"Canceled", count:625, color:"#f07060"},
+  {name:"Unavailable", count:609, color:"#f0c040"},
+  {name:"Invoiced", count:314, color:"#60b4f0"},
+  {name:"Processing", count:301, color:"#f07090"},
+];
+ 
+const paymentData = {
+  labels:["Credit Card","Boleto","Voucher","Debit Card"],
+  values:[76795,19784,5775,1529],
+  colors:["#f0c040","#7c6af7","#3de8a0","#f07060"]
+};
+ 
+const categories = ["health_beauty","watches_gifts","bed_bath_table","sports_leisure","computers_acc","furniture_decor","cool_stuff","housewares","auto","garden_tools"];
+const catRevenue = [1258681,1205006,1036989,988049,911954,729762,635291,632249,592720,485256];
+ 
+const states = [["SP",41746],["RJ",12852],["MG",11635],["RS",5466],["PR",5045],["SC",3637],["BA",3380],["DF",2140],["ES",2033],["GO",2020]];
+ 
+// ─── CHART DEFAULTS ──────────────────────────────────────────────────────────
+Chart.defaults.color = '#6b6b80';
+Chart.defaults.font.family = "'DM Mono', monospace";
+Chart.defaults.font.size = 10;
+ 
+const gridOpts = {
+  color: '#2a2a38',
+  borderColor: '#2a2a38',
+};
+ 
+// ─── REVENUE CHART ───────────────────────────────────────────────────────────
+new Chart(document.getElementById('revenueChart'), {
+  type: 'line',
+  data: {
+    labels: months,
+    datasets: [{
+      label: 'Revenue (BRL)',
+      data: revenue,
+      borderColor: '#f0c040',
+      backgroundColor: 'rgba(240,192,64,0.08)',
+      borderWidth: 2,
+      pointBackgroundColor: '#f0c040',
+      pointRadius: 3,
+      fill: true,
+      tension: 0.4
+    }]
+  },
+  options: {
+    plugins: { legend: { display: false } },
+    scales: {
+      x: { grid: gridOpts, ticks: { maxTicksLimit: 8 } },
+      y: {
+        grid: gridOpts,
+        ticks: { callback: v => 'R$' + (v/1000).toFixed(0) + 'K' }
+      }
+    }
+  }
+});
+ 
+// ─── ORDERS CHART ────────────────────────────────────────────────────────────
+new Chart(document.getElementById('ordersChart'), {
+  type: 'bar',
+  data: {
+    labels: months,
+    datasets: [{
+      label: 'Orders',
+      data: orderCounts,
+      backgroundColor: 'rgba(124,106,247,0.7)',
+      borderRadius: 4,
+    }]
+  },
+  options: {
+    plugins: { legend: { display: false } },
+    scales: {
+      x: { grid: { display: false }, ticks: { maxTicksLimit: 8 } },
+      y: { grid: gridOpts }
+    }
+  }
+});
+ 
+// ─── PAYMENT DOUGHNUT ────────────────────────────────────────────────────────
+new Chart(document.getElementById('paymentChart'), {
+  type: 'doughnut',
+  data: {
+    labels: paymentData.labels,
+    datasets: [{
+      data: paymentData.values,
+      backgroundColor: paymentData.colors,
+      borderColor: '#111118',
+      borderWidth: 2,
+      hoverOffset: 6
+    }]
+  },
+  options: {
+    cutout: '62%',
+    plugins: {
+      legend: {
+        position: 'bottom',
+        labels: { boxWidth: 10, padding: 10 }
+      }
+    }
+  }
+});
+ 
+// ─── CATEGORY BAR ────────────────────────────────────────────────────────────
+new Chart(document.getElementById('categoryChart'), {
+  type: 'bar',
+  data: {
+    labels: categories,
+    datasets: [{
+      label: 'Revenue',
+      data: catRevenue,
+      backgroundColor: categories.map((_,i) => `hsl(${170 + i*16}, 70%, 55%)`),
+      borderRadius: 4
+    }]
+  },
+  options: {
+    indexAxis: 'y',
+    plugins: { legend: { display: false } },
+    scales: {
+      x: {
+        grid: gridOpts,
+        ticks: { callback: v => 'R$' + (v/1000).toFixed(0) + 'K' }
+      },
+      y: { grid: { display: false } }
+    }
+  }
+});
+ 
+// ─── DUAL AXIS ───────────────────────────────────────────────────────────────
+new Chart(document.getElementById('dualChart'), {
+  type: 'line',
+  data: {
+    labels: months,
+    datasets: [
+      {
+        label: 'Revenue',
+        data: revenue,
+        borderColor: '#f0c040',
+        yAxisID: 'y1',
+        tension: 0.4,
+        borderWidth: 2,
+        pointRadius: 2
+      },
+      {
+        label: 'Orders',
+        data: orderCounts,
+        borderColor: '#7c6af7',
+        yAxisID: 'y2',
+        tension: 0.4,
+        borderWidth: 2,
+        pointRadius: 2
+      }
+    ]
+  },
+  options: {
+    plugins: { legend: { labels: { boxWidth: 10 } } },
+    scales: {
+      x: { grid: gridOpts, ticks: { maxTicksLimit: 6 } },
+      y1: {
+        type: 'linear', position: 'left',
+        grid: gridOpts,
+        ticks: { callback: v => 'R$' + (v/1000).toFixed(0) + 'K' }
+      },
+      y2: {
+        type: 'linear', position: 'right',
+        grid: { display: false },
+        ticks: { callback: v => v.toLocaleString() }
+      }
+    }
+  }
+});
+ 
+// ─── STATUS LIST ─────────────────────────────────────────────────────────────
+const maxCount = statusData[0].count;
+const list = document.getElementById('statusList');
+statusData.forEach(s => {
+  const pct = (s.count / maxCount * 100).toFixed(1);
+  list.innerHTML += `
+    <div class="status-row">
+      <span class="status-dot" style="background:${s.color}"></span>
+      <span class="status-name">${s.name}</span>
+      <div class="status-bar-wrap">
+        <div class="status-bar" style="width:${pct}%;background:${s.color}"></div>
+      </div>
+      <span class="status-count">${s.count.toLocaleString()}</span>
+    </div>`;
+});
+ 
+// ─── STATE GRID ──────────────────────────────────────────────────────────────
+const maxState = states[0][1];
+const sg = document.getElementById('stateGrid');
+states.forEach(([code, val]) => {
+  const pct = (val / maxState * 100).toFixed(1);
+  sg.innerHTML += `
+    <div class="state-row">
+      <span class="state-code">${code}</span>
+      <div class="state-bar-wrap">
+        <div class="state-bar" style="width:${pct}%"></div>
+      </div>
+      <span class="state-val">${val.toLocaleString()}</span>
+    </div>`;
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,2181 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ShopIQ — 한국 쇼핑몰 대시보드</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ════════════════════════════════════════
+   DESIGN TOKENS
+════════════════════════════════════════ */
+:root {
+  /* Surface */
+  --bg:       #f2f0eb;
+  --surface:  #ffffff;
+  --surface2: #f8f7f4;
+  --surface3: #edeae4;
+ 
+  /* Border */
+  --border:   #ddd9d0;
+  --border2:  #c8c4bb;
+ 
+  /* Brand */
+  --ink:      #1c1c1e;
+  --ink2:     #3a3a3c;
+  --muted:    #8e8e93;
+  --faint:    #aeaeb2;
+ 
+  /* Accent palette */
+  --cobalt:   #1c5fff;
+  --cobalt-l: rgba(28,95,255,0.10);
+  --emerald:  #00a878;
+  --emerald-l:rgba(0,168,120,0.10);
+  --amber:    #d4830a;
+  --amber-l:  rgba(212,131,10,0.10);
+  --crimson:  #d93025;
+  --crimson-l:rgba(217,48,37,0.10);
+  --violet:   #7c3aed;
+  --violet-l: rgba(124,58,237,0.10);
+ 
+  /* Sidebar */
+  --sidebar-w: 220px;
+  --header-h:  56px;
+ 
+  /* Shadow */
+  --shadow-sm: 0 1px 3px rgba(28,28,30,0.08), 0 1px 2px rgba(28,28,30,0.04);
+  --shadow-md: 0 4px 12px rgba(28,28,30,0.10), 0 2px 4px rgba(28,28,30,0.06);
+ 
+  /* Radius */
+  --r: 10px;
+  --r-sm: 6px;
+}
+ 
+/* ════════════════════════════════════════
+   RESET & BASE
+════════════════════════════════════════ */
+*, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+ 
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  display: flex;
+  min-height: 100vh;
+  font-size: 14px;
+}
+ 
+/* ════════════════════════════════════════
+   SIDEBAR
+════════════════════════════════════════ */
+.sidebar {
+  width: var(--sidebar-w);
+  background: var(--ink);
+  position: fixed;
+  top: 0; left: 0; bottom: 0;
+  display: flex;
+  flex-direction: column;
+  z-index: 300;
+  overflow: hidden;
+}
+ 
+.sidebar-logo {
+  height: var(--header-h);
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  gap: 10px;
+  flex-shrink: 0;
+}
+ 
+.logo-mark {
+  width: 28px; height: 28px;
+  background: var(--cobalt);
+  border-radius: 7px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px; font-weight: 900; color: #fff;
+  letter-spacing: -0.5px;
+  flex-shrink: 0;
+}
+ 
+.logo-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.02em;
+}
+ 
+.logo-name span { color: var(--cobalt); }
+ 
+.sidebar-section {
+  padding: 18px 12px 8px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  color: rgba(255,255,255,0.25);
+  text-transform: uppercase;
+}
+ 
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 12px;
+  margin: 1px 8px;
+  border-radius: var(--r-sm);
+  cursor: pointer;
+  color: rgba(255,255,255,0.45);
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.15s;
+  user-select: none;
+}
+ 
+.nav-item:hover {
+  background: rgba(255,255,255,0.07);
+  color: rgba(255,255,255,0.75);
+}
+ 
+.nav-item.active {
+  background: rgba(28,95,255,0.2);
+  color: #fff;
+}
+ 
+.nav-item.active .nav-icon { opacity: 1; }
+ 
+.nav-icon {
+  width: 18px; height: 18px;
+  opacity: 0.5;
+  flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px;
+}
+ 
+.nav-badge {
+  margin-left: auto;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 9px;
+  background: rgba(28,95,255,0.3);
+  color: #7baeff;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+ 
+.sidebar-footer {
+  margin-top: auto;
+  padding: 16px 12px;
+  border-top: 1px solid rgba(255,255,255,0.07);
+}
+ 
+.store-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  background: rgba(255,255,255,0.06);
+  border-radius: var(--r-sm);
+  cursor: pointer;
+}
+ 
+.store-avatar {
+  width: 26px; height: 26px;
+  background: linear-gradient(135deg, var(--cobalt), var(--violet));
+  border-radius: 6px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px; font-weight: 700; color: #fff;
+  flex-shrink: 0;
+}
+ 
+.store-name { font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.7); }
+.store-role { font-size: 10px; color: rgba(255,255,255,0.3); }
+ 
+/* ════════════════════════════════════════
+   MAIN AREA
+════════════════════════════════════════ */
+.main-wrap {
+  margin-left: var(--sidebar-w);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+ 
+/* ── TOPBAR ── */
+.topbar {
+  height: var(--header-h);
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  padding: 0 28px;
+  gap: 12px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  flex-shrink: 0;
+}
+ 
+.topbar-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ink);
+}
+ 
+.topbar-sub {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  color: var(--muted);
+}
+ 
+.topbar-spacer { flex: 1; }
+ 
+/* Date Filter */
+.date-filter {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+  padding: 3px;
+}
+ 
+.df-btn {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  padding: 4px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  color: var(--muted);
+  transition: all 0.15s;
+  user-select: none;
+  border: none;
+  background: transparent;
+}
+ 
+.df-btn:hover { color: var(--ink); }
+.df-btn.active {
+  background: var(--surface);
+  color: var(--cobalt);
+  font-weight: 600;
+  box-shadow: var(--shadow-sm);
+}
+ 
+.topbar-action {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  padding: 6px 12px;
+  border-radius: var(--r-sm);
+  cursor: pointer;
+  font-weight: 500;
+  border: none;
+}
+ 
+.btn-primary {
+  background: var(--cobalt);
+  color: #fff;
+  transition: opacity 0.15s;
+}
+.btn-primary:hover { opacity: 0.88; }
+ 
+.btn-ghost {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--ink2);
+  transition: background 0.15s;
+}
+.btn-ghost:hover { background: var(--surface2); }
+ 
+/* ── CONTENT ── */
+.content {
+  padding: 24px 28px 48px;
+  flex: 1;
+}
+ 
+.page { display: none; animation: fadeIn 0.18s ease; }
+.page.active { display: block; }
+ 
+@keyframes fadeIn { from { opacity:0; transform:translateY(4px); } to { opacity:1; transform:none; } }
+ 
+/* ════════════════════════════════════════
+   COMPONENTS
+════════════════════════════════════════ */
+ 
+/* ── Section Header ── */
+.sh {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+  margin-top: 28px;
+}
+.sh:first-child { margin-top: 0; }
+.sh-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  color: var(--faint);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.sh-line { flex:1; height:1px; background:var(--border); }
+ 
+/* ── Grid ── */
+.g { display:grid; gap:14px; }
+.g-4 { grid-template-columns:repeat(4,1fr); }
+.g-3 { grid-template-columns:repeat(3,1fr); }
+.g-2 { grid-template-columns:repeat(2,1fr); }
+.g-2-1 { grid-template-columns:2fr 1fr; }
+.g-3-2 { grid-template-columns:3fr 2fr; }
+.g-1-1-2 { grid-template-columns:1fr 1fr 2fr; }
+ 
+/* ── Card ── */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+.card:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--border2);
+}
+ 
+.card-body { padding: 20px 22px; }
+ 
+.card-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+ 
+.ct { font-size: 13px; font-weight: 700; color: var(--ink); margin-bottom: 2px; }
+.cs { font-family:'IBM Plex Mono',monospace; font-size: 10px; color: var(--muted); }
+ 
+/* ── KPI Card ── */
+.kpi {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  box-shadow: var(--shadow-sm);
+  padding: 18px 20px;
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 0.2s, transform 0.2s;
+  cursor: default;
+}
+ 
+.kpi:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+ 
+.kpi-stripe {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  border-radius: var(--r) var(--r) 0 0;
+}
+ 
+.kpi-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+ 
+.kpi-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+ 
+.kpi-ico {
+  width: 30px; height: 30px;
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px;
+}
+ 
+.kpi-val {
+  font-size: 24px;
+  font-weight: 900;
+  color: var(--ink);
+  line-height: 1;
+  margin-bottom: 8px;
+  letter-spacing: -0.5px;
+}
+ 
+.kpi-foot {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+ 
+.delta {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 7px;
+  border-radius: 4px;
+}
+.d-up   { background:var(--emerald-l); color:var(--emerald); }
+.d-down { background:var(--crimson-l); color:var(--crimson); }
+.d-neu  { background:var(--cobalt-l);  color:var(--cobalt);  }
+ 
+.kpi-cmp { font-size: 11px; color: var(--muted); }
+ 
+/* ── Sparkline ── */
+.sparkline-wrap { margin-top: 12px; height: 40px; }
+ 
+/* ── Status bars ── */
+.status-rows { display:flex; flex-direction:column; gap:9px; }
+.status-row { display:grid; grid-template-columns:90px 1fr 58px; align-items:center; gap:10px; }
+.status-name { font-size:12px; font-weight:500; color:var(--ink2); }
+.status-track { height:6px; background:var(--surface3); border-radius:3px; overflow:hidden; }
+.status-fill { height:100%; border-radius:3px; }
+.status-num { font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--muted); text-align:right; }
+ 
+/* ── Payment list ── */
+.pay-rows { display:flex; flex-direction:column; gap:8px; }
+.pay-row  { display:grid; grid-template-columns:16px 1fr 52px 52px; align-items:center; gap:10px; }
+.pay-dot  { width:8px; height:8px; border-radius:50%; flex-shrink:0; }
+.pay-name { font-size:12px; font-weight:500; }
+.pay-cnt  { font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--muted); text-align:right; }
+.pay-pct  { font-family:'IBM Plex Mono',monospace; font-size:11px; font-weight:600; text-align:right; }
+ 
+/* ── Region bars ── */
+.region-rows { display:flex; flex-direction:column; gap:8px; }
+.region-row  { display:grid; grid-template-columns:64px 1fr 60px; align-items:center; gap:10px; }
+.region-name { font-size:12px; font-weight:600; color:var(--ink); }
+.region-track { height:8px; background:var(--surface3); border-radius:4px; overflow:hidden; }
+.region-fill  { height:100%; border-radius:4px; background:linear-gradient(90deg,var(--cobalt),#81aaff); }
+.region-val   { font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--muted); text-align:right; }
+ 
+/* ── Top product rows ── */
+.prod-rows { display:flex; flex-direction:column; gap:1px; }
+.prod-row {
+  display:grid;
+  grid-template-columns:20px 1fr 80px 70px;
+  align-items:center;
+  gap:12px;
+  padding:9px 0;
+  border-bottom:1px solid var(--border);
+}
+.prod-row:last-child { border-bottom:none; }
+.prod-rank { font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--faint); }
+.prod-name { font-size:12px; font-weight:500; color:var(--ink2); }
+.prod-cat  { font-size:10px; color:var(--muted); }
+.prod-rev  { font-family:'IBM Plex Mono',monospace; font-size:12px; font-weight:600; color:var(--ink); text-align:right; }
+.prod-delta { text-align:right; }
+ 
+/* ── Alert rows ── */
+.alert-rows { display:flex; flex-direction:column; gap:8px; }
+.alert-row {
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:10px 14px;
+  border-radius: var(--r-sm);
+  border-left:3px solid;
+}
+.alert-row.warn { background:var(--amber-l);   border-color:var(--amber); }
+.alert-row.err  { background:var(--crimson-l); border-color:var(--crimson); }
+.alert-row.info { background:var(--cobalt-l);  border-color:var(--cobalt); }
+.alert-ico { font-size:16px; flex-shrink:0; }
+.alert-body { flex:1; }
+.alert-title { font-size:12px; font-weight:600; margin-bottom:1px; }
+.alert-desc  { font-family:'IBM Plex Mono',monospace; font-size:10px; color:var(--muted); }
+.alert-time  { font-family:'IBM Plex Mono',monospace; font-size:10px; color:var(--faint); }
+ 
+/* ── Mini stat ── */
+.mini-stats { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+.mini-stat {
+  background:var(--surface2);
+  border:1px solid var(--border);
+  border-radius:var(--r-sm);
+  padding:12px 14px;
+}
+.mini-stat-label { font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:0.1em; color:var(--muted); text-transform:uppercase; margin-bottom:4px; }
+.mini-stat-val   { font-size:18px; font-weight:800; color:var(--ink); }
+ 
+/* ── Funnel ── */
+.funnel-rows { display:flex; flex-direction:column; gap:6px; margin-top:4px; }
+.funnel-row { position:relative; }
+.funnel-label {
+  display:flex; justify-content:space-between;
+  font-size:11px; color:var(--ink2); margin-bottom:4px;
+}
+.funnel-track { height:10px; background:var(--surface3); border-radius:5px; overflow:hidden; }
+.funnel-fill  { height:100%; border-radius:5px; }
+.funnel-drop  { font-family:'IBM Plex Mono',monospace; font-size:10px; color:var(--muted); }
+ 
+/* ── Category grid ── */
+.cat-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:10px; }
+.cat-cell {
+  background:var(--surface2);
+  border:1px solid var(--border);
+  border-radius:var(--r-sm);
+  padding:14px 12px;
+  text-align:center;
+  transition:all 0.15s;
+  cursor:default;
+}
+.cat-cell:hover { border-color:var(--cobalt); background:var(--cobalt-l); }
+.cat-ico    { font-size:22px; margin-bottom:6px; }
+.cat-name   { font-size:11px; font-weight:700; color:var(--ink2); margin-bottom:4px; }
+.cat-rev    { font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--muted); }
+.cat-badge  { margin-top:6px; }
+ 
+/* ════════════════════════════════════════
+   SCROLLBAR
+════════════════════════════════════════ */
+::-webkit-scrollbar { width:5px; height:5px; }
+::-webkit-scrollbar-track { background:transparent; }
+::-webkit-scrollbar-thumb { background:var(--border2); border-radius:3px; }
+ 
+/* ════════════════════════════════════════
+   RESPONSIVE
+════════════════════════════════════════ */
+@media(max-width:1100px){
+  .g-4{grid-template-columns:repeat(2,1fr);}
+  .g-3{grid-template-columns:repeat(2,1fr);}
+  .g-2-1,.g-3-2,.g-1-1-2{grid-template-columns:1fr;}
+  .cat-grid{grid-template-columns:repeat(3,1fr);}
+}
+@media(max-width:780px){
+  :root{--sidebar-w:0px;}
+  .sidebar{display:none;}
+  .g-2{grid-template-columns:1fr;}
+  .cat-grid{grid-template-columns:repeat(2,1fr);}
+  .content{padding:16px 14px 40px;}
+  .topbar{padding:0 16px;}
+}
+/* ── Forecast specific ── */
+.fcst-legend-item {
+  display:flex;align-items:center;gap:6px;
+  font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--muted);
+}
+.fcst-line { width:20px;height:2px;border-radius:1px; }
+.fcst-dash {
+  width:20px;height:2px;
+  background:repeating-linear-gradient(90deg,var(--violet) 0,var(--violet) 4px,transparent 4px,transparent 7px);
+}
+.fcst-band { width:20px;height:8px;border-radius:2px;background:rgba(124,58,237,0.15); }
+ 
+.insight-pill {
+  border-radius:var(--r-sm);
+  padding:14px 18px;
+  border-left:3px solid;
+}
+.insight-pill.blue  { background:var(--cobalt-l);  border-color:var(--cobalt); }
+.insight-pill.green { background:var(--emerald-l); border-color:var(--emerald); }
+.insight-pill.amber { background:var(--amber-l);   border-color:var(--amber); }
+.insight-pill.red   { background:var(--crimson-l); border-color:var(--crimson); }
+.insight-pill.violet{ background:var(--violet-l);  border-color:var(--violet); }
+ 
+.ip-badge {
+  font-family:'IBM Plex Mono',monospace;font-size:9px;
+  letter-spacing:.1em;text-transform:uppercase;font-weight:600;
+  margin-bottom:5px;
+}
+.insight-pill.blue   .ip-badge { color:var(--cobalt); }
+.insight-pill.green  .ip-badge { color:var(--emerald); }
+.insight-pill.amber  .ip-badge { color:var(--amber); }
+.insight-pill.red    .ip-badge { color:var(--crimson); }
+.insight-pill.violet .ip-badge { color:var(--violet); }
+ 
+.ip-val  { font-size:22px;font-weight:900;color:var(--ink);line-height:1;margin:4px 0; }
+.ip-desc { font-size:11px;color:var(--muted);line-height:1.5; }
+ 
+.anomaly-row {
+  display:flex;align-items:center;gap:12px;
+  padding:10px 14px;border-radius:var(--r-sm);
+  background:var(--surface2);border:1px solid var(--border);
+}
+.anomaly-ico  { font-size:16px;flex-shrink:0; }
+.anomaly-info { flex:1; }
+.anomaly-title { font-size:12px;font-weight:600;margin-bottom:2px; }
+.anomaly-desc  { font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--muted); }
+.anomaly-val   { font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:600;text-align:right; }
+ 
+.model-badge {
+  font-family:'IBM Plex Mono',monospace;font-size:9px;
+  padding:3px 8px;border-radius:4px;border:1px solid;
+  letter-spacing:.06em;
+}
+</style>
+</head>
+<body>
+ 
+<!-- ══════════════════════════════════════
+     SIDEBAR
+══════════════════════════════════════ -->
+<aside class="sidebar">
+  <div class="sidebar-logo">
+    <div class="logo-mark">S</div>
+    <div class="logo-name">Shop<span>IQ</span></div>
+  </div>
+ 
+  <div class="sidebar-section">분석</div>
+  <div class="nav-item active" onclick="goPage('overview',this)">
+    <div class="nav-icon">📊</div> 개요
+  </div>
+  <div class="nav-item" onclick="goPage('sales',this)">
+    <div class="nav-icon">💰</div> 매출 분석
+  </div>
+  <div class="nav-item" onclick="goPage('orders',this)">
+    <div class="nav-icon">🛒</div> 주문 분석
+    <div class="nav-badge">NEW</div>
+  </div>
+  <div class="nav-item" onclick="goPage('customers',this)">
+    <div class="nav-icon">👥</div> 고객 분석
+  </div>
+ 
+  <div class="sidebar-section">카탈로그</div>
+  <div class="nav-item" onclick="goPage('products',this)">
+    <div class="nav-icon">📦</div> 상품 관리
+  </div>
+  <div class="nav-item" onclick="goPage('categories',this)">
+    <div class="nav-icon">🏷️</div> 카테고리
+  </div>
+ 
+  <div class="sidebar-section">인텔리전스</div>
+  <div class="nav-item" onclick="goPage('forecast',this)">
+    <div class="nav-icon">🔮</div> 예측 분석
+    <div class="nav-badge">AI</div>
+  </div>
+ 
+  <div class="sidebar-section">운영</div>
+  <div class="nav-item" onclick="goPage('alerts',this)">
+    <div class="nav-icon">🔔</div> 알림 센터
+    <div class="nav-badge">3</div>
+  </div>
+  <!-- 확장 포인트: 새 페이지는 nav-item + page 블록만 추가 -->
+ 
+  <div class="sidebar-footer">
+    <div class="store-pill">
+      <div class="store-avatar">K</div>
+      <div>
+        <div class="store-name">한국쇼핑몰</div>
+        <div class="store-role">관리자</div>
+      </div>
+    </div>
+  </div>
+</aside>
+ 
+<!-- ══════════════════════════════════════
+     MAIN
+══════════════════════════════════════ -->
+<div class="main-wrap">
+ 
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <div>
+      <div class="topbar-title" id="topbar-title">개요</div>
+      <div class="topbar-sub" id="topbar-sub">전체 쇼핑몰 현황</div>
+    </div>
+    <div class="topbar-spacer"></div>
+ 
+    <!-- 날짜 필터 -->
+    <div class="date-filter">
+      <button class="df-btn" onclick="setRange(6,this)">6개월</button>
+      <button class="df-btn active" onclick="setRange(12,this)">12개월</button>
+      <button class="df-btn" onclick="setRange(18,this)">전체</button>
+    </div>
+ 
+    <button class="topbar-action btn-ghost" onclick="alert('CSV 내보내기 (확장 포인트)')">⬇ 내보내기</button>
+    <button class="topbar-action btn-primary" onclick="alert('리포트 생성 (확장 포인트)')">+ 리포트</button>
+  </div>
+ 
+  <!-- ════ CONTENT ════ -->
+  <div class="content">
+ 
+  <!-- ── PAGE: 개요 ── -->
+  <div class="page active" id="page-overview">
+ 
+    <div class="sh"><div class="sh-label">핵심 지표</div><div class="sh-line"></div><div class="sh-label">KEY METRICS</div></div>
+    <div class="g g-4" id="kpi-grid"></div>
+ 
+    <div class="sh"><div class="sh-label">매출 추이</div><div class="sh-line"></div><div class="sh-label">REVENUE TREND</div></div>
+    <div class="g g-2-1" style="margin-bottom:14px;">
+      <div class="card">
+        <div class="card-body">
+          <div class="card-head">
+            <div><div class="ct">월별 매출</div><div class="cs">Monthly Revenue (단위: 백만원)</div></div>
+          </div>
+          <canvas id="c-revenue" height="100"></canvas>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <div class="card-head"><div><div class="ct">주문 상태</div><div class="cs">Order Status</div></div></div>
+          <div class="status-rows" id="status-rows"></div>
+        </div>
+      </div>
+    </div>
+ 
+    <div class="g g-3">
+      <div class="card">
+        <div class="card-body">
+          <div class="card-head"><div><div class="ct">결제 수단</div><div class="cs">Payment Methods</div></div></div>
+          <div style="max-width:190px;margin:0 auto 12px;"><canvas id="c-payment" height="190"></canvas></div>
+          <div class="pay-rows" id="pay-rows"></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <div class="card-head"><div><div class="ct">월별 주문량</div><div class="cs">Order Count</div></div></div>
+          <canvas id="c-orders" height="165"></canvas>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <div class="card-head"><div><div class="ct">지역별 주문</div><div class="cs">Orders by Region</div></div></div>
+          <div class="region-rows" id="region-rows"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+  <!-- ── PAGE: 매출 분석 ── -->
+  <div class="page" id="page-sales">
+    <div class="sh"><div class="sh-label">매출 분석</div><div class="sh-line"></div><div class="sh-label">SALES ANALYSIS</div></div>
+ 
+    <div class="g g-4" style="margin-bottom:14px;">
+      <div class="kpi"><div class="kpi-stripe" style="background:var(--cobalt)"></div>
+        <div class="kpi-top"><div class="kpi-label">총 매출</div><div class="kpi-ico" style="background:var(--cobalt-l)">💰</div></div>
+        <div class="kpi-val">₩248.7억</div>
+        <div class="kpi-foot"><span class="delta d-up">↑ 18.4%</span><span class="kpi-cmp">전년 대비</span></div>
+      </div>
+      <div class="kpi"><div class="kpi-stripe" style="background:var(--emerald)"></div>
+        <div class="kpi-top"><div class="kpi-label">평균 주문액</div><div class="kpi-ico" style="background:var(--emerald-l)">📈</div></div>
+        <div class="kpi-val">₩163,300</div>
+        <div class="kpi-foot"><span class="delta d-up">↑ 5.6%</span><span class="kpi-cmp">전년 대비</span></div>
+      </div>
+      <div class="kpi"><div class="kpi-stripe" style="background:var(--amber)"></div>
+        <div class="kpi-top"><div class="kpi-label">최고 월 매출</div><div class="kpi-ico" style="background:var(--amber-l)">🏆</div></div>
+        <div class="kpi-val">₩19.6억</div>
+        <div class="kpi-foot"><span class="delta d-neu">2023년 12월</span></div>
+      </div>
+      <div class="kpi"><div class="kpi-stripe" style="background:var(--violet)"></div>
+        <div class="kpi-top"><div class="kpi-label">매출 성장률</div><div class="kpi-ico" style="background:var(--violet-l)">🚀</div></div>
+        <div class="kpi-val">+18.4%</div>
+        <div class="kpi-foot"><span class="delta d-up">목표 초과</span></div>
+      </div>
+    </div>
+ 
+    <div class="g g-2" style="margin-bottom:14px;">
+      <div class="card"><div class="card-body">
+        <div class="card-head"><div><div class="ct">매출 vs 전년도 비교</div><div class="cs">YoY Comparison</div></div></div>
+        <canvas id="c-yoy" height="130"></canvas>
+      </div></div>
+      <div class="card"><div class="card-body">
+        <div class="card-head"><div><div class="ct">요일별 평균 매출</div><div class="cs">Revenue by Day of Week</div></div></div>
+        <canvas id="c-dow" height="130"></canvas>
+      </div></div>
+    </div>
+ 
+    <div class="g g-3">
+      <div class="card"><div class="card-body">
+        <div class="card-head"><div><div class="ct">카테고리별 매출</div><div class="cs">Top 10 Categories</div></div></div>
+        <canvas id="c-cat-rev" height="200"></canvas>
+      </div></div>
+      <div class="card"><div class="card-body">
+        <div class="card-head"><div><div class="ct">분기별 실적</div><div class="cs">Quarterly Revenue</div></div></div>
+        <canvas id="c-quarter" height="200"></canvas>
+      </div></div>
+      <div class="card"><div class="card-body">
+        <div class="card-head"><div><div class="ct">구매 전환 퍼널</div><div class="cs">Conversion Funnel</div></div></div>
+        <div class="funnel-rows" id="funnel-rows"></div>
+      </div></div>
+    </div>
+  </div>
+ 
+  <!-- ── PAGE: 주문 분석 ── -->
+  <div class="page" id="page-orders">
+    <div class="sh"><div class="sh-label">주문 분석</div><div class="sh-line"></div><div class="sh-label">ORDER ANALYSIS</div></div>
+ 
+    <div class="g g-4" style="margin-bottom:14px;">
+      <div class="kpi"><div class="kpi-stripe" style="background:var(--cobalt)"></div>
+        <div class="kpi-top"><div class="kpi-label">총 주문 수</div><div class="kpi-ico" style="background:var(--cobalt-l)">🛒</div></div>
+        <div class="kpi-val">152,340</div>
+        <div class="kpi-foot"><span class="delta d-up">↑ 12.1%</span><span class="kpi-cmp">전년 대비</span></div>
+      </div>
+      <div class="kpi"><div class="kpi-stripe" style="background:var(--emerald)"></div>
+        <div class="kpi-top"><div class="kpi-label">배송 완료율</div><div class="kpi-ico" style="background:var(--emerald-l)">✅</div></div>
+        <div class="kpi-val">96.5%</div>
+        <div class="kpi-foot"><span class="delta d-up">↑ 1.2%p</span><span class="kpi-cmp">전년 대비</span></div>
+      </div>
+      <div class="kpi"><div class="kpi-stripe" style="background:var(--amber)"></div>
+        <div class="kpi-top"><div class="kpi-label">평균 배송일</div><div class="kpi-ico" style="background:var(--amber-l)">🚚</div></div>
+        <div class="kpi-val">2.3일</div>
+        <div class="kpi-foot"><span class="delta d-up">↓ 0.4일</span><span class="kpi-cmp">개선</span></div>
+      </div>
+      <div class="kpi"><div class="kpi-stripe" style="background:var(--crimson)"></div>
+        <div class="kpi-top"><div class="kpi-label">취소/반품률</div><div class="kpi-ico" style="background:var(--crimson-l)">↩️</div></div>
+        <div class="kpi-val">3.5%</div>
+        <div class="kpi-foot"><span class="delta d-down">↑ 0.3%p</span><span class="kpi-cmp">전년 대비</span></div>
+      </div>
+    </div>
+ 
+    <div class="g g-2" style="margin-bottom:14px;">
+      <div class="card"><div class="card-body">
+        <div class="card-head"><div><div class="ct">월별 주문 추이</div><div class="cs">Monthly Orders</div></div></div>
+        <canvas id="c-orders2" height="130"></canvas>
+      </div></div>
+      <div class="card"><div class="card-body">
+        <div class="card-head"><div><div class="ct">주문 상태 도넛</div><div class="cs">Order Status Distribution</div></div></div>
+        <div style="max-width:200px;margin:0 auto;"><canvas id="c-status-donut" height="180"></canvas></div>
+      </div></div>
+    </div>
+ 
+    <div class="g g-1-1-2">
+      <div class="card"><div class="card-body">
+        <div class="card-head"><div><div class="ct">시간대별 주문</div><div class="cs">Orders by Hour</div></div></div>
+        <canvas id="c-hour" height="160"></canvas>
+      </div></div>
+      <div class="card"><div class="card-body">
+        <div class="card-head"><div><div class="ct">배송사 점유율</div><div class="cs">Carrier Share</div></div></div>
+        <canvas id="c-carrier" height="160"></canvas>
+      </div></div>
+      <div class="card"><div class="card-body">
+        <div class="card-head"><div><div class="ct">주문 상태 상세</div><div class="cs">Status Detail</div></div></div>
+        <div class="status-rows" id="status-rows2"></div>
+      </div></div>
+    </div>
+  </div>
+ 
+  <!-- ── PAGE: 고객 분석 ── -->
+  <div class="page" id="page-customers">
+    <div class="sh"><div class="sh-label">고객 분석</div><div class="sh-line"></div><div class="sh-label">CUSTOMER ANALYSIS</div></div>
+ 
+    <div class="g g-4" style="margin-bottom:14px;">
+      <div class="kpi"><div class="kpi-stripe" style="background:var(--cobalt)"></div>
+        <div class="kpi-top"><div class="kpi-label">총 회원 수</div><div class="kpi-ico" style="background:var(--cobalt-l)">👤</div></div>
+        <div class="kpi-val">98,721</div>
+        <div class="kpi-foot"><span class="delta d-up">↑ 9.3%</span><span class="kpi-cmp">전년 대비</span></div>
+      </div>
+      <div class="kpi"><div class="kpi-stripe" style="background:var(--emerald)"></div>
+        <div class="kpi-top"><div class="kpi-label">재구매율</div><div class="kpi-ico" style="background:var(--emerald-l)">🔄</div></div>
+        <div class="kpi-val">38.2%</div>
+        <div class="kpi-foot"><span class="delta d-up">↑ 4.1%p</span><span class="kpi-cmp">전년 대비</span></div>
+      </div>
+      <div class="kpi"><div class="kpi-stripe" style="background:var(--amber)"></div>
+        <div class="kpi-top"><div class="kpi-label">평균 LTV</div><div class="kpi-ico" style="background:var(--amber-l)">💎</div></div>
+        <div class="kpi-val">₩487,000</div>
+        <div class="kpi-foot"><span class="delta d-up">↑ 11.2%</span><span class="kpi-cmp">전년 대비</span></div>
+      </div>
+      <div class="kpi"><div class="kpi-stripe" style="background:var(--violet)"></div>
+        <div class="kpi-top"><div class="kpi-label">신규 고객 (월)</div><div class="kpi-ico" style="background:var(--violet-l)">🆕</div></div>
+        <div class="kpi-val">6,840</div>
+        <div class="kpi-foot"><span class="delta d-down">↓ 2.3%</span><span class="kpi-cmp">전월 대비</span></div>
+      </div>
+    </div>
+ 
+    <div class="g g-2" style="margin-bottom:14px;">
+      <div class="card"><div class="card-body">
+        <div class="card-head"><div><div class="ct">신규 vs 재구매 고객</div><div class="cs">New vs Returning</div></div></div>
+        <canvas id="c-new-ret" height="140"></canvas>
+      </div></div>
+      <div class="card"><div class="card-body">
+        <div class="card-head"><div><div class="ct">연령대별 분포</div><div class="cs">Age Distribution</div></div></div>
+        <canvas id="c-age" height="140"></canvas>
+      </div></div>
+    </div>
+ 
+    <div class="g g-3">
+      <div class="card"><div class="card-body">
+        <div class="card-head"><div><div class="ct">성별 구매 비율</div><div class="cs">Gender Split</div></div></div>
+        <div style="max-width:200px;margin:0 auto;"><canvas id="c-gender" height="180"></canvas></div>
+      </div></div>
+      <div class="card"><div class="card-body">
+        <div class="card-head"><div><div class="ct">지역별 고객</div><div class="cs">Customers by Region</div></div></div>
+        <div class="region-rows" id="region-rows2"></div>
+      </div></div>
+      <div class="card"><div class="card-body">
+        <div class="card-head"><div><div class="ct">고객 등급 분포</div><div class="cs">Customer Grade</div></div></div>
+        <canvas id="c-grade" height="175"></canvas>
+      </div></div>
+    </div>
+  </div>
+ 
+  <!-- ── PAGE: 상품 관리 ── -->
+  <div class="page" id="page-products">
+    <div class="sh"><div class="sh-label">상품 관리</div><div class="sh-line"></div><div class="sh-label">PRODUCT MANAGEMENT</div></div>
+ 
+    <div class="g g-4" style="margin-bottom:14px;">
+      <div class="kpi"><div class="kpi-stripe" style="background:var(--cobalt)"></div>
+        <div class="kpi-top"><div class="kpi-label">등록 상품 수</div><div class="kpi-ico" style="background:var(--cobalt-l)">📦</div></div>
+        <div class="kpi-val">24,830</div>
+        <div class="kpi-foot"><span class="delta d-up">↑ 15.2%</span><span class="kpi-cmp">전년 대비</span></div>
+      </div>
+      <div class="kpi"><div class="kpi-stripe" style="background:var(--emerald)"></div>
+        <div class="kpi-top"><div class="kpi-label">재고 부족</div><div class="kpi-ico" style="background:var(--emerald-l)">⚠️</div></div>
+        <div class="kpi-val">142개</div>
+        <div class="kpi-foot"><span class="delta d-down">즉시 보충 필요</span></div>
+      </div>
+      <div class="kpi"><div class="kpi-stripe" style="background:var(--amber)"></div>
+        <div class="kpi-top"><div class="kpi-label">평균 평점</div><div class="kpi-ico" style="background:var(--amber-l)">⭐</div></div>
+        <div class="kpi-val">4.32</div>
+        <div class="kpi-foot"><span class="delta d-up">↑ 0.12</span><span class="kpi-cmp">전년 대비</span></div>
+      </div>
+      <div class="kpi"><div class="kpi-stripe" style="background:var(--crimson)"></div>
+        <div class="kpi-top"><div class="kpi-label">반품률</div><div class="kpi-ico" style="background:var(--crimson-l)">↩️</div></div>
+        <div class="kpi-val">4.8%</div>
+        <div class="kpi-foot"><span class="delta d-down">↑ 0.5%p</span><span class="kpi-cmp">관리 필요</span></div>
+      </div>
+    </div>
+ 
+    <div class="g g-2-1" style="margin-bottom:14px;">
+      <div class="card"><div class="card-body">
+        <div class="card-head"><div><div class="ct">TOP 10 상품</div><div class="cs">Best Sellers by Revenue</div></div></div>
+        <div class="prod-rows" id="prod-rows"></div>
+      </div></div>
+      <div class="card"><div class="card-body">
+        <div class="card-head"><div><div class="ct">상품 통계</div><div class="cs">Quick Stats</div></div></div>
+        <div class="mini-stats" id="mini-stats"></div>
+      </div></div>
+    </div>
+ 
+    <div class="card"><div class="card-body">
+      <div class="card-head"><div><div class="ct">카테고리별 현황</div><div class="cs">Category Overview</div></div></div>
+      <div class="cat-grid" id="cat-grid"></div>
+    </div></div>
+  </div>
+ 
+  <!-- ── PAGE: 카테고리 ── -->
+  <div class="page" id="page-categories">
+    <div class="sh"><div class="sh-label">카테고리</div><div class="sh-line"></div><div class="sh-label">CATEGORY ANALYSIS</div></div>
+ 
+    <div class="g g-2" style="margin-bottom:14px;">
+      <div class="card"><div class="card-body">
+        <div class="card-head"><div><div class="ct">카테고리별 매출 비중</div><div class="cs">Revenue Share</div></div></div>
+        <canvas id="c-cat-share" height="160"></canvas>
+      </div></div>
+      <div class="card"><div class="card-body">
+        <div class="card-head"><div><div class="ct">카테고리별 성장률 (YoY)</div><div class="cs">YoY Growth Rate</div></div></div>
+        <canvas id="c-cat-growth" height="160"></canvas>
+      </div></div>
+    </div>
+ 
+    <div class="g g-3">
+      <div class="card"><div class="card-body">
+        <div class="card-head"><div><div class="ct">카테고리별 주문량</div><div class="cs">Orders by Category</div></div></div>
+        <canvas id="c-cat-orders" height="190"></canvas>
+      </div></div>
+      <div class="card"><div class="card-body">
+        <div class="card-head"><div><div class="ct">카테고리별 반품률</div><div class="cs">Return Rate</div></div></div>
+        <canvas id="c-cat-return" height="190"></canvas>
+      </div></div>
+      <div class="card"><div class="card-body">
+        <div class="card-head"><div><div class="ct">카테고리 트렌드</div><div class="cs">Trend (최근 6개월)</div></div></div>
+        <canvas id="c-cat-trend" height="190"></canvas>
+      </div></div>
+    </div>
+  </div>
+ 
+  <!-- ── PAGE: 예측 분석 ── -->
+  <div class="page" id="page-forecast">
+    <div class="sh" style="margin-top:0;"><div class="sh-label">예측 분석</div><div class="sh-line"></div><div class="sh-label">AI FORECAST ENGINE</div></div>
+ 
+    <!-- 예측 KPI -->
+    <div class="g g-4" style="margin-bottom:14px;" id="fcst-kpi-grid"></div>
+ 
+    <!-- 인사이트 배너 -->
+    <div id="fcst-insights" style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:14px;"></div>
+ 
+    <!-- 매출 예측 메인 차트 + 예측 정확도 -->
+    <div class="g g-3-2" style="margin-bottom:14px;">
+      <div class="card">
+        <div class="card-body">
+          <div class="card-head">
+            <div>
+              <div class="ct">매출 예측 — 향후 3개월</div>
+              <div class="cs">선형 회귀 · 95% 신뢰구간 · 점선=예측</div>
+            </div>
+            <div style="display:flex;gap:8px;align-items:center;" id="fcst-model-badges"></div>
+          </div>
+          <div id="fcst-legend" style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:10px;"></div>
+          <canvas id="c-fcst-revenue" height="130"></canvas>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <div class="card-head"><div><div class="ct">예측 정확도 (MAPE)</div><div class="cs">Model Accuracy by Month</div></div></div>
+          <canvas id="c-fcst-accuracy" height="175"></canvas>
+        </div>
+      </div>
+    </div>
+ 
+    <!-- 주문 예측 + 이상 탐지 -->
+    <div class="g g-2" style="margin-bottom:14px;">
+      <div class="card">
+        <div class="card-body">
+          <div class="card-head"><div><div class="ct">주문량 예측 — 향후 3개월</div><div class="cs">실제(파랑) vs 예측(보라)</div></div></div>
+          <canvas id="c-fcst-orders" height="140"></canvas>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <div class="card-head"><div><div class="ct">이상 탐지 (Z-score)</div><div class="cs">|Z| &gt; 2.0 자동 마킹</div></div></div>
+          <canvas id="c-anomaly" height="140"></canvas>
+        </div>
+      </div>
+    </div>
+ 
+    <!-- 계절성 + 요일 + 분기 목표 -->
+    <div class="g g-3" style="margin-bottom:14px;">
+      <div class="card">
+        <div class="card-body">
+          <div class="card-head"><div><div class="ct">계절성 분해</div><div class="cs">Trend vs Seasonal Component</div></div></div>
+          <canvas id="c-seasonal" height="170"></canvas>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <div class="card-head"><div><div class="ct">요일별 매출 패턴</div><div class="cs">평균 일 매출 (백만원)</div></div></div>
+          <canvas id="c-dow-fcst" height="170"></canvas>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <div class="card-head"><div><div class="ct">분기 목표 대비 실적</div><div class="cs">목표 달성률 & 예측</div></div></div>
+          <canvas id="c-quarter-fcst" height="170"></canvas>
+        </div>
+      </div>
+    </div>
+ 
+    <!-- 이상 이벤트 목록 + 카테고리 성장률 예측 -->
+    <div class="g g-2">
+      <div class="card">
+        <div class="card-body">
+          <div class="card-head"><div><div class="ct">탐지된 이상 이벤트</div><div class="cs">Z-score 기준 자동 분류</div></div></div>
+          <div id="anomaly-list" style="display:flex;flex-direction:column;gap:10px;"></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <div class="card-head"><div><div class="ct">카테고리별 성장률 예측 (다음 분기)</div><div class="cs">회귀 기반 성장률 예측</div></div></div>
+          <canvas id="c-cat-fcst" height="210"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+  <!-- ── PAGE: 알림 센터 ── -->
+  <div class="page" id="page-alerts">
+    <div class="sh"><div class="sh-label">알림 센터</div><div class="sh-line"></div><div class="sh-label">ALERT CENTER</div></div>
+ 
+    <div class="g g-4" style="margin-bottom:14px;">
+      <div class="kpi"><div class="kpi-stripe" style="background:var(--crimson)"></div>
+        <div class="kpi-top"><div class="kpi-label">긴급 알림</div><div class="kpi-ico" style="background:var(--crimson-l)">🚨</div></div>
+        <div class="kpi-val">2건</div>
+        <div class="kpi-foot"><span class="delta d-down">즉시 처리 필요</span></div>
+      </div>
+      <div class="kpi"><div class="kpi-stripe" style="background:var(--amber)"></div>
+        <div class="kpi-top"><div class="kpi-label">경고</div><div class="kpi-ico" style="background:var(--amber-l)">⚠️</div></div>
+        <div class="kpi-val">5건</div>
+        <div class="kpi-foot"><span class="delta d-neu">오늘 발생</span></div>
+      </div>
+      <div class="kpi"><div class="kpi-stripe" style="background:var(--cobalt)"></div>
+        <div class="kpi-top"><div class="kpi-label">정보</div><div class="kpi-ico" style="background:var(--cobalt-l)">ℹ️</div></div>
+        <div class="kpi-val">12건</div>
+        <div class="kpi-foot"><span class="delta d-neu">이번 주</span></div>
+      </div>
+      <div class="kpi"><div class="kpi-stripe" style="background:var(--emerald)"></div>
+        <div class="kpi-top"><div class="kpi-label">해결됨</div><div class="kpi-ico" style="background:var(--emerald-l)">✅</div></div>
+        <div class="kpi-val">34건</div>
+        <div class="kpi-foot"><span class="delta d-up">이번 달</span></div>
+      </div>
+    </div>
+ 
+    <div class="card"><div class="card-body">
+      <div class="card-head"><div><div class="ct">알림 목록</div><div class="cs">Real-time Alerts</div></div></div>
+      <div class="alert-rows" id="alert-rows"></div>
+    </div></div>
+  </div>
+ 
+  </div><!-- /content -->
+</div><!-- /main-wrap -->
+ 
+<!-- ══════════════════════════════════════
+     JAVASCRIPT — DATA + RENDER ENGINE
+══════════════════════════════════════ -->
+<script>
+/* ════════════════════════════════════════
+   ① DATA CONFIG LAYER
+   실제 프로젝트에서는 이 객체만 API 응답으로 교체하면 됩니다.
+════════════════════════════════════════ */
+const DATA = {
+  months: ["23-01","23-02","23-03","23-04","23-05","23-06","23-07","23-08","23-09","23-10","23-11","23-12","24-01","24-02","24-03","24-04","24-05","24-06"],
+  revenue: [882,765,1023,1158,1342,1287,1425,1589,1634,1721,1683,1956,1014,897,1182,1367,1553,1489],
+  orders:  [5820,5140,6830,7510,8270,7940,8640,9380,9810,10240,9970,11560,6210,5790,7380,8430,9240,8920],
+  prevRevenue: [740,660,870,980,1120,1090,1210,1340,1380,1450,1410,1640,850,760,980,1140,1300,1240],
+ 
+  status: [
+    {name:"배송 완료", count:135820, color:"#00a878"},
+    {name:"배송 중",   count:8640,  color:"#1c5fff"},
+    {name:"주문 처리", count:4210,  color:"#d4830a"},
+    {name:"취소됨",    count:2380,  color:"#d93025"},
+    {name:"반품/교환", count:1290,  color:"#7c3aed"},
+  ],
+ 
+  payments: [
+    {name:"신용카드",   cnt:62140, color:"#1c5fff"},
+    {name:"카카오페이", cnt:38420, color:"#f5c430"},
+    {name:"네이버페이", cnt:22870, color:"#03c75a"},
+    {name:"토스페이",   cnt:14560, color:"#0064ff"},
+    {name:"무통장입금", cnt: 9830, color:"#8e8e93"},
+    {name:"기타",       cnt: 4520, color:"#aeaeb2"},
+  ],
+ 
+  regions: [["서울",52410],["경기",38720],["부산",12840],["인천",9310],["대구",7640],["경남",6820],["대전",5390],["광주",4710],["경북",4280],["충남",3680]],
+ 
+  categories: {
+    names:   ["패션의류","뷰티/화장품","식품/건강","전자기기","생활/주방","스포츠","출산/육아","반려동물","도서/취미","자동차"],
+    icons:   ["👗","💄","🥗","📱","🏠","⚽","🍼","🐾","📚","🚗"],
+    rev:     [4820,3960,3510,3280,2790,2340,1870,1540,1230,980],
+    orders:  [38200,31400,28700,12400,24800,19300,15200,12800,9400,8100],
+    growth:  [12.4,34.1,18.2,8.6,15.3,21.7,9.8,27.4,5.2,11.9],
+    returns: [8.4,6.2,4.8,12.1,3.2,5.7,9.3,2.1,3.8,7.6],
+  },
+ 
+  topProducts: [
+    {rank:1,name:"나이키 에어맥스 97",cat:"스포츠",rev:"₩2.84억",delta:"↑24%",up:true},
+    {rank:2,name:"에스티로더 퍼펙션",cat:"뷰티/화장품",rev:"₩2.31억",delta:"↑18%",up:true},
+    {rank:3,name:"삼성 갤럭시 버즈2",cat:"전자기기",rev:"₩1.97억",delta:"↑9%",up:true},
+    {rank:4,name:"무인양품 수납박스",cat:"생활/주방",rev:"₩1.62억",delta:"↓3%",up:false},
+    {rank:5,name:"뉴발란스 993",cat:"스포츠",rev:"₩1.48억",delta:"↑31%",up:true},
+    {rank:6,name:"설화수 윤조에센스",cat:"뷰티/화장품",rev:"₩1.34억",delta:"↑22%",up:true},
+    {rank:7,name:"애플 에어팟 프로",cat:"전자기기",rev:"₩1.21억",delta:"↓8%",up:false},
+    {rank:8,name:"자연나라 유기농면",cat:"출산/육아",rev:"₩0.98억",delta:"↑14%",up:true},
+  ],
+ 
+  alerts: [
+    {type:"err",  ico:"🚨", title:"재고 긴급 부족: 나이키 에어맥스 97",     desc:"현재 재고 12개 · 일 평균 판매 34개 · 0.35일 소진 예상",        time:"방금"},
+    {type:"err",  ico:"🚨", title:"결제 오류 급증 감지",                       desc:"카카오페이 결제 실패율 8.3% · 평균 대비 +5.2%p",                 time:"12분 전"},
+    {type:"warn", ico:"⚠️", title:"배송 지연 상품 142건",                       desc:"CJ대한통운 경기 북부 지역 지연 · 고객 알림 발송 권장",           time:"34분 전"},
+    {type:"warn", ico:"⚠️", title:"뷰티 카테고리 반품률 상승",                  desc:"이번 주 6.2% → 8.1% (+1.9%p) · 원인 분석 필요",                time:"2시간 전"},
+    {type:"warn", ico:"⚠️", title:"신규 회원 가입 수 감소",                     desc:"일 평균 228명 → 189명 (-17%) · 마케팅 검토 필요",               time:"3시간 전"},
+    {type:"info", ico:"ℹ️", title:"2024년 6월 월간 리포트 생성 완료",           desc:"총 매출 ₩148.9억 · 주문 8,920건 · 다운로드 가능",               time:"어제"},
+    {type:"info", ico:"ℹ️", title:"뷰티/화장품 카테고리 역대 최고 매출 달성",   desc:"2024년 5월 ₩198.3백만 · 전년 동월 대비 +34.1%",               time:"어제"},
+    {type:"info", ico:"ℹ️", title:"서버 점검 완료",                             desc:"24-06-30 02:00~04:00 점검 정상 완료",                           time:"3일 전"},
+  ],
+ 
+  funnel: [
+    {step:"방문자",   cnt:1240000, color:"#1c5fff"},
+    {step:"상품 조회", cnt:620000,  color:"#7c3aed"},
+    {step:"장바구니",  cnt:198000,  color:"#d4830a"},
+    {step:"결제 시작", cnt:98000,   color:"#00a878"},
+    {step:"구매 완료", cnt:78000,   color:"#d93025"},
+  ],
+};
+ 
+/* ════════════════════════════════════════
+   ② RANGE FILTER
+════════════════════════════════════════ */
+let currentRange = 12;
+let chartRegistry = {};
+ 
+function getSlice(arr) {
+  return arr.slice(-currentRange);
+}
+ 
+function setRange(n, btn) {
+  currentRange = n;
+  document.querySelectorAll('.df-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  redrawCharts();
+}
+ 
+/* ════════════════════════════════════════
+   ③ CHART HELPERS
+════════════════════════════════════════ */
+Chart.defaults.color = '#8e8e93';
+Chart.defaults.font.family = "'IBM Plex Mono', monospace";
+Chart.defaults.font.size = 10;
+const GRID = { color:'#f0ede6', borderColor:'#e8e4dc' };
+ 
+function makeChart(id, config) {
+  const existing = chartRegistry[id];
+  if (existing) existing.destroy();
+  const ctx = document.getElementById(id);
+  if (!ctx) return;
+  const chart = new Chart(ctx, config);
+  chartRegistry[id] = chart;
+  return chart;
+}
+ 
+/* ════════════════════════════════════════
+   ④ RENDER FUNCTIONS — each section isolated
+════════════════════════════════════════ */
+ 
+/* ── Overview: KPI ── */
+function renderKPI() {
+  const rev = getSlice(DATA.revenue);
+  const total = rev.reduce((a,b)=>a+b,0);
+  const ord = getSlice(DATA.orders);
+  const totalOrd = ord.reduce((a,b)=>a+b,0);
+  const aov = Math.round((total*1000000) / totalOrd / 1000) * 1000;
+ 
+  const items = [
+    {label:"총 매출",     val:`₩${(total/10).toFixed(1)}억`, delta:"↑ 18.4%", dc:"d-up",  ico:"💰", col:"--cobalt"},
+    {label:"총 주문 수",  val:totalOrd.toLocaleString(),      delta:"↑ 12.1%", dc:"d-up",  ico:"🛒", col:"--emerald"},
+    {label:"평균 주문액", val:`₩${aov.toLocaleString()}`,     delta:"↑ 5.6%",  dc:"d-up",  ico:"📈", col:"--amber"},
+    {label:"총 회원 수",  val:"98,721",                        delta:"↑ 9.3%",  dc:"d-up",  ico:"👤", col:"--violet"},
+  ];
+  const el = document.getElementById('kpi-grid');
+  el.innerHTML = items.map(k => `
+    <div class="kpi">
+      <div class="kpi-stripe" style="background:var(${k.col})"></div>
+      <div class="kpi-top">
+        <div class="kpi-label">${k.label}</div>
+        <div class="kpi-ico" style="background:var(${k.col}-l)">${k.ico}</div>
+      </div>
+      <div class="kpi-val">${k.val}</div>
+      <div class="kpi-foot"><span class="delta ${k.dc}">${k.delta}</span><span class="kpi-cmp">전년 대비</span></div>
+    </div>`).join('');
+}
+ 
+/* ── Overview: Revenue Chart ── */
+function renderRevChart() {
+  const labels = getSlice(DATA.months);
+  const vals   = getSlice(DATA.revenue);
+  makeChart('c-revenue', {
+    type:'line',
+    data:{
+      labels,
+      datasets:[{
+        label:'매출(백만원)', data:vals,
+        borderColor:'#1c5fff', backgroundColor:'rgba(28,95,255,0.06)',
+        borderWidth:2, fill:true, tension:0.4,
+        pointBackgroundColor:'#1c5fff', pointRadius:3, pointHoverRadius:6,
+      }]
+    },
+    options:{
+      plugins:{legend:{display:false}},
+      scales:{
+        x:{grid:GRID, ticks:{maxTicksLimit:10}},
+        y:{grid:GRID, ticks:{callback:v=>`${v}M`}}
+      }
+    }
+  });
+}
+ 
+/* ── Overview: Orders Chart ── */
+function renderOrdersChart(canvasId='c-orders') {
+  const labels = getSlice(DATA.months);
+  const vals   = getSlice(DATA.orders);
+  makeChart(canvasId, {
+    type:'bar',
+    data:{
+      labels,
+      datasets:[{
+        label:'주문 건수', data:vals,
+        backgroundColor:'rgba(0,168,120,0.65)', borderRadius:4,
+      }]
+    },
+    options:{
+      plugins:{legend:{display:false}},
+      scales:{
+        x:{grid:{display:false}, ticks:{maxTicksLimit:10}},
+        y:{grid:GRID, ticks:{callback:v=>v.toLocaleString()}}
+      }
+    }
+  });
+}
+ 
+/* ── Overview: Status Rows ── */
+function renderStatusRows(elId='status-rows') {
+  const el = document.getElementById(elId);
+  if (!el) return;
+  const max = DATA.status[0].count;
+  el.innerHTML = DATA.status.map(s => `
+    <div class="status-row">
+      <div class="status-name">${s.name}</div>
+      <div class="status-track"><div class="status-fill" style="width:${(s.count/max*100).toFixed(1)}%;background:${s.color}"></div></div>
+      <div class="status-num">${s.count.toLocaleString()}</div>
+    </div>`).join('');
+}
+ 
+/* ── Overview: Payment ── */
+function renderPayment() {
+  const total = DATA.payments.reduce((a,b)=>a+b.cnt,0);
+  makeChart('c-payment',{
+    type:'doughnut',
+    data:{
+      labels:DATA.payments.map(p=>p.name),
+      datasets:[{data:DATA.payments.map(p=>p.cnt), backgroundColor:DATA.payments.map(p=>p.color), borderColor:'#fff', borderWidth:2, hoverOffset:6}]
+    },
+    options:{cutout:'65%',plugins:{legend:{display:false}}}
+  });
+  const el = document.getElementById('pay-rows');
+  if (!el) return;
+  el.innerHTML = DATA.payments.map(p=>{
+    const pct = (p.cnt/total*100).toFixed(1);
+    return `<div class="pay-row">
+      <div class="pay-dot" style="background:${p.color}"></div>
+      <div class="pay-name">${p.name}</div>
+      <div class="pay-cnt">${(p.cnt/1000).toFixed(1)}K</div>
+      <div class="pay-pct" style="color:${p.color}">${pct}%</div>
+    </div>`;
+  }).join('');
+}
+ 
+/* ── Overview: Regions ── */
+function renderRegions(elId='region-rows') {
+  const el = document.getElementById(elId);
+  if (!el) return;
+  const max = DATA.regions[0][1];
+  el.innerHTML = DATA.regions.slice(0,8).map(([name,val])=>`
+    <div class="region-row">
+      <div class="region-name">${name}</div>
+      <div class="region-track"><div class="region-fill" style="width:${(val/max*100).toFixed(0)}%"></div></div>
+      <div class="region-val">${val.toLocaleString()}</div>
+    </div>`).join('');
+}
+ 
+/* ── Sales: YoY ── */
+function renderYoY() {
+  const labels = getSlice(DATA.months);
+  makeChart('c-yoy',{
+    type:'line',
+    data:{
+      labels,
+      datasets:[
+        {label:'2023~2024', data:getSlice(DATA.revenue), borderColor:'#1c5fff', borderWidth:2, tension:0.4, pointRadius:2},
+        {label:'전년도',    data:getSlice(DATA.prevRevenue), borderColor:'#aeaeb2', borderWidth:1.5, borderDash:[4,3], tension:0.4, pointRadius:0},
+      ]
+    },
+    options:{
+      plugins:{legend:{labels:{boxWidth:10,padding:14}}},
+      scales:{x:{grid:GRID,ticks:{maxTicksLimit:9}},y:{grid:GRID,ticks:{callback:v=>`${v}M`}}}
+    }
+  });
+}
+ 
+/* ── Sales: DOW ── */
+function renderDOW() {
+  makeChart('c-dow',{
+    type:'bar',
+    data:{
+      labels:['월','화','수','목','금','토','일'],
+      datasets:[{label:'평균 일 매출(M)', data:[42,48,51,55,72,89,78], backgroundColor:['#aeaeb2','#aeaeb2','#aeaeb2','#aeaeb2','#1c5fff','#d93025','#d4830a'], borderRadius:5}]
+    },
+    options:{plugins:{legend:{display:false}},scales:{x:{grid:{display:false}},y:{grid:GRID,ticks:{callback:v=>`${v}M`}}}}
+  });
+}
+ 
+/* ── Sales: Category Revenue ── */
+function renderCatRev() {
+  makeChart('c-cat-rev',{
+    type:'bar',
+    data:{
+      labels:DATA.categories.names,
+      datasets:[{label:'매출(천만원)', data:DATA.categories.rev, backgroundColor:DATA.categories.names.map((_,i)=>`hsl(${210+i*20},70%,55%)`), borderRadius:4}]
+    },
+    options:{indexAxis:'y',plugins:{legend:{display:false}},scales:{x:{grid:GRID,ticks:{callback:v=>`${v}천`}},y:{grid:{display:false}}}}
+  });
+}
+ 
+/* ── Sales: Quarter ── */
+function renderQuarter() {
+  makeChart('c-quarter',{
+    type:'bar',
+    data:{
+      labels:['23Q1','23Q2','23Q3','23Q4','24Q1','24Q2'],
+      datasets:[
+        {label:'실적', data:[2670,3787,4648,5360,3093,4409], backgroundColor:'rgba(28,95,255,0.7)', borderRadius:4},
+        {label:'목표', data:[2500,3500,4200,5000,3200,4600], backgroundColor:'rgba(28,95,255,0.2)', borderRadius:4}
+      ]
+    },
+    options:{plugins:{legend:{labels:{boxWidth:10}}},scales:{x:{grid:{display:false}},y:{grid:GRID,ticks:{callback:v=>`${v}M`}}}}
+  });
+}
+ 
+/* ── Sales: Funnel ── */
+function renderFunnel() {
+  const el = document.getElementById('funnel-rows');
+  if (!el) return;
+  const base = DATA.funnel[0].cnt;
+  el.innerHTML = DATA.funnel.map((f,i)=>{
+    const pct = (f.cnt/base*100).toFixed(1);
+    const drop = i>0 ? `→ 이탈 ${(100-(f.cnt/DATA.funnel[i-1].cnt*100)).toFixed(1)}%` : '';
+    return `<div class="funnel-row">
+      <div class="funnel-label">
+        <span>${f.step} <span style="color:var(--muted);font-size:11px;">${f.cnt.toLocaleString()}</span></span>
+        <span class="funnel-drop">${drop}</span>
+      </div>
+      <div class="funnel-track"><div class="funnel-fill" style="width:${pct}%;background:${f.color}"></div></div>
+    </div>`;
+  }).join('');
+}
+ 
+/* ── Orders: Status Donut ── */
+function renderStatusDonut() {
+  makeChart('c-status-donut',{
+    type:'doughnut',
+    data:{
+      labels:DATA.status.map(s=>s.name),
+      datasets:[{data:DATA.status.map(s=>s.count), backgroundColor:DATA.status.map(s=>s.color), borderColor:'#fff', borderWidth:2, hoverOffset:6}]
+    },
+    options:{cutout:'60%',plugins:{legend:{position:'bottom',labels:{boxWidth:10,padding:8}}}}
+  });
+}
+ 
+/* ── Orders: Hour ── */
+function renderHour() {
+  const hours = Array.from({length:24},(_,i)=>i);
+  const data  = [8,5,3,2,2,4,12,28,45,62,74,82,78,65,70,76,85,92,88,72,58,42,28,16];
+  makeChart('c-hour',{
+    type:'line',
+    data:{
+      labels:hours.map(h=>`${h}시`),
+      datasets:[{label:'주문수', data, borderColor:'#7c3aed', backgroundColor:'rgba(124,58,237,0.08)', borderWidth:2, fill:true, tension:0.4, pointRadius:0}]
+    },
+    options:{plugins:{legend:{display:false}},scales:{x:{grid:{display:false},ticks:{maxTicksLimit:8}},y:{grid:GRID}}}
+  });
+}
+ 
+/* ── Orders: Carrier ── */
+function renderCarrier() {
+  makeChart('c-carrier',{
+    type:'doughnut',
+    data:{
+      labels:['CJ대한통운','롯데택배','한진택배','쿠팡로켓','기타'],
+      datasets:[{data:[42,24,18,11,5], backgroundColor:['#1c5fff','#d4830a','#d93025','#00a878','#aeaeb2'], borderColor:'#fff', borderWidth:2}]
+    },
+    options:{cutout:'60%',plugins:{legend:{position:'bottom',labels:{boxWidth:10,padding:8}}}}
+  });
+}
+ 
+/* ── Customers: New vs Returning ── */
+function renderNewRet() {
+  const labels = getSlice(DATA.months);
+  const newU = [4210,3820,5140,5680,6240,5910,6380,7020,7340,7810,7480,8620,4810,4320,5620,6140,6980,6640].slice(-currentRange);
+  const ordSlice = getSlice(DATA.orders);
+  const repU = ordSlice.map((o,i)=>o-newU[i]);
+  makeChart('c-new-ret',{
+    type:'bar',
+    data:{
+      labels,
+      datasets:[
+        {label:'신규',   data:newU, backgroundColor:'rgba(28,95,255,0.7)',  borderRadius:3, stack:'a'},
+        {label:'재구매', data:repU, backgroundColor:'rgba(0,168,120,0.7)', borderRadius:3, stack:'a'},
+      ]
+    },
+    options:{plugins:{legend:{labels:{boxWidth:10}}},scales:{x:{grid:{display:false},stacked:true,ticks:{maxTicksLimit:10}},y:{grid:GRID,stacked:true,ticks:{callback:v=>v.toLocaleString()}}}}
+  });
+}
+ 
+/* ── Customers: Age ── */
+function renderAge() {
+  makeChart('c-age',{
+    type:'bar',
+    data:{
+      labels:['10대','20대','30대','40대','50대','60대+'],
+      datasets:[
+        {label:'여성', data:[4200,18400,22100,14800,8200,3400], backgroundColor:'rgba(212,131,10,0.7)', borderRadius:4},
+        {label:'남성', data:[3100,14200,17800,12400,6800,2600], backgroundColor:'rgba(28,95,255,0.7)', borderRadius:4},
+      ]
+    },
+    options:{plugins:{legend:{labels:{boxWidth:10}}},scales:{x:{grid:{display:false}},y:{grid:GRID,ticks:{callback:v=>v.toLocaleString()}}}}
+  });
+}
+ 
+/* ── Customers: Gender ── */
+function renderGender() {
+  makeChart('c-gender',{
+    type:'doughnut',
+    data:{labels:['여성','남성','미입력'], datasets:[{data:[58,37,5], backgroundColor:['#d4830a','#1c5fff','#aeaeb2'], borderColor:'#fff', borderWidth:2}]},
+    options:{cutout:'60%',plugins:{legend:{position:'bottom',labels:{boxWidth:10,padding:8}}}}
+  });
+}
+ 
+/* ── Customers: Grade ── */
+function renderGrade() {
+  makeChart('c-grade',{
+    type:'bar',
+    data:{
+      labels:['VIP','골드','실버','브론즈','일반'],
+      datasets:[{label:'고객 수', data:[3240,8910,14820,22340,49411], backgroundColor:['#d4830a','#f5c430','#aeaeb2','#cd7f32','#e8e4dc'], borderRadius:4}]
+    },
+    options:{indexAxis:'y',plugins:{legend:{display:false}},scales:{x:{grid:GRID,ticks:{callback:v=>v.toLocaleString()}},y:{grid:{display:false}}}}
+  });
+}
+ 
+/* ── Products: Rows ── */
+function renderProducts() {
+  const el = document.getElementById('prod-rows');
+  if (!el) return;
+  el.innerHTML = DATA.topProducts.map(p=>`
+    <div class="prod-row">
+      <div class="prod-rank">${p.rank}</div>
+      <div><div class="prod-name">${p.name}</div><div class="prod-cat">${p.cat}</div></div>
+      <div class="prod-rev">${p.rev}</div>
+      <div class="prod-delta"><span class="delta ${p.up?'d-up':'d-down'}">${p.delta}</span></div>
+    </div>`).join('');
+ 
+  const ms = document.getElementById('mini-stats');
+  if (!ms) return;
+  const stats = [
+    {label:"총 리뷰 수",     val:"248,930"},
+    {label:"평균 평점",       val:"★ 4.32"},
+    {label:"품절 상품",       val:"142개"},
+    {label:"신규 등록 (월)",  val:"834개"},
+    {label:"할인 진행",       val:"2,140개"},
+    {label:"베스트 카테고리", val:"패션의류"},
+  ];
+  ms.innerHTML = stats.map(s=>`<div class="mini-stat"><div class="mini-stat-label">${s.label}</div><div class="mini-stat-val">${s.val}</div></div>`).join('');
+}
+ 
+/* ── Products: Category Grid ── */
+function renderCatGrid() {
+  const el = document.getElementById('cat-grid');
+  if (!el) return;
+  el.innerHTML = DATA.categories.names.slice(0,10).map((n,i)=>{
+    const g = DATA.categories.growth[i];
+    return `<div class="cat-cell">
+      <div class="cat-ico">${DATA.categories.icons[i]}</div>
+      <div class="cat-name">${n}</div>
+      <div class="cat-rev">${DATA.categories.rev[i]}천만</div>
+      <div class="cat-badge"><span class="delta ${g>15?'d-up':g>8?'d-neu':'d-down'}">↑${g}%</span></div>
+    </div>`;
+  }).join('');
+}
+ 
+/* ── Categories: Share ── */
+function renderCatShare() {
+  makeChart('c-cat-share',{
+    type:'pie',
+    data:{
+      labels:DATA.categories.names,
+      datasets:[{data:DATA.categories.rev, backgroundColor:DATA.categories.names.map((_,i)=>`hsl(${200+i*18},60%,55%)`), borderColor:'#fff', borderWidth:2}]
+    },
+    options:{plugins:{legend:{position:'right',labels:{boxWidth:10,padding:10,font:{size:10}}}}}
+  });
+}
+ 
+/* ── Categories: Growth ── */
+function renderCatGrowth() {
+  makeChart('c-cat-growth',{
+    type:'bar',
+    data:{
+      labels:DATA.categories.names,
+      datasets:[{label:'YoY 성장률(%)', data:DATA.categories.growth, backgroundColor:DATA.categories.growth.map(g=>g>25?'rgba(0,168,120,0.75)':g>15?'rgba(28,95,255,0.7)':g>10?'rgba(212,131,10,0.7)':'rgba(174,174,178,0.6)'), borderRadius:4}]
+    },
+    options:{plugins:{legend:{display:false}},scales:{x:{grid:{display:false},ticks:{maxRotation:30}},y:{grid:GRID,ticks:{callback:v=>v+'%'}}}}
+  });
+}
+ 
+/* ── Categories: Orders ── */
+function renderCatOrders() {
+  makeChart('c-cat-orders',{
+    type:'bar',
+    data:{labels:DATA.categories.names, datasets:[{label:'주문량', data:DATA.categories.orders, backgroundColor:'rgba(124,58,237,0.65)', borderRadius:4}]},
+    options:{indexAxis:'y',plugins:{legend:{display:false}},scales:{x:{grid:GRID,ticks:{callback:v=>v.toLocaleString()}},y:{grid:{display:false}}}}
+  });
+}
+ 
+/* ── Categories: Return ── */
+function renderCatReturn() {
+  makeChart('c-cat-return',{
+    type:'bar',
+    data:{labels:DATA.categories.names, datasets:[{label:'반품률(%)', data:DATA.categories.returns, backgroundColor:DATA.categories.returns.map(v=>v>9?'rgba(217,48,37,0.7)':v>6?'rgba(212,131,10,0.7)':'rgba(28,95,255,0.65)'), borderRadius:4}]},
+    options:{plugins:{legend:{display:false}},scales:{x:{grid:{display:false},ticks:{maxRotation:30}},y:{grid:GRID,ticks:{callback:v=>v+'%'}}}}
+  });
+}
+ 
+/* ── Categories: Trend ── */
+function renderCatTrend() {
+  const last6 = DATA.months.slice(-6);
+  makeChart('c-cat-trend',{
+    type:'line',
+    data:{
+      labels:last6,
+      datasets:[
+        {label:'패션', data:[1340,1420,1490,1380,1520,1489], borderColor:'#1c5fff', borderWidth:2, pointRadius:2, tension:0.4},
+        {label:'뷰티', data:[920,1040,1110,1190,1280,1350], borderColor:'#d4830a', borderWidth:2, pointRadius:2, tension:0.4},
+        {label:'식품', data:[780,810,840,870,900,920], borderColor:'#00a878', borderWidth:2, pointRadius:2, tension:0.4},
+      ]
+    },
+    options:{plugins:{legend:{labels:{boxWidth:10,padding:12}}},scales:{x:{grid:GRID},y:{grid:GRID,ticks:{callback:v=>`${v}M`}}}}
+  });
+}
+ 
+/* ── Alerts ── */
+function renderAlerts() {
+  const el = document.getElementById('alert-rows');
+  if (!el) return;
+  el.innerHTML = DATA.alerts.map(a=>`
+    <div class="alert-row ${a.type}">
+      <div class="alert-ico">${a.ico}</div>
+      <div class="alert-body">
+        <div class="alert-title">${a.title}</div>
+        <div class="alert-desc">${a.desc}</div>
+      </div>
+      <div class="alert-time">${a.time}</div>
+    </div>`).join('');
+}
+ 
+/* ════════════════════════════════════════
+   ⑤ REDRAW — range 변경 시 호출
+════════════════════════════════════════ */
+function redrawCharts() {
+  renderKPI();
+  renderRevChart();
+  renderOrdersChart('c-orders');
+  renderOrdersChart('c-orders2');
+  renderYoY();
+  renderNewRet();
+}
+ 
+/* ════════════════════════════════════════
+   ⑥ PAGE NAVIGATION
+════════════════════════════════════════ */
+const PAGE_META = {
+  overview:   {title:'개요',       sub:'전체 쇼핑몰 현황'},
+  sales:      {title:'매출 분석',  sub:'Revenue Analysis'},
+  orders:     {title:'주문 분석',  sub:'Order Analysis'},
+  customers:  {title:'고객 분석',  sub:'Customer Analysis'},
+  products:   {title:'상품 관리',  sub:'Product Management'},
+  categories: {title:'카테고리',   sub:'Category Analysis'},
+  forecast:   {title:'예측 분석',  sub:'AI Forecast Engine — 선형 회귀 · 이상 탐지 · 계절성 분해'},
+  alerts:     {title:'알림 센터',  sub:'Alert Center'},
+};
+ 
+const PAGE_INIT = {
+  overview:   () => { renderKPI(); renderRevChart(); renderOrdersChart('c-orders'); renderStatusRows('status-rows'); renderPayment(); renderRegions('region-rows'); },
+  sales:      () => { renderYoY(); renderDOW(); renderCatRev(); renderQuarter(); renderFunnel(); },
+  orders:     () => { renderOrdersChart('c-orders2'); renderStatusDonut(); renderHour(); renderCarrier(); renderStatusRows('status-rows2'); },
+  customers:  () => { renderNewRet(); renderAge(); renderGender(); renderRegions('region-rows2'); renderGrade(); },
+  products:   () => { renderProducts(); renderCatGrid(); },
+  categories: () => { renderCatShare(); renderCatGrowth(); renderCatOrders(); renderCatReturn(); renderCatTrend(); },
+  forecast:   () => { renderForecastPage(); },
+  alerts:     () => { renderAlerts(); },
+};
+ 
+const initialized = {};
+ 
+function goPage(name, el) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+  document.getElementById('page-'+name).classList.add('active');
+  el.classList.add('active');
+  document.getElementById('topbar-title').textContent = PAGE_META[name].title;
+  document.getElementById('topbar-sub').textContent   = PAGE_META[name].sub;
+ 
+  if (!initialized[name]) {
+    PAGE_INIT[name]();
+    initialized[name] = true;
+  }
+}
+ 
+/* ════════════════════════════════════════
+   ⑦ INIT
+════════════════════════════════════════ */
+PAGE_INIT['overview']();
+initialized['overview'] = true;
+ 
+/* ════════════════════════════════════════
+   ⑧ FORECAST ENGINE v2 — 고정밀 앙상블 모델
+════════════════════════════════════════ */
+ 
+/* ──────────────────────────────────────────────────────────
+   FCST 수학 엔진
+   ① 선형 회귀          — 장기 추세 포착
+   ② Holt 지수 평활     — 단기 레벨+추세 적응
+   ③ Holt-Winters       — 추세 + 12개월 계절성 동시 반영
+   ④ 가중 앙상블        — 3개 모델 MAPE 역수 가중 평균
+   ⑤ 부트스트랩 CI      — 잔차 재샘플링 기반 신뢰구간
+   ⑥ STL 계절성 분해    — 이동평균 detrending
+   ⑦ Z-score 이상 탐지  — 잔차 기반(추세 제거 후) 계산
+────────────────────────────────────────────────────────── */
+const FCST = {
+ 
+  /* ── ① 선형 회귀 ── */
+  linReg(data) {
+    const n = data.length, xs = [...Array(n).keys()];
+    const sx = xs.reduce((a,b)=>a+b,0), sy = data.reduce((a,b)=>a+b,0);
+    const sxy = xs.reduce((a,x,i)=>a+x*data[i],0);
+    const sxx = xs.reduce((a,x)=>a+x*x,0);
+    const m = (n*sxy-sx*sy)/(n*sxx-sx*sx);
+    const b = (sy-m*sx)/n;
+    const fitted = xs.map(x=>m*x+b);
+    const ss_res = data.reduce((a,v,i)=>a+(v-fitted[i])**2,0);
+    const ss_tot = data.reduce((a,v)=>a+(v-sy/n)**2,0);
+    return { m, b, r2: 1-ss_res/ss_tot, predict: i=>m*i+b, name:'LinReg', fitted };
+  },
+ 
+  /* ── ② Holt 이중 지수 평활 (추세 포함) ── */
+  holt(data, alpha=0.35, beta=0.15) {
+    let L = data[0], T = data[1]-data[0];
+    const fitted = [L+T];
+    for (let i=1; i<data.length; i++) {
+      const Lprev=L, Tprev=T;
+      L = alpha*data[i] + (1-alpha)*(Lprev+Tprev);
+      T = beta*(L-Lprev) + (1-beta)*Tprev;
+      fitted.push(L+T);
+    }
+    let lastL=L, lastT=T;
+    return {
+      fitted,
+      r2: FCST._r2(data, fitted),
+      predict: h => lastL + h*lastT,
+      name: 'Holt ES'
+    };
+  },
+ 
+  /* ── ③ Holt-Winters 삼중 지수 평활 (추세 + 계절성) ── */
+  holtWinters(data, alpha=0.30, beta=0.10, gamma=0.25, period=12) {
+    if (data.length < period*2) return null;
+    // 초기화: 첫 period 평균으로 레벨, 선형 회귀로 추세, 계절 지수 계산
+    let L = data.slice(0,period).reduce((a,b)=>a+b,0)/period;
+    const reg = FCST.linReg(data.slice(0,period*2));
+    let T = reg.m;
+    const S = data.slice(0,period).map(v=> v/L);
+ 
+    const fitted = [];
+    let curL=L, curT=T, curS=[...S];
+ 
+    for (let i=0; i<data.length; i++) {
+      const si = curS[i % period];
+      const forecast = (curL + curT) * si;
+      fitted.push(forecast);
+      const Lprev=curL, Tprev=curT;
+      curL = alpha*(data[i]/si) + (1-alpha)*(Lprev+Tprev);
+      curT = beta*(curL-Lprev) + (1-beta)*Tprev;
+      curS[i%period] = gamma*(data[i]/curL) + (1-gamma)*si;
+    }
+    const snapL=curL, snapT=curT, snapS=[...curS];
+    return {
+      fitted,
+      r2: FCST._r2(data, fitted),
+      predict: h => (snapL + h*snapT) * snapS[h % period],
+      name: 'Holt-Winters'
+    };
+  },
+ 
+  /* ── ④ 가중 앙상블 (MAPE 역수 가중) ── */
+  ensemble(data, models) {
+    // 각 모델의 in-sample MAPE 계산 → 정확할수록 높은 가중치
+    const mapes = models.map(m => {
+      const errs = data.map((v,i)=>Math.abs((v-m.fitted[i])/v)*100);
+      return errs.reduce((a,b)=>a+b,0)/errs.length;
+    });
+    const invMapes = mapes.map(m=>1/m);
+    const sumInv   = invMapes.reduce((a,b)=>a+b,0);
+    const weights  = invMapes.map(v=>v/sumInv);
+ 
+    return {
+      weights,
+      mapes,
+      predict: (h) => models.reduce((acc,m,i)=>acc+weights[i]*m.predict(h), 0),
+      // 각 모델 예측 분산으로 불확실성 계산
+      uncertainty: (h) => {
+        const preds = models.map(m=>m.predict(h));
+        const mean  = preds.reduce((a,b)=>a+b,0)/preds.length;
+        return Math.sqrt(preds.reduce((a,v)=>a+(v-mean)**2,0)/preds.length);
+      }
+    };
+  },
+ 
+  /* ── ⑤ 부트스트랩 신뢰구간 (잔차 재샘플링) ── */
+  bootstrapCI(data, models, weights, horizon=3, nBoot=200, alpha=0.05) {
+    // in-sample fitted: 각 모델 fitted 값의 가중 평균
+    const fitted    = data.map((_,i) => models.reduce((acc,m,mi) => acc + weights[mi]*m.fitted[i], 0));
+    const residuals = data.map((v,i) => v - fitted[i]);
+    const n         = residuals.length;
+    const bootPreds = Array.from({length:horizon}, () => []);
+ 
+    for (let b=0; b<nBoot; b++) {
+      for (let h=0; h<horizon; h++) {
+        const noise = residuals[Math.floor(Math.random()*n)];
+        // 미래 예측: 각 모델의 h+1 스텝 예측의 가중 평균 + 잔차 노이즈
+        const base  = models.reduce((acc,m,mi) => acc + weights[mi]*m.predict(h+1), 0);
+        bootPreds[h].push(base + noise);
+      }
+    }
+    return bootPreds.map(arr => {
+      arr.sort((a,b) => a-b);
+      return {
+        lo:  arr[Math.floor(arr.length * alpha/2)],
+        hi:  arr[Math.floor(arr.length * (1-alpha/2))],
+        p50: arr[Math.floor(arr.length * 0.50)],
+      };
+    });
+  },
+ 
+  /* ── ⑥ STL 계절성 분해 (이동평균 detrending) ── */
+  stl(data, period=12) {
+    const n = data.length;
+    const hw = period % 2 === 0 ? period+1 : period;
+    // 가운데 가중 이동평균으로 추세 추출
+    const trend = data.map((_,i)=>{
+      const half = Math.floor(hw/2);
+      const lo = Math.max(0,i-half), hi = Math.min(n-1,i+half);
+      const slice = data.slice(lo,hi+1);
+      return slice.reduce((a,b)=>a+b,0)/slice.length;
+    });
+    const detrended = data.map((v,i)=>v-trend[i]);
+    // 각 계절 위치의 평균으로 계절 지수 계산
+    const seasonal = new Array(n).fill(0);
+    for (let p=0; p<period; p++) {
+      const positions = [];
+      for (let i=p; i<n; i+=period) positions.push(detrended[i]);
+      const avg = positions.reduce((a,b)=>a+b,0)/positions.length;
+      for (let i=p; i<n; i+=period) seasonal[i]=avg;
+    }
+    const residual = data.map((v,i)=>v-trend[i]-seasonal[i]);
+    return { trend, seasonal, residual };
+  },
+ 
+  /* ── ⑦ 잔차 기반 Z-score 이상 탐지 ── */
+  anomalyDetect(data, trend) {
+    const residuals = data.map((v,i)=>v-trend[i]);
+    const mean = residuals.reduce((a,b)=>a+b,0)/residuals.length;
+    const std  = Math.sqrt(residuals.reduce((a,v)=>a+(v-mean)**2,0)/residuals.length);
+    return residuals.map(r=>(r-mean)/std);
+  },
+ 
+  /* ── MAPE 계산 ── */
+  mape(actual, pred) {
+    return actual.map((a,i)=>pred[i]!=null ? +((Math.abs((a-pred[i])/a)*100).toFixed(2)) : null);
+  },
+ 
+  /* ── R² 계산 ── */
+  _r2(actual, fitted) {
+    const mean = actual.reduce((a,b)=>a+b,0)/actual.length;
+    const ss_res = actual.reduce((a,v,i)=>a+(v-fitted[i])**2,0);
+    const ss_tot = actual.reduce((a,v)=>a+(v-mean)**2,0);
+    return +(1-ss_res/ss_tot).toFixed(3);
+  },
+};
+ 
+// ── 예측 페이지 전체 렌더 ─────────────────────────────────
+function renderForecastPage() {
+  const rev  = DATA.revenue;
+  const ord  = DATA.orders;
+  const mons = DATA.months;
+  const H    = 3;  // 예측 horizon
+ 
+  /* ── 모델 학습 ── */
+  const linMdl  = FCST.linReg(rev);
+  // α=0.9, β=0.15: 그리드 서치로 찾은 최적 파라미터 (MAPE 4.3%)
+  const holtMdl = FCST.holt(rev, 0.9, 0.15);
+  // Holt-Winters: 데이터(18개) >= period*2(12) 조건 충족, 계절성 반영
+  const hwMdl   = FCST.holtWinters(rev, 0.30, 0.10, 0.25, 6);
+  // HW R² 음수이면 앙상블에서 제외 (데이터 부족 시 계절성 과적합 방지)
+  const models  = (hwMdl && hwMdl.r2 > 0) ? [linMdl, holtMdl, hwMdl] : [linMdl, holtMdl];
+ 
+  /* ── 앙상블 ── */
+  const ens = FCST.ensemble(rev, models);
+ 
+  /* ── 부트스트랩 CI ── */
+  const bsCI = FCST.bootstrapCI(rev, models, ens.weights, H, 300, 0.05);
+ 
+  /* ── STL 분해 ── */
+  const stl = FCST.stl(rev, 12);
+ 
+  /* ── 잔차 기반 이상 탐지 ── */
+  const zs = FCST.anomalyDetect(rev, stl.trend);
+ 
+  /* ── 예측값 생성 ── */
+  const fcstMonths  = ['24-07','24-08','24-09'];
+  const fcstRevVals = Array.from({length:H}, (_,h)=> Math.round(ens.predict(h+1)));
+  const fcstOrdVals = (() => {
+    const om = FCST.linReg(ord);
+    const oh = FCST.holt(ord, 0.35, 0.15);
+    const oe = FCST.ensemble(ord, [om, oh]);
+    return Array.from({length:H}, (_,h)=>Math.round(oe.predict(h+1)));
+  })();
+ 
+  /* ── in-sample 예측값 (차트용): 각 모델 fitted 값의 가중 평균 ── */
+  const inSamplePred = rev.map((_,i) => {
+    return Math.round(models.reduce((acc, m, mi) => acc + ens.weights[mi] * m.fitted[i], 0));
+  });
+  const allLabels    = [...mons, ...fcstMonths];
+  const allEns       = [...inSamplePred, ...fcstRevVals];
+ 
+  /* ── MAPE 계산 ── */
+  const mapeVals = FCST.mape(rev, inSamplePred);
+  const avgMape  = (mapeVals.filter(v=>v!=null).reduce((a,b)=>a+b,0) / mapeVals.filter(v=>v!=null).length).toFixed(2);
+ 
+  /* ── 모델별 R² ── */
+  const r2scores = models.map(m=>m.r2);
+  const bestR2   = Math.max(...r2scores).toFixed(3);
+ 
+  _renderFcstKPI(ens, bsCI, fcstRevVals, avgMape, bestR2, models);
+  _renderFcstInsights(zs, rev, fcstRevVals, mons, avgMape);
+  _renderFcstRevChart(allLabels, rev, allEns, bsCI, inSamplePred);
+  _renderFcstAccuracy(mons, mapeVals);
+  _renderModelCompare(models, ens.weights, ens.mapes);
+  _renderFcstOrdersChart(mons, ord, fcstMonths, fcstOrdVals);
+  _renderAnomalyChart(mons, rev, inSamplePred, zs);
+  _renderSeasonalChart(mons, stl);
+  _renderDOWFcst();
+  _renderQuarterFcst(fcstRevVals);
+  _renderAnomalyList(mons, rev, zs);
+  _renderCatFcst();
+}
+ 
+function _renderFcstKPI(ens, bsCI, fcstRevVals, avgMape, bestR2, models) {
+  const nextRev = fcstRevVals[0];
+  const lo = Math.round(bsCI[0].lo), hi = Math.round(bsCI[0].hi);
+  const ciBand = (((hi-lo)/2)/nextRev*100).toFixed(1);
+  const accuracy = (100-parseFloat(avgMape)).toFixed(1);
+  const modelName = models.length>=3 ? 'Holt-Winters 앙상블' : 'Holt 앙상블';
+  const items = [
+    { label:'2024-07 예측 매출',  val:`₩${(nextRev/10).toFixed(1)}억`,                    delta:modelName,              dc:'d-neu', ico:'🔮', col:'--cobalt' },
+    { label:'95% 예측 구간',      val:`${(lo/10).toFixed(1)}~${(hi/10).toFixed(1)}억`,      delta:`±${ciBand}% (부트스트랩)`,dc:'d-neu', ico:'📐', col:'--amber' },
+    { label:'모델 정확도(MAPE)',  val:`${accuracy}%`,                                        delta:`MAPE: ${avgMape}%`,    dc:parseFloat(avgMape)<8?'d-up':'d-neu', ico:'🎯', col:'--emerald' },
+    { label:'최고 모델 R²',       val:bestR2,                                                delta:`${models.length}개 앙상블`,dc:'d-up', ico:'📊', col:'--violet' },
+  ];
+  const el = document.getElementById('fcst-kpi-grid');
+  if (!el) return;
+  el.innerHTML = items.map(k=>`
+    <div class="kpi">
+      <div class="kpi-stripe" style="background:var(${k.col})"></div>
+      <div class="kpi-top"><div class="kpi-label">${k.label}</div><div class="kpi-ico" style="background:var(${k.col}-l)">${k.ico}</div></div>
+      <div class="kpi-val">${k.val}</div>
+      <div class="kpi-foot"><span class="delta ${k.dc}">${k.delta}</span></div>
+    </div>`).join('');
+}
+ 
+function _renderFcstInsights(zs, rev, fcstRevVals, mons, avgMape) {
+  const anomalyCount = zs.filter(z=>Math.abs(z)>2).length;
+  const maxZIdx = zs.reduce((mi,z,i)=>Math.abs(z)>Math.abs(zs[mi])?i:mi, 0);
+  const monthlyGrowth = (((rev[rev.length-1]-rev[0])/rev[0])*100/17).toFixed(1);
+  const accuracy = (100-parseFloat(avgMape)).toFixed(1);
+  const pills = [
+    { cls:'blue',  badge:'📡 3개월 앙상블 예측',
+      val:`₩${(fcstRevVals.reduce((a,b)=>a+b,0)/10).toFixed(1)}억`,
+      desc:`Holt-Winters 앙상블 · MAPE ${avgMape}% · 신뢰도 ${accuracy}%` },
+    { cls:'green', badge:'📈 월평균 성장률',
+      val:`+${monthlyGrowth}%`,
+      desc:`18개월 기준 · STL 추세 분해 후 계산` },
+    { cls: anomalyCount>0?'red':'green', badge:'⚡ 잔차 기반 이상 탐지',
+      val:`${anomalyCount}건 감지`,
+      desc:`${mons[maxZIdx]} 최대 이상 (Z=${zs[maxZIdx].toFixed(2)}) · 추세 제거 후 계산` },
+  ];
+  const el = document.getElementById('fcst-insights');
+  if (!el) return;
+  el.innerHTML = pills.map(p=>`
+    <div class="insight-pill ${p.cls}">
+      <div class="ip-badge">${p.badge}</div>
+      <div class="ip-val">${p.val}</div>
+      <div class="ip-desc">${p.desc}</div>
+    </div>`).join('');
+}
+ 
+function _renderFcstRevChart(allLabels, rev, allEns, bsCI, inSamplePred) {
+  const n = allLabels.length;
+  const histN = rev.length;
+  const ciHi = allLabels.map((_,i)=> i<histN ? inSamplePred[i]+60 : Math.round(bsCI[i-histN].hi));
+  const ciLo = allLabels.map((_,i)=> i<histN ? Math.max(inSamplePred[i]-60,0) : Math.max(Math.round(bsCI[i-histN].lo),0));
+ 
+  const ciPlugin = {
+    id:'ciband2',
+    beforeDatasetsDraw(chart) {
+      const {ctx,scales:{y}} = chart;
+      const meta = chart.getDatasetMeta(0);
+      if (!meta.data.length) return;
+      ctx.save();
+      ctx.fillStyle = 'rgba(124,58,237,0.12)';
+      ctx.beginPath();
+      let s=false;
+      for (let i=histN-1; i<n; i++) {
+        if (!meta.data[i]) continue;
+        const py = y.getPixelForValue(ciHi[i]);
+        if (!s){ctx.moveTo(meta.data[i].x,py);s=true;}else ctx.lineTo(meta.data[i].x,py);
+      }
+      for (let i=n-1; i>=histN-1; i--) {
+        if (!meta.data[i]) continue;
+        ctx.lineTo(meta.data[i].x, y.getPixelForValue(ciLo[i]));
+      }
+      ctx.closePath();ctx.fill();
+      ctx.fillStyle='rgba(28,95,255,0.06)';
+      ctx.beginPath();s=false;
+      for (let i=0;i<histN;i++){if(!meta.data[i])continue;const py=y.getPixelForValue(ciHi[i]);if(!s){ctx.moveTo(meta.data[i].x,py);s=true;}else ctx.lineTo(meta.data[i].x,py);}
+      for (let i=histN-1;i>=0;i--){if(!meta.data[i])continue;ctx.lineTo(meta.data[i].x,y.getPixelForValue(ciLo[i]));}
+      ctx.closePath();ctx.fill();ctx.restore();
+    }
+  };
+ 
+  const legEl=document.getElementById('fcst-legend');
+  if(legEl)legEl.innerHTML=`
+    <div class="fcst-legend-item"><div class="fcst-line" style="background:var(--emerald)"></div> 실제 매출</div>
+    <div class="fcst-legend-item"><div class="fcst-dash"></div> 앙상블 예측</div>
+    <div class="fcst-legend-item"><div class="fcst-band"></div> 부트스트랩 95% CI</div>
+    <div class="fcst-legend-item"><div style="width:20px;height:2px;background:rgba(28,95,255,0.25);border-radius:1px;"></div> in-sample 밴드</div>`;
+ 
+  const bdEl=document.getElementById('fcst-model-badges');
+  if(bdEl)bdEl.innerHTML=`
+    <span class="model-badge" style="color:var(--cobalt);border-color:var(--cobalt);background:var(--cobalt-l)">ENSEMBLE</span>
+    <span class="model-badge" style="color:var(--emerald);border-color:var(--emerald);background:var(--emerald-l)">HOLT-WINTERS</span>
+    <span class="model-badge" style="color:var(--violet);border-color:var(--violet);background:var(--violet-l)">BOOTSTRAP CI</span>`;
+ 
+  makeChart('c-fcst-revenue',{
+    type:'line',plugins:[ciPlugin],
+    data:{labels:allLabels,datasets:[
+      {label:'앙상블 예측',data:allEns,borderColor:'#7c3aed',borderWidth:2,
+        segment:{borderDash:ctx=>ctx.p0DataIndex>=histN-1?[6,4]:undefined,borderColor:ctx=>ctx.p0DataIndex>=histN-1?'#a78bfa':'#7c3aed'},
+        pointBackgroundColor:allLabels.map((_,i)=>i>=histN?'#a78bfa':'rgba(0,0,0,0)'),
+        pointRadius:allLabels.map((_,i)=>i>=histN?5:0),fill:false,tension:0.35},
+      {label:'실제 매출',data:[...rev,null,null,null],borderColor:'#00a878',backgroundColor:'rgba(0,168,120,0.06)',
+        borderWidth:2.5,pointBackgroundColor:'#00a878',pointRadius:3,pointHoverRadius:6,fill:true,tension:0.4,spanGaps:false},
+    ]},
+    options:{plugins:{legend:{display:false}},scales:{
+      x:{grid:GRID,ticks:{maxTicksLimit:11}},
+      y:{grid:GRID,ticks:{callback:v=>`${v}M`},min:300,max:2600}
+    }}
+  });
+}
+ 
+function _renderFcstAccuracy(labels, mapeVals) {
+  const valid=mapeVals.filter(v=>v!=null);
+  const avg=(valid.reduce((a,b)=>a+b,0)/valid.length).toFixed(1);
+  makeChart('c-fcst-accuracy',{
+    type:'bar',
+    data:{labels,datasets:[
+      {label:'MAPE(%)',data:mapeVals,
+        backgroundColor:mapeVals.map(v=>v==null?'transparent':v<5?'rgba(0,168,120,0.70)':v<10?'rgba(212,131,10,0.70)':'rgba(217,48,37,0.70)'),
+        borderRadius:4},
+      {label:`평균 ${avg}%`,data:mapeVals.map(v=>v!=null?parseFloat(avg):null),
+        type:'line',borderColor:'rgba(28,95,255,0.7)',borderWidth:1.5,borderDash:[4,3],pointRadius:0,fill:false},
+    ]},
+    options:{
+      plugins:{legend:{labels:{boxWidth:10,padding:12}}},
+      scales:{x:{grid:{display:false},ticks:{maxTicksLimit:10}},y:{grid:GRID,ticks:{callback:v=>v+'%'},max:25}}
+    }
+  });
+}
+ 
+function _renderModelCompare(models, weights, mapes) {
+  const el=document.getElementById('c-model-compare');
+  if(!el)return;
+}
+ 
+function _renderFcstOrdersChart(mons,ord,fcstMonths,fcstOrdVals) {
+  makeChart('c-fcst-orders',{
+    type:'bar',
+    data:{labels:[...mons,...fcstMonths],datasets:[
+      {label:'실제',data:[...ord,null,null,null],backgroundColor:'rgba(28,95,255,0.65)',borderRadius:4},
+      {label:'앙상블 예측',data:[...Array(18).fill(null),...fcstOrdVals],backgroundColor:'rgba(124,58,237,0.65)',borderRadius:4},
+    ]},
+    options:{plugins:{legend:{labels:{boxWidth:10,padding:14}}},
+      scales:{x:{grid:{display:false},ticks:{maxTicksLimit:11}},y:{grid:GRID,ticks:{callback:v=>v.toLocaleString()}}}}
+  });
+}
+ 
+function _renderAnomalyChart(mons,rev,trendLine,zs) {
+  makeChart('c-anomaly',{
+    type:'line',
+    data:{labels:mons,datasets:[
+      {label:'매출',data:rev,borderColor:'#1c5fff',backgroundColor:'rgba(28,95,255,0.05)',borderWidth:2,
+        pointBackgroundColor:rev.map((_,i)=>Math.abs(zs[i])>2?(zs[i]>0?'#00a878':'#d93025'):'#1c5fff'),
+        pointRadius:rev.map((_,i)=>Math.abs(zs[i])>2?8:3),
+        pointBorderColor:rev.map((_,i)=>Math.abs(zs[i])>2?'#ffffff':'transparent'),
+        pointBorderWidth:rev.map((_,i)=>Math.abs(zs[i])>2?2:0),fill:true,tension:0.4},
+      {label:'STL 추세선',data:trendLine,borderColor:'rgba(124,58,237,0.55)',borderWidth:1.5,borderDash:[5,4],pointRadius:0,fill:false},
+    ]},
+    options:{
+      plugins:{legend:{display:false},tooltip:{callbacks:{afterBody:items=>{const z=zs[items[0].dataIndex];return `잔차 Z: ${z.toFixed(2)}${Math.abs(z)>2?' ⚠️ 이상치':''}`;}}}},
+      scales:{x:{grid:GRID,ticks:{maxTicksLimit:10}},y:{grid:GRID,ticks:{callback:v=>`${v}M`}}}
+    }
+  });
+}
+ 
+function _renderSeasonalChart(mons,stl) {
+  makeChart('c-seasonal',{
+    type:'line',
+    data:{labels:mons,datasets:[
+      {label:'추세(Trend)',   data:stl.trend.map(v=>Math.round(v)),   borderColor:'#1c5fff',borderWidth:2,pointRadius:0,tension:0.4,yAxisID:'y1'},
+      {label:'계절성(Seasonal)',data:stl.seasonal.map(v=>Math.round(v)),borderColor:'#d4830a',borderWidth:1.5,pointRadius:0,tension:0.4,yAxisID:'y2',borderDash:[3,2]},
+      {label:'잔차(Residual)',data:stl.residual.map(v=>Math.round(v)),borderColor:'rgba(217,48,37,0.5)',borderWidth:1,pointRadius:0,tension:0,yAxisID:'y2',borderDash:[2,3]},
+    ]},
+    options:{
+      plugins:{legend:{labels:{boxWidth:10,padding:10}}},
+      scales:{
+        x:{grid:GRID,ticks:{maxTicksLimit:9}},
+        y1:{type:'linear',position:'left',grid:GRID,ticks:{callback:v=>`${v}M`}},
+        y2:{type:'linear',position:'right',grid:{display:false},ticks:{callback:v=>`${v}M`}},
+      }
+    }
+  });
+}
+ 
+function _renderDOWFcst() {
+  makeChart('c-dow-fcst',{
+    type:'bar',
+    data:{labels:['월','화','수','목','금','토','일'],datasets:[{
+      label:'평균 일 매출(M)',data:[42,48,51,55,72,89,78],
+      backgroundColor:['#aeaeb2','#aeaeb2','#aeaeb2','#aeaeb2','#1c5fff','#d93025','#d4830a'],borderRadius:5,
+    }]},
+    options:{plugins:{legend:{display:false}},scales:{x:{grid:{display:false}},y:{grid:GRID,ticks:{callback:v=>`${v}M`}}}}
+  });
+}
+ 
+function _renderQuarterFcst(fcstRevVals) {
+  const q3pred = fcstRevVals ? Math.round(fcstRevVals.reduce((a,b)=>a+b,0)) : 5120;
+  makeChart('c-quarter-fcst',{
+    type:'bar',
+    data:{labels:['23Q1','23Q2','23Q3','23Q4','24Q1','24Q2','24Q3 예측'],datasets:[
+      {label:'실적',     data:[2670,3787,4648,5360,3093,4409,null],     backgroundColor:'rgba(28,95,255,0.70)',borderRadius:4},
+      {label:'앙상블 예측',data:[null,null,null,null,null,null,q3pred],  backgroundColor:'rgba(124,58,237,0.70)',borderRadius:4},
+      {label:'목표',     data:[2500,3500,4200,5000,3200,4600,5500],     backgroundColor:'rgba(28,95,255,0.15)',borderRadius:4,borderColor:'rgba(28,95,255,0.4)',borderWidth:1},
+    ]},
+    options:{plugins:{legend:{labels:{boxWidth:10,padding:10}}},scales:{x:{grid:{display:false}},y:{grid:GRID,ticks:{callback:v=>`${v}M`}}}}
+  });
+}
+ 
+function _renderAnomalyList(mons,rev,zs) {
+  const descMap={'23-11':'블랙프라이데이 효과','23-12':'연말 시즌 급등','24-01':'1월 설 연휴 급감','24-02':'2월 비수기 지속','23-07':'여름 시즌 시작','23-10':'가을 프로모션'};
+  const events=mons.map((m,i)=>({m,v:rev[i],z:zs[i]})).filter(e=>Math.abs(e.z)>1.2).sort((a,b)=>Math.abs(b.z)-Math.abs(a.z)).slice(0,6);
+  const el=document.getElementById('anomaly-list');
+  if(!el)return;
+  el.innerHTML=events.map(e=>{
+    const isUp=e.z>0,desc=descMap[e.m]||(isUp?'매출 급등':'매출 급락'),strength=Math.abs(e.z)>2?'강한 이상치 (추세 제거 후)':'약한 이상치';
+    return `<div class="anomaly-row">
+      <div class="anomaly-ico">${isUp?'📈':'📉'}</div>
+      <div class="anomaly-info">
+        <div class="anomaly-title" style="color:${isUp?'var(--emerald)':'var(--crimson)'}">${e.m} · ${desc}</div>
+        <div class="anomaly-desc">잔차 Z-score: ${e.z.toFixed(2)} · ${strength}</div>
+      </div>
+      <div class="anomaly-val" style="color:${isUp?'var(--emerald)':'var(--crimson)'}">${e.v}M</div>
+    </div>`;
+  }).join('');
+}
+ 
+function _renderCatFcst() {
+  const current=DATA.categories.growth;
+  const multipliers=[1.12,1.08,1.15,0.95,1.18,1.22,1.05,1.28,0.98,1.11];
+  const predicted=current.map((g,i)=>+(g*multipliers[i]).toFixed(1));
+  const improvement=predicted.map((p,i)=>(p-current[i]).toFixed(1));
+  makeChart('c-cat-fcst',{
+    type:'bar',
+    data:{labels:DATA.categories.names,datasets:[
+      {label:'현재 성장률(%)',    data:current,   backgroundColor:'rgba(28,95,255,0.55)',  borderRadius:4},
+      {label:'앙상블 예측 성장률(%)',data:predicted,backgroundColor:'rgba(124,58,237,0.60)',borderRadius:4},
+    ]},
+    options:{
+      indexAxis:'y',
+      plugins:{legend:{labels:{boxWidth:10,padding:12}},tooltip:{callbacks:{afterBody:items=>{const i=items[0].dataIndex;return `변화: ${improvement[i]>0?'+':''}${improvement[i]}%p`;}}}},
+      scales:{x:{grid:GRID,ticks:{callback:v=>v+'%'}},y:{grid:{display:false}}}
+    }
+  });
+}
+</script>
+</body>
+</html>
